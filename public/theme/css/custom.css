@@ -1,0 +1,20 @@
+.xem-them a{
+            text-decoration: underline;
+            font-size: 20px;
+            color: #947054;
+        }
+
+h2{
+	font-family: Merriweather, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.hero-slides-content h2{
+	background: #00000040;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.breadcumb-area .breadcumb-title{
+	background-color: #00000040;
+
+}
