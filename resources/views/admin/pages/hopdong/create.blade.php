@@ -57,13 +57,13 @@
                         <select class="selectpicker" id = "customer">
                             <option value="">-- Please select --</option>
                             @foreach($customers as $customer)
-                            <option value="{{ $customer->id }}">{{ $customer->ten_kh }}</option>
+                            <option value="{{ $customer->id }}">{{ $customer->ten_nv }}</option>
                             @endforeach
                         </select>
                         <a type="button" class="btn bg-green waves-effect" href="{{ route('customer.create') }}">
                             <i class="material-icons">add</i>
                         </a>
-                        <input name="id_kh" type="text" id="id_kh" class="form-control hidden" placeholder="id" value="{{ old('id_kh') }}">
+                        <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="id" value="{{ old('id_nv') }}">
                     </div>
                     <label for="staff">
                         Nhân viên
@@ -185,7 +185,7 @@
     <script>
         $(".selectpicker").selectpicker();
         $("#customer").change(function (e) {
-            $("#id_kh").val($('#customer').val());
+            $("#id_nv").val($('#customer').val());
         });
         $("#bds").change(function (e) {
             $("#id_bds").val($('#bds').val());

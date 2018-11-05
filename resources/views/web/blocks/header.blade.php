@@ -6,7 +6,7 @@
 
 <header class="header-area">
     <!-- Top Header Area -->
-    <div class="top-header-area">
+    {{-- <div class="top-header-area">
         <div class="h-100 d-md-flex justify-content-between align-items-center">
             <div class="email-address">
                 <a href="mailto:contact@southtemplate.com">contact@southtemplate.com</a>
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Main Header Area -->
     <div class="main-header-area" id="stickyHeader">
         <div class="classy-nav-container breakpoint-off">
