@@ -23,7 +23,7 @@ class KhachHangController extends Controller
     {
         return view('admin.pages.customers.index',[
             'auth'          => \Auth::user(),
-            'data'          => $this->model->where('id_cvu',6)->get(),
+            'data'          => $this->model->get(),
             'route'         => $this->model->route,
         ]);
     }
@@ -50,14 +50,14 @@ class KhachHangController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'ten_nv'        => 'required',
-            'ngaysinh_nv'   => '',
-            'diachi_nv'     => 'required',
-            'phone_nv'      => 'required|max:11,phone_nv',
-            'email_nv'      => '',
+            'ten_kh'        => 'required',
+            'ngaysinh_kh'   => '',
+            'diachi_kh'     => 'required',
+            'phone_kh'      => 'required|max:11,phone_kh',
+            'email_kh'      => '',
             'hokhau'        => 'required',
-            'cmnd_nv'       => 'required',
-            'ngaycap_nv'    => 'required',
+            'cmnd_kh'       => 'required',
+            'ngaycap_kh'    => 'required',
             'ghichu'        => '',
         ], $this->model->rules, $this->model->messages);
         $this->model->create($request->all());
@@ -101,14 +101,14 @@ class KhachHangController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'ten_nv'        => 'required',
-            'ngaysinh_nv'   => '',
-            'diachi_nv'     => 'required',
-            'phone_nv'      => 'required|max:11,phone_nv,'.$id,
-            'email_nv'      => '',
+            'ten_kh'        => 'required',
+            'ngaysinh_kh'   => '',
+            'diachi_kh'     => 'required',
+            'phone_kh'      => 'required|max:11,phone_kh,'.$id,
+            'email_kh'      => '',
             'hokhau'        => 'required',
-            'cmnd_nv'       => 'required',
-            'ngaycap_nv'    => 'required',
+            'cmnd_kh'       => 'required',
+            'ngaycap_kh'    => 'required',
             'ghichu'        => '',
         ], $this->model->rules, $this->model->messages);
         $this->model->find($id)->update($request->all());

@@ -40,13 +40,13 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="ten_nv" type="text" id="customer_name" class="form-control" placeholder="Họ và tên" value="{{ old('ten_nv', $data->ten_nv) }}">
+                            <input name="ten_kh" type="text" id="customer_name" class="form-control" placeholder="Họ và tên" value="{{ old('ten_kh', $data->ten_kh) }}">
                         </div>
                     </div>
                     <b>Ngày sinh</b>
                     <div class="input-group">
                         <div class="form-line">
-                        <input data-inputmask-alias="yyyy/mm/dd" name="ngaysinh_nv" type="text" id="customer_birth" class="form-control date" data-inputmask="'yearrange': { 'minyear': '1900', 'maxyear': '2018' }" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaysinh_nv', $data->ngaysinh_nv) }}">
+                        <input data-inputmask-alias="yyyy/mm/dd" name="ngaysinh_kh" type="text" id="customer_birth" class="form-control date" data-inputmask="'yearrange': { 'minyear': '1900', 'maxyear': '2018' }" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaysinh_kh', $data->ngaysinh_kh) }}">
                         </div>
                     </div>
                     <label for="customer_address">
@@ -54,7 +54,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="diachi_nv" type="text" id="customer_address" class="form-control" placeholder="Địa chỉ" value="{{ old('diachi_nv', $data->diachi_nv) }}">
+                            <input name="diachi_kh" type="text" id="customer_address" class="form-control" placeholder="Địa chỉ" value="{{ old('diachi_kh', $data->diachi_kh) }}">
                         </div>
                     </div>
                     <label for="customer_phone">
@@ -62,7 +62,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-mask="9{10,11}" name="phone_nv" type="text" id="customer_phone" class="form-control" placeholder="Số điện thoại" value="{{ $data->phone_nv or old('phone_nv') }}">
+                            <input data-inputmask-mask="9{10,11}" name="phone_kh" type="text" id="customer_phone" class="form-control" placeholder="Số điện thoại" value="{{ $data->phone_kh or old('phone_kh') }}">
                         </div>
                     </div>
                     <label for="customer_email">
@@ -70,7 +70,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="email" name="email_nv" type="text" id="customer_email" class="form-control" placeholder="Email" value="{{ old('email_nv', $data->email_nv) }}">
+                            <input data-inputmask-alias="email" name="email_kh" type="text" id="customer_email" class="form-control" placeholder="Email" value="{{ old('email_kh', $data->email_kh) }}">
                         </div>
                     </div>
                 </div>
@@ -88,13 +88,13 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-mask="9{12,15}" name="cmnd_nv" type="text" id="customer_identity" class="form-control" placeholder="Chứng minh thư" value="{{ $data->cmnd_nv or old('cmnd_nv') }}">
+                            <input data-inputmask-mask="9{12,15}" name="cmnd_kh" type="text" id="customer_identity" class="form-control" placeholder="Chứng minh thư" value="{{ $data->cmnd_kh or old('cmnd_kh') }}">
                         </div>
                     </div>
                     <b>Ngày cấp</b>
                     <div class="input-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaycap_nv" type="text" id="customer_dayRange" data-inputmask="'yearrange': { 'minyear': '1900', 'maxyear': '2018' }" class="form-control date" placeholder="Ex: 2016/07/30" value="{{ old('ngaycap_nv', $data->ngaycap_nv) }}">
+                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaycap_kh" type="text" id="customer_dayRange" data-inputmask="'yearrange': { 'minyear': '1900', 'maxyear': '2018' }" class="form-control date" placeholder="Ex: 2016/07/30" value="{{ old('ngaycap_kh', $data->ngaycap_kh) }}">
                         </div>
                     </div>
                     <label for="customer_note">

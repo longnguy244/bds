@@ -82,7 +82,7 @@ class HopDongController extends Controller
     {
         return view('admin.pages.hopdong.edit',[
             'auth'          => \Auth::user(),
-            'customers'     => KHACHHANG::all(),
+            'customers'     => KHACHHANG::get(),
             'nhanvien'      => NHANVIEN::all(),
             'bds'           => BATDONGSAN::all(),
             'data'          => $this->model->find($id),

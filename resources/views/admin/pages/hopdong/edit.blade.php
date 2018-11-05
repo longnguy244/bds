@@ -4,6 +4,18 @@
     Sửa Hợp Đồng - DreamHouse
 @endsection
 
+@push('css')
+
+    <style>
+        .select2-container--default .select2-selection--single{
+            border: none !important;
+            border-bottom: 1px solid #80808066  !important;
+            height: 36px !important;
+        }
+    </style>
+
+@endpush
+
 @section('main')
 
 @if($errors->any())
@@ -38,46 +50,43 @@
                     <label for="bds">
                         Bất động sản
                     </label>
-                    <div class="form-group">
-                        <select class="selectpicker" id = "bds">
-                            <option value="">-- Please select --</option>
-                            @foreach($bds as $bds)
-                            <option value="{{ $bds->id }}">{{ $bds->ten_bds }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('bds.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="text" id="id_bds" class="form-control" readonly="" placeholder="id" value="{{ TenBDS($data->id_bds) }}">
+                        </div>
+                        <div class="col-md-2">
+                            <a type="button" class="btn bg-green waves-effect" href="{{ route('bds.edit', ['data' => $data->id_bds]) }}">
+                                Xem
+                            </a>
+                        </div>
                         <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
                     </div>
                     <label for="customer">
                         Khách hàng
                     </label>
-                    <div class="form-group">
-                        <select class="selectpicker" id = "customer">
-                            <option value="">-- Please select --</option>
-                            @foreach($customers as $customer)
-                            <option value="{{ $customer->id }}">{{ $customer->ten_kh }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('customer.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" readonly="" placeholder="id" value="{{ TenKhachHang($data->id_kh) }}">
+                        </div>
+                        <div class="col-md-2">
+                            <a type="button" class="btn bg-green waves-effect" href="{{ route('customer.edit',  ['data' => $data->id_kh]) }}">
+                                Xem
+                            </a>
+                        </div>
                         <input name="id_kh" type="text" id="id_kh" class="form-control hidden" placeholder="id" value="{{ old('id_kh', $data->id_kh) }}">
                     </div>
                     <label for="staff">
                         Nhân viên
                     </label>
-                    <div class="form-group">
-                        <select class="selectpicker" id = "staff">
-                            <option value="">-- Please select --</option>
-                            @foreach($nhanvien as $nhanvien)
-                            <option value="{{ $nhanvien->id }}">{{ $nhanvien->ten_nv }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('staff.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <select class="form-control select2" id = "staff">
+                                <option value="">-- Please select --</option>
+                                @foreach($nhanvien as $nhanvien)
+                                <option @if($data->id_nv == $nhanvien->id) selected @endif value="{{ $nhanvien->id }}">{{ $nhanvien->ten_nv }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="Nhân viên" value="{{ old('id_nv', $data->id_nv) }}">
                     </div>
                     <label for="ten_hd">
@@ -201,5 +210,6 @@
             $("#bds").selectpicker("val", "{{ $data->id_bds }}");
             $("#staff").selectpicker("val", "{{ $data->id_nv }}");
         });
+        $('.select2').select2();
     </script>
 @endpush

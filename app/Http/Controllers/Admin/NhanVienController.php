@@ -26,7 +26,8 @@ class NhanVienController extends Controller
         $id = 6;
         return view('admin.pages.staffs.index',[
             'auth'          => \Auth::user(),
-            'data'          => $this->model->whereNotIN('id_cvu',[6])->get(),
+            // 'data'          => $this->model->whereNotIN('id_cvu',[6])->get(),
+            'data'          => $this->model->get(),
             'route'         => $this->model->route,
         ]);
     }

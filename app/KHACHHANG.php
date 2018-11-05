@@ -7,43 +7,40 @@ use Illuminate\Database\Eloquent\Model;
 class KHACHHANG extends Model
 {
 	public $route = 'khachhang';
-	protected $table = 'nhanvien';
+	protected $table = 'khachhang';
     protected $fillable = 
     [
-        'id_cvu',
-        'ten_nv',
-        'ngaysinh_nv',
-        'diachi_nv',
-        'phone_nv',
-        'email_nv',
-        'cmnd_nv',
-        'ngaycap_nv',
+        'ten_kh',
+        'ngaysinh_kh',
+        'diachi_kh',
+        'phone_kh',
+        'email_kh',
+        'cmnd_kh',
+        'ngaycap_kh',
         'ghichu',
         'hokhau',
     ];
     
     public  $rules =
     [
-        'id_cvu'        => 'required',
-        'ten_nv'        => 'required',
-        'ngaysinh_nv'   => '',
-        'diachi_nv'     => 'required',
-        'phone_nv'      => 'required,phone_nv|max:11',
-        'email_nv'      => '',
-        'cmnd_nv'       => 'required|unique:nhanvien,cmnd_nv',
-        'ngaycap_nv'    => 'required',
+        'ten_kh'        => 'required',
+        'ngaysinh_kh'   => '',
+        'diachi_kh'     => 'required',
+        'phone_kh'      => 'required,phone_kh|max:11',
+        'email_kh'      => '',
+        'cmnd_kh'       => 'required|unique:nhanvien,cmnd_kh',
+        'ngaycap_kh'    => 'required',
         'ghichu'        => '',
     ];
 
     public $messages = 
     [
-        'id_cvu.required'       => 'Chọn chức vụ',
-        'ten_nv.required'       => 'Tên nhân viên không được phép để trống',
-        'diachi_nv.required'    => 'Địa chỉ nhân viên không được phép để trống',
-        'phone_nv.required'     => 'Điện thoại nhân viên không được phép để trống',
-        'cmnd_nv.required'      => 'CMND nhân viên không được phép để trống',
-        'ngaycap_nv.required'   => 'Ngày cấp nhân viên không được phép để trống',
-        'phone_nv.max'          => 'Điện thoại nhân viên không được vượt quá :max ký tự',
-        'cmnd_nv.unique'        => 'CMND nhân viên là duy nhất',
+        'ten_kh.required'       => 'Tên nhân viên không được phép để trống',
+        'diachi_kh.required'    => 'Địa chỉ nhân viên không được phép để trống',
+        'phone_kh.required'     => 'Điện thoại nhân viên không được phép để trống',
+        'cmnd_kh.required'      => 'CMND nhân viên không được phép để trống',
+        'ngaycap_kh.required'   => 'Ngày cấp nhân viên không được phép để trống',
+        'phone_kh.max'          => 'Điện thoại nhân viên không được vượt quá :max ký tự',
+        'cmnd_kh.unique'        => 'CMND nhân viên là duy nhất',
     ];
 }

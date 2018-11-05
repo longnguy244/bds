@@ -9,6 +9,9 @@
     <!-- Favicon-->
     <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 
+
+    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -197,6 +200,10 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">$('select2').select2()</script>
     @stack('js')
     
     </body>

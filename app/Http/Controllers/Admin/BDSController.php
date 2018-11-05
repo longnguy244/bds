@@ -83,7 +83,7 @@ class BDSController extends Controller
     {
         return view('admin.pages.bds.edit',[
             'auth'          => \Auth::user(),
-            'customers'    => KHACHHANG::where('id_cvu',6)->get(),
+            'customers'    => KHACHHANG::get(),
             'loaibds'      => LOAIBDS::all(),
             'city'         => THANHPHO::all(),
             'data'          => $this->model->find($id),

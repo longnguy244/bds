@@ -12,10 +12,23 @@ function LoaiBDS($id)
 	echo $data->ten_loaibds;
 }
 
-function TenKhachHang($id)
+function TenBDS($id)
+{
+	$data = DB::table('batdongsan')->find($id);
+	echo $data->ten_bds;
+}
+
+function TenNhanVien($id)
 {
 	$data = DB::table('nhanvien')->find($id);
 	echo $data->ten_nv;
+}
+
+
+function TenKhachHang($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->ten_kh;
 }
 
 function TenThanhPho($id)

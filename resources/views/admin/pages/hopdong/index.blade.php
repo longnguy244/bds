@@ -28,16 +28,10 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID BĐS
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID khách hàng
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID nhân viên
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Tên hợp đồng
+                                    </th>
+                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
+                                        BĐS
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Giá bán
@@ -46,47 +40,20 @@
                                         Giá thuê
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Phí môi giới
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Phí đăng bài
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Huê hồng
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         HThức TT
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Số lần TT
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Thời hạn TT
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Thời hạn HĐ
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Ngày lập
                                     </th>
-                                    <th rowspan="1" colspan="1" style="width: 20px;"> 
-                                    </th>
-                                    <th rowspan="1" colspan="1" style="width: 20px;"> 
-                                    </th>
-                                    <th rowspan="1" colspan="1" style="width: 20px;"> 
+                                    <th style="text-align: center;"> 
+                                        Thao tác
                                     </th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        ID BĐS
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        ID khách hàng
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        ID nhân viên
+                                        BĐS
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Tên hợp đồng
@@ -98,68 +65,36 @@
                                         Giá thuê
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        Phí môi giới
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        Phí đăng bài
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        Huê hồng
-                                    </th>
-                                    <th rowspan="1" colspan="1">
                                         HThức TT
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        Số lần TT
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        Thời hạn TT
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                        Thời hạn HĐ
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Ngày lập
                                     </th>
-                                    <th rowspan="1" colspan="1">
-                                    </th>
-                                    <th rowspan="1" colspan="1">
-                                    </th>
-                                    <th rowspan="1" colspan="1">
+                                    <th style="text-align: center;"> 
+                                        Thao tác
                                     </th>
                                 </tr>
                             </tfoot>
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->id_bds }}</td>
-                                    <td>{{ $data->id_kh }}</td>
-                                    <td>{{ $data->id_nv }}</td>
                                     <td>{{ $data->ten_hd }}</td>
+                                    <td>{{ TenBDS($data->id_bds) }}</td>
                                     <td>{{ $data->giaban }}</td>
                                     <td>{{ $data->giathue }}</td>
-                                    <td>{{ $data->phi_mg }}</td>
-                                    <td>{{ $data->phi_dangbai }}</td>
-                                    <td>{{ $data->huehong }}</td>
                                     <td>{{ $data->hinhthucthanhtoan }}</td>
-                                    <td>{{ $data->solanthanhtoan }}</td>
-                                    <td>{{ $data->thoihanthanhtoan }}</td>
-                                    <td>{{ $data->thoihanhopdong }}</td>
                                     <td>{{ $data->ngaylaphd }}</td>
-                                    <td>
+                                    <td><center>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('hopdong.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
-                                    </td>
-                                    <td>
                                         <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
-                                    </td>
-                                    <td>
                                         <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
+                                        </center>
                                     </td>
                                 </tr>
                             @endforeach

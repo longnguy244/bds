@@ -87,12 +87,12 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->ten_nv }}</td>
-                                    <td>{{ $data->ngaysinh_nv }}</td>
-                                    <td>{{ $data->diachi_nv }}</td>
-                                    <td>{{ $data->phone_nv }}</td>
+                                    <td>{{ $data->ten_kh }}</td>
+                                    <td>{{ $data->ngaysinh_kh }}</td>
+                                    <td>{{ $data->diachi_kh }}</td>
+                                    <td>{{ $data->phone_kh }}</td>
                                     <td>{{ $data->hokhau }}</td>
-                                    <td>{{ $data->cmnd_nv }}</td>
+                                    <td>{{ $data->cmnd_kh }}</td>
                                     <td>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('customer.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>

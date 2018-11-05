@@ -75,6 +75,10 @@
                         </a>
                         <input name="id_tp" type="text" id="id_tp" class="form-control hidden" placeholder="id" value="{{ old('id_tp', $data->id_tp) }}">
                     </div>
+                    
+                    
+                </div>
+                <div class= "col-md-6">
                     <label for="ten_bds">
                         Tên bất động sản
                     </label>
@@ -83,16 +87,6 @@
                             <input name="ten_bds" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds', $data->ten_bds) }}">
                         </div>
                     </div>
-                    <label for="alias">
-                        Alias
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="alias" type="text" id="alias" class="form-control" placeholder="Alias" value="{{ old('alias', $data->alias) }}">
-                        </div>
-                    </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="bds_address">
                         Địa chỉ
                     </label>
@@ -109,6 +103,16 @@
                             <input name="soCNQSDD" type="text" id="soCNQSDD" class="form-control" placeholder="Chủ sở hữu" value="{{ old('soCNQSDD', $data->soCNQSDD) }}">
                         </div>
                     </div>
+                    <label for="alias">
+                        Alias
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="alias" type="text" id="alias" class="form-control" placeholder="Alias" value="{{ old('alias', $data->alias) }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
                     <label for="bds_note">
                         Tọa độ
                     </label>
@@ -118,8 +122,6 @@
                             </textarea>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12">
                     <label for="bds_note">
                     Ghi chú
                     </label>
