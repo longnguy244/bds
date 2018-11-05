@@ -4,7 +4,19 @@
     Sửa Bất Động Sản - DreamHouse
 @endsection
 
+@push('css')
+    
+    <style>
+        iframe{
+            width: 90%;
+            height: auto;
+        }
+    </style>
+
+@endpush
+
 @section('main')
+
 
 @if($errors->any())
   <div class="alert alert-danger">
@@ -114,15 +126,6 @@
                 </div>
                 <div class="col-md-12">
                     <label for="bds_note">
-                        Tọa độ
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <textarea name="toado" id="toado" rows="5" class="form-control no-resize" placeholder="Tọa độ">{{ old('toado', $data->toado) }}
-                            </textarea>
-                        </div>
-                    </div>
-                    <label for="bds_note">
                     Ghi chú
                     </label>
                     <div class="form-group">
@@ -130,6 +133,22 @@
                             <textarea name="ghichu" id="ghichu" rows="5" class="form-control no-resize" placeholder="Ghi chú">{{ old('ghichu', $data->ghichu) }}
                             </textarea>
                         </div>
+                    </div>
+                    <label for="bds_note">
+                        Tọa độ
+                    </label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {!! $data->toado !!}
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea name="toado" id="toado" rows="6" class="form-control no-resize" placeholder="Tọa độ">{{ old('toado', $data->toado) }}
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>                       
                     </div>
                 </div>
             </div>

@@ -80,6 +80,8 @@
                         </a>
                         <input name="id_tp" type="text" id="id_tp" class="form-control hidden" placeholder="id" value="{{ old('id_tp') }}">
                     </div>
+                </div>
+                <div class= "col-md-6">
                     <label for="ten_bds">
                         Tên bất động sản
                     </label>
@@ -96,8 +98,6 @@
                             <input name="alias" type="text" id="alias" class="form-control" placeholder="Alias" value="{{ old('alias') }}">
                         </div>
                     </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="bds_address">
                         Địa chỉ
                     </label>
@@ -114,22 +114,28 @@
                             <input name="soCNQSDD" type="text" id="soCNQSDD" class="form-control" placeholder="Số Chứng nhận quyền sử dụng đất" value="{{ old('soCNQSDD') }}">
                         </div>
                     </div>
-                    <label for="bds_note">
-                        Ghi chú
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu') }}">
-                            </textarea>
+                </div>
+                <div class="row container-fluid">
+                    <div class="col-md-6">
+                        <label for="bds_note">
+                            Ghi chú
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú">
+                                </textarea>
+                            </div>
                         </div>
                     </div>
-                    <label for="bds_note">
-                        Tọa độ
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <textarea name="toado" id="toado" rows="5" class="form-control no-resize" placeholder="Tọa độ">{{ old('toado') }}
-                            </textarea>
+                    <div class="col-md-6">
+                        <label for="bds_note">
+                            Tọa độ
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <textarea name="toado" id="toado" rows="5" class="form-control no-resize" placeholder="Tọa độ">{{ old('toado') }}
+                                </textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
