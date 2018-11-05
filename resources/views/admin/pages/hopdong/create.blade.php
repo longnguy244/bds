@@ -54,7 +54,7 @@
                     </label>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <select class="form-control select2" id= "bds">
+                            <select class="form-control select2" name="id_bds" id= "bds">
                                 <option value="">-- Please select --</option>
                                 @foreach($bds as $bds)
                                 <option value="{{ $bds->id }}">{{ $bds->ten_bds }}</option>
@@ -73,7 +73,7 @@
                     </label>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <select class="form-control select2" id = "customer">
+                            <select class="form-control select2" name="id_kh" id = "customer">
                                 <option value="">-- Please select --</option>
                                 @foreach($customers as $customer)
                                 <option value="{{ $customer->id }}">{{ $customer->ten_kh }}</option>
@@ -85,14 +85,13 @@
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
-                        <input name="id_kh" type="text" id="id_kh" class="form-control hidden" placeholder="id" value="{{ old('id_kh') }}">
                     </div>
                     <label for="staff">
                         Nhân viên
                     </label>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <select class="form-control select2"  id = "staff">
+                            <select class="form-control select2" name="id_nv"  id = "staff">
                                 <option value="">-- Please select --</option>
                                 @foreach($nhanvien as $nhanvien)
                                 <option value="{{ $nhanvien->id }}">{{ $nhanvien->ten_nv }}</option>
@@ -103,7 +102,7 @@
                             <a type="button" class="btn bg-green waves-effect" href="{{ route('staff.create') }}">
                                 <i class="material-icons">add</i>
                             </a>
-                            <
+                        </div>
                         <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="Nhân viên" value="{{ old('id_nv') }}">
                     </div>
                     <label for="ten_hd">
