@@ -24,7 +24,7 @@
     <!-- ##### Breadcumb Area End ##### -->
 
     <!-- ##### Advance Search Area Start ##### -->
-    @include('web.blocks.search')
+    {{-- @include('web.blocks.search') --}}
     <!-- ##### Advance Search Area End ##### -->
 
     <!-- ##### About Content Wrapper Start ##### -->
@@ -34,18 +34,18 @@
                 <div class="col-12 col-lg-8">
                     <div class="section-heading text-left wow fadeInUp" data-wow-delay="250ms">
                         <h2>Chúng tôi tìm kiếm tổ ấm hoàn hảo</h2>
-                        <p>Suspendisse dictum enim sit amet libero</p>
+                        <p>Nhiều người đã tìm được ngôi nhà của mình tại Dreamhouse</p>
                     </div>
                     <div class="about-content">
                         <img class="wow fadeInUp" data-wow-delay="350ms" src="{{ asset('south/img/bg-img/about.jpg') }}" alt="">
-                        <p class="wow fadeInUp" data-wow-delay="450ms">Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada. Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada feugiat. Praesent malesuada congue magna at finibus. In hac habitasse platea dictumst. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id. Phasellus fringilla nisl sed sem scelerisque, eget aliquam magna vehicula.</p>
+                        <p class="wow fadeInUp" data-wow-delay="450ms"> Công ty được thành lập vào năm 2018 cùng với những thành viên đầu tiên của Dreamhouse. Được sự tin tưởng của khách hàng, ..</p>
                     </div>
                 </div>
 
                 <div class="col-12 col-lg-4">
                     <div class="section-heading text-left wow fadeInUp" data-wow-delay="250ms">
                         <h2>Căn hộ nổi bật</h2>
-                        <p>Suspendisse dictum enim sit amet libero</p>
+                        <p>Căn hộ được nhiều người xem</p>
                     </div>
 
                     <div class="featured-properties-slides owl-carousel wow fadeInUp" data-wow-delay="350ms">
@@ -218,7 +218,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-heading">
-                        <h2>Meet The Team</h2>
+                        <h2>Gương mặt đại diện</h2>
                         <p>Suspendisse dictum enim sit amet libero</p>
                     </div>
                 </div>

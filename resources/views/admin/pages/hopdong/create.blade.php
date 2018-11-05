@@ -211,7 +211,7 @@
     <script>
         $("selectpicker").selectpicker();
         $("#customer").change(function (e) {
-            $("#id_kh").val($('#customer').val());
+            $("#id_nv").val($('#customer').val());
         });
         $("#bds").change(function (e) {
             $("#id_bds").val($('#bds').val());

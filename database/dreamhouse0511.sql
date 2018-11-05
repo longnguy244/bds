@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 100131
+ Source Server Version : 100136
  Source Host           : localhost:3306
  Source Schema         : dreamhouse
 
  Target Server Type    : MySQL
- Target Server Version : 100131
+ Target Server Version : 100136
  File Encoding         : 65001
 
- Date: 05/10/2018 23:26:13
+ Date: 05/11/2018 17:13:32
 */
 
 SET NAMES utf8mb4;
@@ -39,31 +39,42 @@ CREATE TABLE `baiviet`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
+-- Records of baiviet
+-- ----------------------------
+INSERT INTO `baiviet` VALUES (1, 1, 'acd', NULL, 'acd', '<p>rgwb, .ulnbrgff.k,mnbv</p>', 'Đang bán', NULL, 'sửvrqerag', '2018-10-13 18:08:03', '2018-10-13 18:08:03');
+
+-- ----------------------------
 -- Table structure for batdongsan
 -- ----------------------------
 DROP TABLE IF EXISTS `batdongsan`;
 CREATE TABLE `batdongsan`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `id_kh` int(10) UNSIGNED NOT NULL,
+  `id_csh` int(10) UNSIGNED NOT NULL,
   `id_loaibds` int(10) UNSIGNED NOT NULL,
   `id_tp` int(10) UNSIGNED NOT NULL,
   `ten_bds` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `alias` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `hinhanh` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `diachi_bds` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `chusohuu` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `soCNQSDD` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ghichu` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `toado` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `batdongsan_id_kh_foreign`(`id_kh`) USING BTREE,
+  INDEX `batdongsan_id_kh_foreign`(`id_csh`) USING BTREE,
   INDEX `batdongsan_id_loaibds_foreign`(`id_loaibds`) USING BTREE,
   INDEX `batdongsan_id_tp_foreign`(`id_tp`) USING BTREE,
-  CONSTRAINT `batdongsan_id_kh_foreign` FOREIGN KEY (`id_kh`) REFERENCES `khachhang` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `batdongsan_id_loaibds_foreign` FOREIGN KEY (`id_loaibds`) REFERENCES `loaibds` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `batdongsan_id_tp_foreign` FOREIGN KEY (`id_tp`) REFERENCES `thanhpho` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of batdongsan
+-- ----------------------------
+INSERT INTO `batdongsan` VALUES (1, 1, 1, 1, 'ABC', 'abc', NULL, '128a nc', '12344ffsv', 'Không có', '2018-10-13 18:07:12', '2018-11-03 07:07:24', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>');
+INSERT INTO `batdongsan` VALUES (2, 1, 1, 2, 'Nhà ở', 'nha-o', NULL, 'a/b/c', '11231231413', 'Không có', '2018-11-03 07:07:42', '2018-11-03 07:07:42', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>');
+INSERT INTO `batdongsan` VALUES (4, 2, 1, 1, 'Đất đai', 'dat-dai', NULL, 'c/a/a', '121312312414', 'ấdasd', '2018-11-03 07:14:29', '2018-11-03 07:14:29', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>');
 
 -- ----------------------------
 -- Table structure for bienbanthanhly
@@ -80,7 +91,12 @@ CREATE TABLE `bienbanthanhly`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `bienbanthanhly_id_hd_foreign`(`id_hd`) USING BTREE,
   CONSTRAINT `bienbanthanhly_id_hd_foreign` FOREIGN KEY (`id_hd`) REFERENCES `hopdong` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of bienbanthanhly
+-- ----------------------------
+INSERT INTO `bienbanthanhly` VALUES (1, 1, 'Đã bán', '2018-10-23', NULL, '2018-10-28 12:30:30', '2018-10-28 12:30:58');
 
 -- ----------------------------
 -- Table structure for chucvu
@@ -105,6 +121,58 @@ INSERT INTO `chucvu` VALUES (4, 'Nhân viên hành chính', NULL, '2018-08-15 09
 INSERT INTO `chucvu` VALUES (5, 'Quản lý nhân sự', NULL, '2018-08-15 09:26:41', '2018-08-15 09:26:41');
 
 -- ----------------------------
+-- Table structure for chusohuu
+-- ----------------------------
+DROP TABLE IF EXISTS `chusohuu`;
+CREATE TABLE `chusohuu`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ten` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `sdt` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `diachi` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `cmnd` varchar(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of chusohuu
+-- ----------------------------
+INSERT INTO `chusohuu` VALUES (1, 'Hoàng Phúc CSH', '0123456789', 'a@g.a', 'Cần Thơ', '123522453657', '2018-11-03 06:48:24', '2018-11-03 07:01:22');
+INSERT INTO `chusohuu` VALUES (2, 'Mèo CSH', '01241343534', 'a@b.c', 'Cần Thơ', '123123143556', '2018-11-03 07:11:52', '2018-11-03 07:11:52');
+
+-- ----------------------------
+-- Table structure for hinhanh
+-- ----------------------------
+DROP TABLE IF EXISTS `hinhanh`;
+CREATE TABLE `hinhanh`  (
+  `id` int(11) NOT NULL,
+  `hinhanh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `id_bds` int(11) UNSIGNED NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `hinhanh_id_bds_foreign`(`id_bds`) USING BTREE,
+  CONSTRAINT `hinhanh_id_bds_foreign` FOREIGN KEY (`id_bds`) REFERENCES `batdongsan` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for hinhthucthanhtoan
+-- ----------------------------
+DROP TABLE IF EXISTS `hinhthucthanhtoan`;
+CREATE TABLE `hinhthucthanhtoan`  (
+  `id` int(11) NOT NULL,
+  `ten_httt` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `solantt` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `thoihantt` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `ghichu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
 -- Table structure for hopdong
 -- ----------------------------
 DROP TABLE IF EXISTS `hopdong`;
@@ -119,9 +187,6 @@ CREATE TABLE `hopdong`  (
   `phi_mg` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `phi_dangbai` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `huehong` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hinhthucthanhtoan` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `solanthanhtoan` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `thoihanthanhtoan` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoihanhopdong` date NOT NULL,
   `ngaylaphd` date NOT NULL,
   `ghichu` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
@@ -135,6 +200,11 @@ CREATE TABLE `hopdong`  (
   CONSTRAINT `hopdong_id_kh_foreign` FOREIGN KEY (`id_kh`) REFERENCES `khachhang` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `hopdong_id_nv_foreign` FOREIGN KEY (`id_nv`) REFERENCES `nhanvien` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of hopdong
+-- ----------------------------
+INSERT INTO `hopdong` VALUES (1, 1, 1, 2, 'HỢP ĐỒNG MÔI GIỚI BDS', '120000000000', '1000000000', '123', '12345', '2342', '2018-03-01', '2018-01-03', 'FVSVV', '2018-10-13 19:18:07', '2018-10-13 19:18:07');
 
 -- ----------------------------
 -- Table structure for khachhang
@@ -172,7 +242,7 @@ CREATE TABLE `loaibds`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of loaibds
@@ -181,6 +251,7 @@ INSERT INTO `loaibds` VALUES (1, 'Nhà ở', NULL, '2018-08-15 09:34:13', '2018-
 INSERT INTO `loaibds` VALUES (2, 'Đất đai', NULL, '2018-08-15 09:34:17', '2018-08-15 09:34:17');
 INSERT INTO `loaibds` VALUES (3, 'Biệt thự', NULL, '2018-08-15 09:34:22', '2018-08-15 09:34:22');
 INSERT INTO `loaibds` VALUES (4, 'Căn hộ', NULL, '2018-08-15 09:34:30', '2018-08-15 09:34:30');
+INSERT INTO `loaibds` VALUES (5, 'Nothing', NULL, '2018-11-03 07:18:04', '2018-11-03 07:18:04');
 
 -- ----------------------------
 -- Table structure for menus
@@ -252,7 +323,7 @@ CREATE TABLE `motabds`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `motabds_id_bds_foreign`(`id_bds`) USING BTREE,
   CONSTRAINT `motabds_id_bds_foreign` FOREIGN KEY (`id_bds`) REFERENCES `batdongsan` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for nhanvien
@@ -269,18 +340,21 @@ CREATE TABLE `nhanvien`  (
   `cmnd_nv` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngaycap_nv` date NOT NULL,
   `ghichu` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `hokhau` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `id_phanquyen` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `nhanvien_id_cvu_foreign`(`id_cvu`) USING BTREE,
-  CONSTRAINT `nhanvien_id_cvu_foreign` FOREIGN KEY (`id_cvu`) REFERENCES `chucvu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+  INDEX `nhanvien_id_cvu_foreign`(`id_cvu`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of nhanvien
 -- ----------------------------
-INSERT INTO `nhanvien` VALUES (1, 1, 'Nguyen Van A', '1983-05-12', 'CMT8', '0939542123', 'nva@dreamhouse.com', '123456985203', '2005-02-15', NULL, '2018-08-15 09:28:42', '2018-08-15 09:28:42');
-INSERT INTO `nhanvien` VALUES (2, 3, 'Lê Thị Riêng', '1988-02-25', 'CT', '0936975203', 'ltr@dreamhouse.com', '326458963154', '2011-02-05', NULL, '2018-08-15 09:30:38', '2018-08-15 09:30:38');
+INSERT INTO `nhanvien` VALUES (1, 1, 'Nguyen Van A', '1983-05-12', 'CMT8', '0939542123', 'nva@dreamhouse.com', '123456985203', '2005-02-15', NULL, NULL, '2018-08-15 09:28:42', '2018-08-15 09:28:42', NULL);
+INSERT INTO `nhanvien` VALUES (2, 3, 'Lê Thị Riêng', '1988-02-25', 'CT', '0936975203', 'ltr@dreamhouse.com', '326458963154', '2011-02-05', NULL, NULL, '2018-08-15 09:30:38', '2018-10-10 08:36:53', NULL);
+INSERT INTO `nhanvien` VALUES (3, 1, 'Hoàng Phúc', '1996-10-26', 'Cần Thơ', '01664669813', 'wolf.alone613@gmail.com', '123456789074', '2000-11-11', NULL, NULL, '2018-11-03 06:49:58', '2018-11-03 06:49:58', NULL);
+INSERT INTO `nhanvien` VALUES (5, 6, 'Trần Văn Tèo', '1996-02-11', 'Cà Mau', '0123546543', 'w@a.q', '123142352466', '2000-10-10', 'No thing', 'Cà Mau', '2018-11-03 06:52:34', '2018-11-03 06:52:34', NULL);
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -292,6 +366,19 @@ CREATE TABLE `password_resets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for phanquyen
+-- ----------------------------
+DROP TABLE IF EXISTS `phanquyen`;
+CREATE TABLE `phanquyen`  (
+  `id` int(11) NOT NULL,
+  `quyen` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `ghichu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for phieuchi
@@ -389,6 +476,19 @@ INSERT INTO `thanhpho` VALUES (3, 'Hậu Giang', NULL, '2018-08-15 09:35:07', '2
 INSERT INTO `thanhpho` VALUES (4, 'Bạc Liêu', NULL, '2018-08-15 09:35:12', '2018-08-15 09:35:12');
 
 -- ----------------------------
+-- Table structure for tieuchi
+-- ----------------------------
+DROP TABLE IF EXISTS `tieuchi`;
+CREATE TABLE `tieuchi`  (
+  `id` int(11) NOT NULL,
+  `tentieuchi` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `ghichu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
@@ -402,11 +502,12 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'admin', 'admin@admin.com', '$2y$10$ghrLWJnrLk.1c4sbEnCSEOD/4Yz6ePAb4tZQf4YRHfGW65CEOQ2RG', NULL, '2018-08-15 09:20:23', '2018-08-15 09:20:23');
+INSERT INTO `users` VALUES (1, 'admin', 'admin@admin.com', '$2y$10$ghrLWJnrLk.1c4sbEnCSEOD/4Yz6ePAb4tZQf4YRHfGW65CEOQ2RG', 'JE5p7PyokRaEluqkTdzzBEUXF30WnkPqgVnON6UOxHfLvMhflIZjhmH32Z8S', '2018-08-15 09:20:23', '2018-08-15 09:20:23');
+INSERT INTO `users` VALUES (2, 'yennhi', 'n@n.com', '$2y$10$qYhuYvGrihHs/6fudcu1keln2eFVlOIIZEMQy0qt39lE7wN1QqnQG', 'EUExwZgqNjIn0lIPwc3OF1NLlORT2kGpikeVVCfpCueAoxIIs7gD8CGXpZmM', '2018-10-10 08:03:21', '2018-10-10 08:03:21');
 
 SET FOREIGN_KEY_CHECKS = 1;

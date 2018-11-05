@@ -5,47 +5,46 @@
             <div class="row">
 
                 <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div class="col-12 col-sm-6 col-xl-4">
                     <div class="footer-widget-area mb-100">
                         <!-- Widget Title -->
                         <div class="widget-title">
-                            <h6>About Us</h6>
+                            <h6>Dreamhouse</h6>
                         </div>
 
                         <img src="{{ asset('south/img/bg-img/footer.jpg') }}" alt="">
                         <div class="footer-logo my-4">
                             <img src="{{ asset('south/img/core-img/logo.png') }}" alt="">
                         </div>
-                        <p>Integer nec bibendum lacus. Suspen disse dictum enim sit amet libero males uada feugiat. Praesent malesuada.</p>
+                        <p>Nơi đáng tin cậy để tìm kiếm và xây dựng ngôi nhà mơ ước của bạn</p>
                     </div>
                 </div>
 
                 <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div class="col-12 col-sm-6 col-xl-4">
                     <div class="footer-widget-area mb-100">
                         <!-- Widget Title -->
                         <div class="widget-title">
-                            <h6>Hours</h6>
+                            <h6>Giờ Làm việc</h6>
                         </div>
                         <!-- Office Hours -->
                         <div class="weekly-office-hours">
                             <ul>
-                                <li class="d-flex align-items-center justify-content-between"><span>Monday - Friday</span> <span>09 AM - 19 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Saturday</span> <span>09 AM - 14 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Sunday</span> <span>Closed</span></li>
+                                <li class="d-flex align-items-center justify-content-between"><span>Thứ hai - Thứ sáu</span> <span>09:00 - 17:00</span></li>
+                                <li class="d-flex align-items-center justify-content-between"><span>Thứ bảy</span> <span>09:00- 11:00</span></li>
                             </ul>
                         </div>
                         <!-- Address -->
                         <div class="address">
-                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> +45 677 8993000 223</h6>
-                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> office@template.com</h6>
-                            <h6><img src="{{ asset('south/img/icons/location.png') }}" alt=""> Main Str. no 45-46, b3, 56832, Los Angeles, CA</h6>
+                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt="">0939928143</h6>
+                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt="">Nhinguy@gmail.com</h6>
+                            <h6><img src="{{ asset('south/img/icons/location.png') }}" alt="">1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</h6>
                         </div>
                     </div>
                 </div>
 
                 <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                {{-- <div class="col-12 col-sm-6 col-xl-4">
                     <div class="footer-widget-area mb-100">
                         <!-- Widget Title -->
                         <div class="widget-title">
@@ -68,14 +67,14 @@
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Single Footer Widget -->
-                <div class="col-12 col-sm-6 col-xl-3">
+                <div class="col-12 col-sm-6 col-xl-4">
                     <div class="footer-widget-area mb-100">
                         <!-- Widget Title -->
                         <div class="widget-title">
-                            <h6>Featured Properties</h6>
+                            <h6>Hình ảnh nổi bật</h6>
                         </div>
                         <!-- Featured Properties Slides -->
                         <div class="featured-properties-slides owl-carousel">
@@ -100,9 +99,9 @@
     </div>
 
     <!-- Copywrite Text -->
-    <div class="copywrite-text d-flex align-items-center justify-content-center">
+    {{-- <div class="copywrite-text d-flex align-items-center justify-content-center">
         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    </div>
+    </div> --}}
 </footer>

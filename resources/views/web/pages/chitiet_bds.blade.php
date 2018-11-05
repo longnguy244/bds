@@ -77,10 +77,10 @@
                         <h5>Địa chỉ</h5>
                         {!! $bds->toado !!}
                         <!-- Listings Btn Groups -->
-                        <div class="listings-btn-groups">
+                        {{-- <div class="listings-btn-groups">
                             <a href="#" class="btn south-btn">See Floor plans</a>
                             <a href="#" class="btn south-btn active">calculate mortgage</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
@@ -88,10 +88,10 @@
                         <div class="realtor-info">
                             <img src="{{ asset('south/img/bg-img/listing.jpg') }}" alt="">
                             <div class="realtor---info">
-                                <h2>Jeremy Scott</h2>
-                                <p>Realtor</p>
-                                <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> +45 677 8993000 223</h6>
-                                <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> office@template.com</h6>
+                                <h2>Ngụy Yến Nhi</h2>
+                                <p>Chăm sóc khách hàng</p>
+                                <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0939928143</h6>
+                                <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Nhinguy@gmail.com</h6>
                             </div>
                             <div class="realtor--contact-form">
                                 <form action="#" method="post">
@@ -107,7 +107,7 @@
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Your Message"></textarea>
                                     </div>
-                                    <button type="submit" class="btn south-btn">Send Message</button>
+                                    <button type="submit" class="btn south-btn">Liên hệ</button>
                                 </form>
                             </div>
                         </div>

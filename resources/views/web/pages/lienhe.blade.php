@@ -15,7 +15,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-content">
-                        <h3 class="breadcumb-title">Contact</h3>
+                        <h3 class="breadcumb-title">Liên hệ</h3>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-heading">
-                        <h6>Contact info</h6>
+                        <h6>Thông tin liên hệ</h6>
                     </div>
                 </div>
             </div>
@@ -39,16 +39,16 @@
                         <!-- Office Hours -->
                         <div class="weekly-office-hours">
                             <ul>
-                                <li class="d-flex align-items-center justify-content-between"><span>Monday - Friday</span> <span>09 AM - 19 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Saturday</span> <span>09 AM - 14 PM</span></li>
-                                <li class="d-flex align-items-center justify-content-between"><span>Sunday</span> <span>Closed</span></li>
+                                <li class="d-flex align-items-center justify-content-between"><span>Thứ hai - Thứ sáu</span> <span>09:00 - 17:00</span></li>
+                                <li class="d-flex align-items-center justify-content-between"><span>Thứ bảy</span> <span>09:00- 11:00</span></li>
+                                
                             </ul>
                         </div>
                         <!-- Address -->
                         <div class="address mt-30">
-                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> +45 677 8993000 223</h6>
-                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> office@template.com</h6>
-                            <h6><img src="{{ asset('south/img/icons/location.png') }}" alt=""> Main Str. no 45-46, b3, 56832,<br>Los Angeles, CA</h6>
+                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0939928143</h6>
+                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Nhinguy@gmail.com</h6>
+                            <h6><img src="{{ asset('south/img/icons/location.png') }}" alt=""> 1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</h6>
                         </div>
                     </div>
                 </div>
@@ -58,18 +58,18 @@
                     <div class="contact-form">
                         <form action="#" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="text" id="contact-name" placeholder="Your Name">
+                                <input type="text" class="form-control" name="text" id="contact-name" placeholder="Tên của anh chị">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="number" id="contact-number" placeholder="Your Phone">
+                                <input type="number" class="form-control" name="number" id="contact-number" placeholder="Số điện thoại">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="contact-email" placeholder="Your Email">
+                                <input type="email" class="form-control" name="email" id="contact-email" placeholder="Email của anh chị">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Thông tin anh chị cần cung cấp"></textarea>
                             </div>
-                            <button type="submit" class="btn south-btn">Send Message</button>
+                            <button type="submit" class="btn south-btn">Gửi tin nhắn</button>
                         </form>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
     </section>
 
     <!-- Google Maps -->
-    <div class="map-area mb-100">
+    {{-- <div class="map-area mb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- ##### Footer Area Start ##### -->
     @include('web.blocks.footer')
