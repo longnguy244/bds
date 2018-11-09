@@ -45,6 +45,9 @@
                     <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
                         Quay Lại
                     </a>
+                    <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.hopdong',$data->id) }}">
+                        <i class="fas fa-save"></i>  In
+                    </a>
                 </div>
                 <div class= "col-md-6">
                     <label for="bds">
@@ -113,6 +116,8 @@
                             <input data-inputmask-mask="9{1,}" name="giathue" type="text" id="giathue" class="form-control" placeholder="Giá thuê" value="{{ old('giathue', $data->giathue) }}">
                         </div>
                     </div>
+                </div>
+                <div class= "col-md-6">
                     <label for="phi_mg">
                         Phí môi giới
                     </label>
@@ -129,38 +134,12 @@
                             <input data-inputmask-mask="9{1,}" name="phi_dangbai" type="text" id="phi_dangbai" class="form-control" placeholder="Phí đăng bài" value="{{ old('phi_dangbai', $data->phi_dangbai) }}">
                         </div>
                     </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="huehong">
                         Huê hồng
                     </label>
                     <div class="form-group">
                         <div class="form-line">
                             <input data-inputmask-mask="9{1,}" name="huehong" type="text" id="huehong" class="form-control" placeholder="Huê hồng" value="{{ old('huehong', $data->huehong) }}">
-                        </div>
-                    </div>
-                    <label for="hinhthucthanhtoan">
-                        Hình thức thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="hinhthucthanhtoan" type="text" id="hinhthucthanhtoan" class="form-control" placeholder="Hình thức thanh toán" value="{{ old('hinhthucthanhtoan', $data->hinhthucthanhtoan) }}">
-                        </div>
-                    </div>
-                    <label for="solanthanhtoan">
-                        Số lần thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input data-inputmask-mask="9{1,}" name="solanthanhtoan" type="text" id="solanthanhtoan" class="form-control" placeholder="Số lần thanh toán" value="{{ old('solanthanhtoan', $data->solanthanhtoan) }}">
-                        </div>
-                    </div>
-                    <label for="thoihanthanhtoan">
-                        Thời hạn thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="thoihanthanhtoan" type="text" id="thoihanthanhtoan" class="form-control" placeholder="Thời hạn thanh toán" value="{{ old('thoihanthanhtoan', $data->thoihanthanhtoan) }}">
                         </div>
                     </div>
                     <b>Thời hạn hợp đồng</b>
@@ -180,7 +159,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <textarea name="ghichu" id="ghichu" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu', $data->ghichu) }}">
+                            <textarea name="ghichu" id="ghichu" rows="5" class="form-control no-resize" placeholder="Ghi chú">{{ old('ghichu', $data->ghichu) }}
                             </textarea>
                         </div>
                     </div>

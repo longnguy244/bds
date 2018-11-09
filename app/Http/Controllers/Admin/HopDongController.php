@@ -121,4 +121,12 @@ class HopDongController extends Controller
         return redirect(route('hopdong.index'));
     }
     
+
+    public function PDF_HopDong($id){
+        $data = $this->model->find($id);
+        return view('admin.pages.hopdong.show',compact('data'));
+    }
+
+
+    
 }

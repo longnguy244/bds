@@ -60,3 +60,10 @@ Route::get('baiviet', 'Web\BaiVietController@index');
 Route::get('lienhe', 'Web\LienHeController@index');
 Route::get('/{aliasBDS}', 'Web\HomeController@detailBDS');
 Route::get('/baiviet/{aliasBV}', 'Web\BaiVietController@detailBV');
+
+
+
+
+
+Route::get('/admin/pdf/{id}','Admin\pdfController@pdf')->name('down.hopdong');
+Route::get('/admin/hopdong/pdf/{id}','Admin\HopDongController@PDF_HopDong')->name('print.hopdong');

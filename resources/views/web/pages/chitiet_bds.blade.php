@@ -52,8 +52,11 @@
                             @endif
                         </div>
                         <h5>{{ $bds->ten_bds }}</h5>
+                        <hr>
+                        <h6>Địa chỉ</h6>
                         <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odiomattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna. Curabitur rhoncus auctor eleifend. Fusce venenatis diam urna, eu pharetra arcu varius ac. Etiam cursus turpis lectus, id iaculis risus tempor id. Phasellus fringilla nisl sed sem scelerisque, eget aliquam magna vehicula.</p>
+                        <h6>Chi tiết</h6>
+                        <p>{{ $bds->ghichu }}</p>
                         <!-- Meta -->
                         <div class="property-meta-data d-flex align-items-end">
                             <div class="new-tag">
@@ -74,7 +77,7 @@
                         </div>
                         <br>
                         <!-- Core Features -->
-                        <h5>Địa chỉ</h5>
+                        <h5>Tọa độ</h5>
                         {!! $bds->toado !!}
                         <!-- Listings Btn Groups -->
                         {{-- <div class="listings-btn-groups">

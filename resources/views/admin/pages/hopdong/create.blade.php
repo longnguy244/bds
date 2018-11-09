@@ -129,6 +129,9 @@
                             <input data-inputmask-mask="9{1,}" name="giathue" type="text" id="giathue" class="form-control" placeholder="Giá thuê" value="{{ old('giathue') }}">
                         </div>
                     </div>
+                    
+                </div>
+                <div class= "col-md-6">
                     <label for="phi_mg">
                         Phí môi giới
                     </label>
@@ -145,38 +148,12 @@
                             <input data-inputmask-mask="9{1,}" name="phi_dangbai" type="text" id="phi_dangbai" class="form-control" placeholder="Phí đăng bài" value="{{ old('phi_dangbai') }}">
                         </div>
                     </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="huehong">
                         Huê hồng
                     </label>
                     <div class="form-group">
                         <div class="form-line">
                             <input data-inputmask-mask="9{1,}" name="huehong" type="text" id="huehong" class="form-control" placeholder="Huê hồng" value="{{ old('huehong') }}">
-                        </div>
-                    </div>
-                    <label for="hinhthucthanhtoan">
-                        Hình thức thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="hinhthucthanhtoan" type="text" id="hinhthucthanhtoan" class="form-control" placeholder="Hình thức thanh toán" value="{{ old('hinhthucthanhtoan') }}">
-                        </div>
-                    </div>
-                    <label for="solanthanhtoan">
-                        Số lần thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input data-inputmask-mask="9{1,}" name="solanthanhtoan" type="text" id="solanthanhtoan" class="form-control" placeholder="Số lần thanh toán" value="{{ old('solanthanhtoan') }}">
-                        </div>
-                    </div>
-                    <label for="thoihanthanhtoan">
-                        Thời hạn thanh toán
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="thoihanthanhtoan" type="text" id="thoihanthanhtoan" class="form-control" placeholder="Thời hạn thanh toán" value="{{ old('thoihanthanhtoan') }}">
                         </div>
                     </div>
                     <b>Thời hạn hợp đồng</b>
@@ -196,7 +173,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu') }}">
+                            <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú">
                             </textarea>
                         </div>
                     </div>
