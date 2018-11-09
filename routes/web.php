@@ -63,6 +63,10 @@ Route::get('/baiviet/{aliasBV}', 'Web\BaiVietController@detailBV');
 
 
 
+Route::get('web/phanhoi',function()
+    {
+        return view('web.pages.phanhoi');
+    })->name('web.phanhoi');
 
 
 Route::get('/admin/pdf/{id}','Admin\pdfController@pdf')->name('down.hopdong');

@@ -18,6 +18,12 @@ function TenBDS($id)
 	echo $data->ten_bds;
 }
 
+function soCNQSDD($id)
+{
+	$data = DB::table('batdongsan')->find($id);
+	echo $data->soCNQSDD;
+}
+
 function TenNhanVien($id)
 {
 	$data = DB::table('nhanvien')->find($id);
@@ -41,4 +47,53 @@ function TenCSH($id)
 {
 	$data = DB::table('chusohuu')->find($id);
 	echo $data->ten;
+}
+
+function NgaySinhKhachHang($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->ngaysinh_kh;
+	# code...
+}
+
+function CMNDKhachHang($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->cmnd_kh;
+	# code...
+}
+
+function CMNDNgaycap($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->ngaycap_kh;
+	# code...
+}
+
+function HoKhauKH($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->hokhau;
+	# code...
+}
+
+function DiaChiKH($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->diachi_kh;
+	# code...
+}
+
+function SDTKH($id)
+{
+	$data = DB::table('khachhang')->find($id);
+	echo $data->phone_kh;
+	# code...
+}
+
+function ChungTu($id)
+{
+	$data = DB::table('hopdong')->find($id);
+	echo $data->ghichu;
+	# code...
 }

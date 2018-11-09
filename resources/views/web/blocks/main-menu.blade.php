@@ -31,43 +31,8 @@
             <li><a href="{{ asset('/vechungtoi') }}">Về chúng tôi</a></li>
             <li><a href="{{ asset('/batdongsan') }}">Bất động sản</a></li>
             <li><a href="{{ asset('/baiviet') }}">Bài viết</a></li>
-            <!-- <li><a href="#">Mega Menu</a>
-                <div class="megamenu">
-                    <ul class="single-mega cn-col-4">
-                        <li class="title">Headline 1</li>
-                        <li><a href="#">Mega Menu Item 1</a></li>
-                        <li><a href="#">Mega Menu Item 2</a></li>
-                        <li><a href="#">Mega Menu Item 3</a></li>
-                        <li><a href="#">Mega Menu Item 4</a></li>
-                        <li><a href="#">Mega Menu Item 5</a></li>
-                    </ul>
-                    <ul class="single-mega cn-col-4">
-                        <li class="title">Headline 2</li>
-                        <li><a href="#">Mega Menu Item 1</a></li>
-                        <li><a href="#">Mega Menu Item 2</a></li>
-                        <li><a href="#">Mega Menu Item 3</a></li>
-                        <li><a href="#">Mega Menu Item 4</a></li>
-                        <li><a href="#">Mega Menu Item 5</a></li>
-                    </ul>
-                    <ul class="single-mega cn-col-4">
-                        <li class="title">Headline 3</li>
-                        <li><a href="#">Mega Menu Item 1</a></li>
-                        <li><a href="#">Mega Menu Item 2</a></li>
-                        <li><a href="#">Mega Menu Item 3</a></li>
-                        <li><a href="#">Mega Menu Item 4</a></li>
-                        <li><a href="#">Mega Menu Item 5</a></li>
-                    </ul>
-                    <ul class="single-mega cn-col-4">
-                        <li class="title">Headline 4</li>
-                        <li><a href="#">Mega Menu Item 1</a></li>
-                        <li><a href="#">Mega Menu Item 2</a></li>
-                        <li><a href="#">Mega Menu Item 3</a></li>
-                        <li><a href="#">Mega Menu Item 4</a></li>
-                        <li><a href="#">Mega Menu Item 5</a></li>
-                    </ul>
-                </div>
-            </li> -->
             <li><a href="{{ asset('/lienhe') }}">Liên hệ</a></li>
+            <li><a href="{{ route('web.phanhoi') }}">Phản hồi</a></li>
         </ul>
 
         <!-- Search Form -->

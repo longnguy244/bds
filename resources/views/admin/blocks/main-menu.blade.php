@@ -130,5 +130,23 @@
                 </li>
             </ul>
         </li>
+        <li class="{{ $route=='feedback' ? 'active' : '' }}">
+            <a class="menu-toggle" href="javascript:void(0);">
+                <i class="material-icons">loyalty</i>
+                <span>Trợ giúp</span>
+            </a>
+            <ul class="ml-menu">
+                {{-- <li class="{{ $route=='phieuthu' ? 'active' : '' }}">
+                    <a href="{{ asset('admin/phieuthu') }}">
+                        <span>Liên hệ</span>
+                    </a>
+                </li> --}}
+                <li class="{{ $route=='feedback' ? 'active' : '' }}">
+                    <a href="{{ asset('admin/feedback') }}">
+                        <span>Phản hồi</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </div>
