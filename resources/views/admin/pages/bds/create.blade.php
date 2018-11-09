@@ -36,7 +36,7 @@
                 </div>
                 <div class= "col-md-6">
                     <label for="customer">
-                        Khách hàng
+                        Chủ sở hữu
                     </label>
                     <div class="form-group">
                         <select class="selectpicker" id = "customer">

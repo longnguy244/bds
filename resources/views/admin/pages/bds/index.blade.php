@@ -28,7 +28,7 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Khách hàng
+                                        Tên
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Loại BĐS
@@ -51,7 +51,7 @@
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        Chủ sở hữu
+                                        Tên
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Loại BĐS
@@ -74,7 +74,7 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ TenCSH($data->id_csh) }}</td>
+                                    <td>{{ $data->ten_bds }}</td>
                                     <td>{{ LoaiBDS($data->id_loaibds) }}</td>
                                     <td>{{ TenThanhPho($data->id_tp) }}</td>
                                     <td>{{ $data->diachi_bds }}</td>

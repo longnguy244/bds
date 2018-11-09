@@ -26,8 +26,7 @@
             <p>Hôm nay ngày tháng năm</p>
             <p><b>Chúng tôi tên:</b></p>
         </div>
-        <a href="{{ route('down.hopdong',$data->id) }}">Xuat File</a>
-    </center>   
+    </center>    
 </body>
 </html>
 
