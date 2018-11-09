@@ -102,12 +102,12 @@
             <ul class="ml-menu">
                 <li class="{{ $route=='hopdong' ? 'active' : '' }}">
                     <a href="{{ asset('admin/hopdong') }}">
-                        <span>Hợp đồng</span>
+                        <span>Hợp đồng môi giới</span>
                     </a>
                 </li>
                 <li class="{{ $route=='bienbanhopdong' ? 'active' : '' }}">
                     <a href="{{ asset('admin/bienbanhopdong') }}">
-                        <span>Biên bản hợp đồng</span>
+                        <span>Biên bản thanh lý hợp đồng</span>
                     </a>
                 </li>
             </ul>

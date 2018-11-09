@@ -28,6 +28,9 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
+                                        ID
+                                    </th>
+                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Tên hợp đồng
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
@@ -53,10 +56,13 @@
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        BĐS
+                                        ID
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Tên hợp đồng
+                                    </th>
+                                    <th rowspan="1" colspan="1">
+                                        BĐS
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Giá bán
@@ -78,6 +84,7 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
+                                    <td>{{ $data->id }}</td>
                                     <td>{{ $data->ten_hd }}</td>
                                     <td>{{ TenBDS($data->id_bds) }}</td>
                                     <td>{{ $data->giaban }}</td>
@@ -91,9 +98,9 @@
                                         <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
-                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
-                                            <i class="material-icons">delete</i>
-                                        </div>
+                                        <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdong.show', ['data' => $data->id]) }}">
+                                            <i class="material-icons">visibility</i>
+                                        </a>
                                         </center>
                                     </td>
                                 </tr>

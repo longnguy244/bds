@@ -30,7 +30,7 @@
             </li> -->
             <li><a href="{{ asset('/vechungtoi') }}">Về chúng tôi</a></li>
             <li><a href="{{ asset('/batdongsan') }}">Bất động sản</a></li>
-            {{-- <li><a href="{{ asset('/baiviet') }}">Bài viết</a></li> --}}
+            <li><a href="{{ asset('/baiviet') }}">Bài viết</a></li>
             <!-- <li><a href="#">Mega Menu</a>
                 <div class="megamenu">
                     <ul class="single-mega cn-col-4">

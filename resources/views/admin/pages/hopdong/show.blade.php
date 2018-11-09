@@ -22,12 +22,12 @@
         <p>Độc lập - Tự do - Hạnh phúc</p>
         <p>----------</p>
         <h4>HỢP ĐỒNG MÔI GIỚI BẤT ĐỘNG SẢN<h4>
-        <p>(Số:....../HDMGBDS)
+        <p>(Số:{{$data->id}}/HDMGBDS)
         </div>
         
         <div class="dream">
-        Hôm nay ngày tháng năm</br></br>
-        <b>Chúng tôi tên:</b>
+        Hôm nay ngày{{$data->ngaylaphd}} tháng năm</br></br>
+        <b>Chúng tôi tên:{{$data->ten_kh}}</b>
         </div>
 	    </body>	
     

@@ -182,13 +182,13 @@
                     <b>Thời hạn hợp đồng</b>
                     <div class="input-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="thoihanhopdong" type="text" id="thoihanhopdong" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('thoihanhopdong') }}">
+                            <input data-inputmask-alias="yyyy/mm/dd" name="thoihanhopdong" type="text" id="thoihanhopdong" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 30/07/2016" value="{{ old('thoihanhopdong') }}">
                         </div>
                     </div>
                     <b>Ngày lập hợp đồng</b>
                     <div class="input-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylaphd" type="text" id="ngaylaphd" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaylaphd') }}">
+                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylaphd" type="text" id="ngaylaphd" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 30/07/2016" value="{{ old('ngaylaphd') }}">
                         </div>
                     </div>
                     <label for="bds_note">

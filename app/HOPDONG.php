@@ -12,6 +12,7 @@ class HOPDONG extends Model
         [
 			'id_bds',
 			'id_kh',
+			'ten_kh',
 			'id_nv',
 			'ten_hd',
 			'giaban',
@@ -31,6 +32,7 @@ class HOPDONG extends Model
         [
 			'id_bds'			=> 'required',
 			'id_kh'				=> 'required',
+			'ten_kh'			=> 'required',
 			'id_nv'				=> 'required',
 			'ten_hd'			=> 'required',
 			'giaban'			=> 'required',
@@ -50,6 +52,7 @@ class HOPDONG extends Model
         [
 			'id_bds.required'       		=> 'Chọn bất động sản',
 			'id_kh.required'       			=> 'Chọn khách hàng',
+			'ten_kh.required'      			=> 'Tên khách hàng',
 			'id_nv.required'    			=> 'Nhân viên không được phép để trống',
 			'ten_hd.required'     			=> 'Tên hợp đồng không được phép để trống',
 			'giaban.required'       		=> 'Giá bán không được phép để trống',
