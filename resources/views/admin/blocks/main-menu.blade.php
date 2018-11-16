@@ -142,7 +142,7 @@
                     </a>
                 </li> --}}
                 <li class="{{ $route=='feedback' ? 'active' : '' }}">
-                    <a href="{{ asset('admin/feedback') }}">
+                    <a href="{{ route('get.feedback.create') }}">
                         <span>Phản hồi</span>
                     </a>
                 </li>

@@ -21,7 +21,7 @@
             THÊM PHẢN HỒI
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('phanhoi.store') }}">
+    <form name="formBds" method="POST" action="">
 	{{ method_field('POST') }}
     {{ csrf_field() }}
         <div class="body">

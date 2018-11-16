@@ -71,3 +71,9 @@ Route::get('web/phanhoi',function()
 
 Route::get('/admin/pdf/{id}','Admin\pdfController@pdf')->name('down.hopdong');
 Route::get('/admin/hopdong/pdf/{id}','Admin\HopDongController@PDF_HopDong')->name('print.hopdong');
+
+// Feedback pages
+    Route::group(['prefix' => 'admin'], function(){
+        Route::get('/feedback/create','Admin\FeedbackController@getCreate')->name('get.feedback.create');
+        Route::post('/feedback/create','Admin\FeedbackController@getCreate')->name('post.feedback.create');
+    });
