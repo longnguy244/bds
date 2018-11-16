@@ -49,6 +49,7 @@
                     <div class="form-group">
                         <div class="form-line">
                             <input name="email" type="text" id="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                            <input name="duyet" type="hidden" value="0">
                         </div>
                     </div>
                     <label for="lydothanhly">
@@ -72,7 +73,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <textarea name="noidung" id="bds_note" rows="5" class="form-control no-resize" placeholder="Nội dung" value="{{ old('ghichu') }}">
+                            <textarea name="noidung" id="bds_note" rows="5" class="form-control no-resize" placeholder="Nội dung" value="{{ old('noidung') }}">
                             </textarea>
                         </div>
                     </div>

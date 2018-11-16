@@ -74,6 +74,12 @@ Route::get('/admin/hopdong/pdf/{id}','Admin\HopDongController@PDF_HopDong')->nam
 
 // Feedback pages
     Route::group(['prefix' => 'admin'], function(){
+        Route::get('/feedback/index','Admin\FeedbackController@getIndex')->name('get.feedback.index');
         Route::get('/feedback/create','Admin\FeedbackController@getCreate')->name('get.feedback.create');
         Route::post('/feedback/create','Admin\FeedbackController@postCreate')->name('post.feedback.create');
+        Route::get('/feedback/edit/{id}','Admin\FeedbackController@getEdit')->name('get.feedback.edit');
+        Route::post('/feedback/edit/{id}','Admin\FeedbackController@postEdit')->name('post.feedback.edit');
+        Route::get('/feedback/delete/{id}','Admin\FeedbackController@getDelete')
+            ->name('feedback.delete');
+
     });

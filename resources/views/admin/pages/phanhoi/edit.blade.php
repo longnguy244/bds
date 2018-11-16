@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Sửa Biên Bản - DreamHouse
+    Sửa Phản Hồi - DreamHouse
 @endsection
 
 @section('main')
@@ -18,11 +18,10 @@
 <div class="card">
     <div class="header">
         <h2>
-            SỬA BIÊN BẢN
+            SỬA PHẢN HỒI
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('bienbanhopdong.update', ['data' => $data->id]) }}">
-	{{ method_field('PUT') }}
+    <form name="formBds" method="POST" action="">
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
@@ -36,42 +35,53 @@
                 </div>
                 <div class= "col-md-6">
                     <label for="hopdong">
-                        Hợp đồng
-                    </label>
-                    <div class="form-group">
-                        <select class="selectpicker" id = "hopdong">
-                            <option value="">-- Please select --</option>
-                            @foreach($hopdong as $hopdong)
-                            <option value="{{ $hopdong->id }}">{{ $hopdong->ten_hd }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('hopdong.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
-                        <input name="id_hd" type="text" id="id_hd" class="form-control hidden" placeholder="id" value="{{ old('id_hd', $data->id_hd) }}">
-                    </div>
-                    <label for="lydothanhly">
-                        Lý do thanh lý
+                        Tên
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="lydothanhly" type="text" id="lydothanhly" class="form-control" placeholder="Lý do thanh lý" value="{{ old('lydothanhly', $data->lydothanhly) }}">
+                            <input name="ten" type="text" id="ten" class="form-control" placeholder="Tên" value="{{ $data->ten }}">
                         </div>
                     </div>
-                    <b>Ngày lập biên bản</b>
-                    <div class="input-group">
+                    <label for="lydothanhly">
+                        Email
+                    </label>
+                    <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylapbb" type="text" id="ngaylapbb" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaylapbb', $data->ngaylapbb) }}">
+                            <input name="email" type="text" id="sdt" class="form-control" placeholder="Email" value="{{ $data->email }}">
+                        </div>
+                    </div>
+                    <label for="lydothanhly">
+                        Số điện thoại
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="sdt" type="text" id="sdt" class="form-control" placeholder="Số điện thoại" value="{{ $data->sdt }}">
+                        </div>
+                    </div>
+                    <label for="lydothanhly">
+                        Tiêu đề
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="tieude" type="text" id="tieude" class="form-control" placeholder="Tiêu dề phản hồi" value="{{ $data->tieude }}"
                         </div>
                     </div>
                     <label for="bds_note">
-                        Ghi chú
+                        Nội dung phản hồi
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu') }}">
+                            <textarea name="noidung" id="bds_note" rows="5" class="form-control no-resize" placeholder="Nội dung" >
+                                {{ $data->noidung }}
                             </textarea>
                         </div>
+                    </div>
+                    <label for="bds_note">
+                        Trang thái
+                    </label>
+                    <div class="form-group">
+                        <input type="radio" class="form-control" name="duyet" value="0">Ẩn
+                        <input type="radio" class="form-control" name="duyet" value="1">Duyệt
                     </div>
                 </div>
             </div>

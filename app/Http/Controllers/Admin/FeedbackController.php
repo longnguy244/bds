@@ -12,7 +12,15 @@ class FeedbackController extends Controller
     {
         $this->model    = $model;
     }
- 
+ 	
+ 	public function getIndex()
+ 	{
+ 		$auth = \Auth::user();
+		$route = $this->model->route;
+		$data = $this->model->all();
+ 		return view('admin.pages.phanhoi.index',compact('auth','route','data'));
+ 	}
+
  	public function getCreate()
  	{
  		$auth = \Auth::user();
@@ -26,5 +34,27 @@ class FeedbackController extends Controller
  		$insert = new FEEDBACK($data);
  		$insert->save();
  		return back();
- 	}   
+ 	} 
+
+ 	public function getEdit($id)
+ 	{
+ 		$auth = \Auth::user();
+		$route = $this->model->route;
+ 		$data = $this->model->find($id);
+ 		return view('admin.pages.phanhoi.edit',compact('auth','route','data'));
+ 	}  
+
+ 	public function postEdit(Request $request, $id)
+ 	{
+ 		
+ 		$data = $this->model->find($id);
+ 		$data->update($request->all());
+ 		return redirect()->back();
+ 	}
+
+ 	public function getDelete(Request $request, $id)
+ 	{
+ 		$data = $this->model->destroy($id);
+ 		return redirect()->route('get.feedback.index');
+ 	}  
 }

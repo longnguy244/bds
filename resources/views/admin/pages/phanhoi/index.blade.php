@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Biên Bản - DreamHouse
+    Phản Hồi - DreamHouse
 @endsection
 
 @section('main')
@@ -17,7 +17,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('bienbanhopdong.create') }}">
+                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('get.feedback.create') }}">
                             Thêm
                         </a>
                     </div>
@@ -28,13 +28,13 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID hợp đồng
+                                        Tên người dùng
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Lý do thanh lý
+                                        Email
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Ngày lập biên bản
+                                        Tiêu đề
                                     </th>
                                     <th rowspan="1" colspan="1" style="width: 20px;"> 
                                     </th>
@@ -45,13 +45,13 @@
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        ID nhân viên
+                                        Tên người dùng
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        Lý do thanh lý
+                                        Email
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        Ngày lập biên bản
+                                        Tiêu đề
                                     </th>
                                     <th rowspan="1" colspan="1">
                                     </th>
@@ -62,18 +62,21 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->id_hd }}</td>
-                                    <td>{{ $data->lydothanhly }}</td>
-                                    <td>{{ $data->ngaylapbb }}</td>
+                                    <td>{{ $data->ten }}</td>
+                                    <td>{{ $data->email }}</td>
+                                    <td>{{ $data->tieude }}</td>
                                     <td>
-                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('bienbanhopdong.edit', ['data' => $data->id]) }}">
+                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('get.feedback.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
                                     </td>
                                     <td>
-                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('bienbanhopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
+                                        {{-- <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('feedback.delete',$data->id) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
-                                        </div>
+                                        </div> --}}
+                                            <a class="btn bg-red waves-effect" href="{{route('feedback.delete',$data->id) }}">
+                                                <i class="material-icons">delete</i>
+                                            </a>
                                     </td>
                                 </tr>
                             @endforeach
