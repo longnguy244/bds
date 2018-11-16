@@ -21,7 +21,7 @@
             THÊM PHẢN HỒI
         </h2>
     </div>
-    <form name="formBds" method="POST" action="">
+    <form name="formBds" method="POST" action="{{ route('post.feedback.create') }}">
 	
     {{ csrf_field() }}
         <div class="body">
