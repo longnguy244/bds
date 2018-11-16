@@ -22,7 +22,7 @@
         </h2>
     </div>
     <form name="formBds" method="POST" action="">
-	{{ method_field('POST') }}
+	
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
@@ -36,6 +36,14 @@
                 </div>
                 <div class= "col-md-6">
                     <label for="hopdong">
+                        Tên người dùng
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="ten" type="text" id="email" class="form-control" placeholder="Tên người dùng" value="{{ old('email') }}">
+                        </div>
+                    </div>
+                    <label for="hopdong">
                         Email người dùng
                     </label>
                     <div class="form-group">
@@ -44,25 +52,27 @@
                         </div>
                     </div>
                     <label for="lydothanhly">
-                        Lý do thanh lý
+                        Số điện thoại
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="lydothanhly" type="text" id="lydothanhly" class="form-control" placeholder="Lý do thanh lý" value="{{ old('lydothanhly') }}">
+                            <input name="sdt" type="text" id="sdt" class="form-control" placeholder="Số điện thoại" >
                         </div>
                     </div>
-                    <b>Ngày lập biên bản</b>
-                    <div class="input-group">
+                    <label for="lydothanhly">
+                        Tiêu đề
+                    </label>
+                    <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylapbb" type="text" id="ngaylapbb" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaylapbb') }}">
+                            <input name="tieude" type="text" id="tieude" class="form-control" placeholder="Nhập tiêu đề" >
                         </div>
                     </div>
                     <label for="bds_note">
-                        Ghi chú
+                        Nội dung phản hồi
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu') }}">
+                            <textarea name="noidung" id="bds_note" rows="5" class="form-control no-resize" placeholder="Nội dung" value="{{ old('ghichu') }}">
                             </textarea>
                         </div>
                     </div>
