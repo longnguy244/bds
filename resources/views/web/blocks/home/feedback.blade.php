@@ -13,38 +13,19 @@
             <div class="col-12">
                 <div class="testimonials-slides owl-carousel wow fadeInUp" data-wow-delay="500ms">
 
-                    <!-- Single Testimonial Slide -->
+                    @foreach($data as $data)
+
                     <div class="single-testimonial-slide text-center">
-                        <h5>Perfect Home for me</h5>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
+                        <h5>{{$data->tieude}}</h5>
+                        <p>{{$data->noidung}}</p>
 
                         <div class="testimonial-author-info">
-                            <img src="{{ asset('south/img/bg-img/feature6.jpg') }}" alt="">
-                            <p>Daiane Smith, <span>Customer</span></p>
+                            <p>{{$data->ten}}, <span>Customer</span></p>
                         </div>
                     </div>
 
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide text-center">
-                        <h5>Perfect Home for me</h5>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-
-                        <div class="testimonial-author-info">
-                            <img src="{{ asset('south/img/bg-img/feature6.jpg') }}" alt="">
-                            <p>Daiane Smith, <span>Customer</span></p>
-                        </div>
-                    </div>
-
-                    <!-- Single Testimonial Slide -->
-                    <div class="single-testimonial-slide text-center">
-                        <h5>Perfect Home for me</h5>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.</p>
-
-                        <div class="testimonial-author-info">
-                            <img src="{{ asset('south/img/bg-img/feature6.jpg') }}" alt="">
-                            <p>Daiane Smith, <span>Customer</span></p>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

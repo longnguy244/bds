@@ -142,7 +142,7 @@
                     </a>
                 </li> --}}
                 <li class="{{ $route=='feedback' ? 'active' : '' }}">
-                    <a href="{{ route('get.feedback.create') }}">
+                    <a href="{{ route('get.feedback.index') }}">
                         <span>Phản hồi</span>
                     </a>
                 </li>

@@ -56,18 +56,23 @@
                 <!-- Contact Form Area -->
                 <div class="col-12 col-lg-8">
                     <div class="contact-form">
-                        <form action="#" method="post">
+                        <form action="{{route('post.feedback.create')}}" method="post">
+                            {{csrf_field()}}
+                            <input name="duyet" type="hidden" value="0">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="text" id="contact-name" placeholder="Tên của anh chị">
+                                <input type="text" class="form-control" name="ten" id="contact-name" placeholder="Tên của anh chị">
                             </div>
                             <div class="form-group">
-                                <input type="number" class="form-control" name="number" id="contact-number" placeholder="Số điện thoại">
+                                <input type="number" class="form-control" name="sdt" id="contact-number" placeholder="Số điện thoại">
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="contact-email" placeholder="Email của anh chị">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Thông tin phản hồi của anh chị"></textarea>
+                                <input type="text" class="form-control" name="tieude" id="contact-email" placeholder="Tiêu đề phản hồi">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="noidung" id="message" cols="30" rows="10" placeholder="Thông tin phản hồi của anh chị"></textarea>
                             </div>
                             <button type="submit" class="btn south-btn">Gửi phản hồi</button>
                         </form>
