@@ -88,7 +88,14 @@
                         <input name="id_tp" type="text" id="id_tp" class="form-control hidden" placeholder="id" value="{{ old('id_tp', $data->id_tp) }}">
                     </div>
                     
-                    
+                    <label for="ten_bds">
+                        Hinh anh
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="ten_bds" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('hinhanh', $data->hinhanh) }}">
+                        </div>
+                    </div>
                 </div>
                 <div class= "col-md-6">
                     <label for="ten_bds">

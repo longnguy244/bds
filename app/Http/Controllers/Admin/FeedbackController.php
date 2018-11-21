@@ -25,6 +25,7 @@ class FeedbackController extends Controller
  		$data = $request->all();
  		$insert = new FEEDBACK($data);
  		$insert->save();
+ 		
  		return back();
  	}   
 }
