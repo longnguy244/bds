@@ -97,3 +97,45 @@ function ChungTu($id)
 	echo $data->ghichu;
 	# code...
 }
+
+function DCBDS($id)
+{
+	$data = DB::table('batdongsan')->find($id);
+	echo $data->diachi_bds;
+	# code...
+}
+
+function DTMD($id)
+{
+	$data = DB::table('motabds')->find($id);
+	echo $data->dientich;
+	# code...
+}
+
+function DTXD($id)
+{
+	$data = DB::table('motabds')->find($id);
+	echo $data->dientichxd;
+	# code...
+}
+
+function DTSD($id)
+{
+	$data = DB::table('motabds')->find($id);
+	echo $data->dientichsd;
+	# code...
+}
+
+function Cautruc($id)
+{
+	$data = DB::table('motabds')->find($id);
+	echo $data->cautruc;
+	# code...
+}
+
+function Tiennghi($id)
+{
+	$data = DB::table('motabds')->find($id);
+	echo $data->tiennghi;
+	# code...
+}

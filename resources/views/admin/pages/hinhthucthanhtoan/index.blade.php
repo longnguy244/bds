@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Biên Bản - DreamHouse
+    Hình Thức Thanh Toán - DreamHouse
 @endsection
 
 @section('main')
@@ -17,7 +17,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('bienbanhopdong.create') }}">
+                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('loaibds.create') }}">
                             Thêm
                         </a>
                     </div>
@@ -28,52 +28,52 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID hợp đồng
+                                        ID Hình thức thanh toán
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Lý do thanh lý
+                                        Tên Hình thức thanh toán
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        Ngày lập biên bản
+                                        Ghi chú
                                     </th>
-                                    <th style="text-align: center;"> 
-                                        Thao tác
+                                    <th rowspan="1" colspan="1" style="width: 20px;"> 
+                                    </th>
+                                    <th rowspan="1" colspan="1" style="width: 20px;"> 
                                     </th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        ID nhân viên
+                                        ID Hình thức thanh toán
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        Lý do thanh lý
+                                        Tên Hình thức thanh toán
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        Ngày lập biên bản
+                                        Ghi chú
                                     </th>
-                                    <th style="text-align: center;"> 
-                                        Thao tác
+                                    <th rowspan="1" colspan="1">
+                                    </th>
+                                    <th rowspan="1" colspan="1">
                                     </th>
                                 </tr>
                             </tfoot>
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->id_hd }}</td>
-                                    <td>{{ $data->lydothanhly }}</td>
-                                    <td>{{ $data->ngaylapbb }}</td>
-                                    <td><center>
-                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('bienbanhopdong.edit', ['data' => $data->id]) }}">
+                                    <td>{{ $data->id }}</td>
+                                    <td>{{ $data->ten_httt }}</td>
+                                    <td>{{ $data->ghichu }}</td>
+                                    <td>
+                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('hinhthucthanhtoan.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
-                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('bienbanhopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
+                                    </td>
+                                    <td>
+                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hinhthucthanhtoan.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
-                                        <a type="button" class="btn bg-light-green waves-effect" href="{{ route('bienbanhopdong.show', ['data' => $data->id]) }}">
-                                            <i class="material-icons">visibility</i>
-                                        </a>
-                                        </center>
                                     </td>
                                 </tr>
                             @endforeach

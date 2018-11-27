@@ -110,4 +110,9 @@ class BienBanController extends Controller
         $this->model->destroy($id);
         return redirect(route('bienbanhopdong.index'));
     }
+
+    public function PDF_BienBan($id){
+        $data = $this->model->find($id);
+        return view('admin.pages.bienban.show',compact('data'));
+    }
 }
