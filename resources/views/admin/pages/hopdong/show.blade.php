@@ -92,8 +92,8 @@
                 <p>4.4 Khách hàng của bên A là người được nhân viên bên A hoặc bất kỳ người nào được bên A giới thiệu hoặc khách hàng của bên A giới thiệu khách hàng khác đến bên B để ký hợp đồng, đặt cọc giữ chỗ hay tìm hiểu để sau đó ký hợp đồng mua bán với bên B. Nếu trước khi ký hợp đồng mua bán bất động sản mà khách hàng yêu cầu thay đổi người đứng tên trên hợp đồng thì vẫn được xem là khách hàng của bên A.</p>
                 <p>4.5 Giá bán bất động sản theo khoản 2.1 Điều 2 nêu trên theo thỏa thuận giữa bên A và bên B (Gọi là giá bán ban đầu)</p>
                 <p>4.6 Trường hợp bên A giới thiệu khách mua cho bên B và khách mua đã trả giá theo giá bán ban đầu nhưng bên B không bán thì coi như bên A đã thực hiện xong hợp đồng, bên B vẫn phải thanh tóan cho bên A: 5% (Bằng chữ:…... phần trăm) trên giá bán thực tế. (Việc không bán bao gồm sự xác nhận không bán bằng văn bản của người bán hoặc sau 3 (ba) ngày kể từ ngày người mua xác nhận mua nhưng người bán không nhận tiền đặt cọc).</p>
-                <p>4.7 Trong thời gian thực hiện hợp đồng hoặc sau ngày chấm dứt hợp đồng này nếu khách hàng do bên A giới thiệu hoặc khách hàng đó giới thiệu khách hàng khác đến mua căn hộ của bên B thì bên A vẫn được hưởng phí môi giới như mức phí môi giới đã thỏa thuận tại khoản 2.1 Điều 2 của Hợp đồng này.</p>
-                <p>(Có thể quy định một khoảng thời gian cụ thể: 6 tháng; một năm hoặc 2 năm …cho phù hợp với Điều khoản trên)</p>
+                <p>4.7 Trong thời gian thực hiện hợp đồng hoặc trong vòng 6 tháng sau ngày chấm dứt hợp đồng này nếu khách hàng do bên A giới thiệu hoặc khách hàng đó giới thiệu khách hàng khác đến mua căn hộ của bên B thì bên A vẫn được hưởng phí môi giới như mức phí môi giới đã thỏa thuận tại khoản 2.1 Điều 2 của Hợp đồng này.</p>
+        
                 <p><b> ĐIỀU 5: QUYỀN VÀ NGHĨA VỤ CỦA BÊN A</b></p>
                 <p>5.1. Quyền của bên A:</p>
                 <p>a) Yêu cầu bên B cung cấp hồ sơ, thông tin, tài liệu liên quan đến bất động sản;</p>
