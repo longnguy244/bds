@@ -87,9 +87,12 @@ Route::get('web/phanhoi',function()
 
 
 //PDF
-//Hopdong
+    //Hopdong
     Route::get('/admin/pdf/{id}','Admin\pdfController@pdf')->name('down.hopdong');
     Route::get('/admin/hopdong/pdf/{id}','Admin\HopDongController@PDF_HopDong')->name('print.hopdong');
-
+    //Phieuthu
     Route::get('/admin/pdf_phieuthu/{id}','Admin\pdfController@pdf_phieu_thu')->name('down.phieuthu');
     Route::get('/admin/phieuthu/pdf/{id}','Admin\PhieuThuController@pdf_phieu_thu')->name('print.phieuthu');
+    //Phieuchi
+    Route::get('/admin/pdf_phieuchi/{id}','Admin\pdfController@pdf_phieu_chi')->name('down.phieuchi');
+    Route::get('/admin/phieuchi/pdf/{id}','Admin\PhieuChiController@pdf_phieu_chi')->name('print.phieuchi');
