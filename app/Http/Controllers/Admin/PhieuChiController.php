@@ -113,4 +113,9 @@ class PhieuChiController extends Controller
         $this->model->destroy($id);
         return redirect(route('phieuchi.index'));
     }
+
+    public function pdf_phieu_chi($id){
+        $data = $this->model->find($id);
+        return view('admin.pages.phieuchi.show',compact('data'));
+    }
 }

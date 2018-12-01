@@ -11,27 +11,30 @@ class PHIEUCHI extends Model
 	protected $fillable = 
 	[
 		'id_nv',
-		'id_hd',
 		'lydochi',
 		'tongtien',
 		'ngaychi',
 		'ghichu',
+		'nguoinhantien',
+		'CMND',
+		'tongtienbangchu',
 	];
 	
 	public  $rules =
 	[
 		'id_nv'		=> 'required',
-		'id_hd'		=> 'required',
 		'lydochi'	=> 'required',
 		'tongtien'	=> 'required',
 		'ngaychi'	=> 'required',
 		'ghichu'	=> '',
+		'nguoinhantien' => '',
+		'CMND' => '',
+		'tongtienbangchu' => '',
 	];
 
 	public $messages = 
 	[
 		'id_nv.required'       	=> 'Nhân viên là bắt buộc',
-		'id_hd.required'    	=> 'Chọn hợp đồng',
 		'lydochi.required'     	=> 'Lý do chi là bắt buộc',
 		'tongtien.required'     => 'Tổng tiền là bắt buộc',
 		'ngaychi.required'      => 'Ngày chi là bắt buộc',

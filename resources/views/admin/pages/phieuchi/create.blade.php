@@ -35,21 +35,6 @@
                     </a>
                 </div>
                 <div class= "col-md-6">
-                    <label for="hopdong">
-                        Hợp đồng
-                    </label>
-                    <div class="form-group">
-                        <select class="selectpicker" id = "hopdong">
-                            <option value="">-- Please select --</option>
-                            @foreach($hopdong as $hopdong)
-                            <option value="{{ $hopdong->id }}">{{ $hopdong->ten_hd }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('hopdong.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
-                        <input name="id_hd" type="text" id="id_hd" class="form-control hidden" placeholder="id" value="{{ old('id_hd') }}">
-                    </div>
                     <label for="staff">
                         Nhân viên
                     </label>
@@ -65,6 +50,25 @@
                         </a>
                         <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="Nhân viên" value="{{ old('id_nv') }}">
                     </div>
+                    <label for="nguoinhantien">
+                        Người nhận tiền
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="nguoinhantien" type="text" id="nguoinhantien" class="form-control" placeholder="Tên người nhận" value="{{ old('nguoinhantien') }}">
+                        </div>
+                    </div>
+                    <label for="CMND">
+                        Số CMND
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="CMND" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND') }}">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class= "col-md-6">
                     <label for="lydochi">
                         Lý do chi
                     </label>
@@ -73,14 +77,20 @@
                             <input name="lydochi" type="text" id="lydochi" class="form-control" placeholder="Lý do chi" value="{{ old('lydochi') }}">
                         </div>
                     </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="tongtien">
                         Tổng tiền
                     </label>
                     <div class="form-group">
                         <div class="form-line">
                             <input data-inputmask-mask="9{1,}" name="tongtien" type="text" id="tongtien" class="form-control" placeholder="Tổng tiền" value="{{ old('tongtien') }}">
+                        </div>
+                    </div>
+                    <label for="tongtienbangchu">
+                        Tổng tiền bằng chữ
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="tongtienbangchu" type="text" id="tongtienbangchu" class="form-control" placeholder="Tổng tiền bằng chữ" value="{{ old('tongtienbangchu') }}">
                         </div>
                     </div>
                     <b>Ngày chi</b>

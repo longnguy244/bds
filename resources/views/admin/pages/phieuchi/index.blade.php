@@ -31,9 +31,6 @@
                                         ID nhân viên
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID hợp đồng
-                                    </th>
-                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Lý do chi
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
@@ -54,9 +51,6 @@
                                         ID nhân viên
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        ID hợp đồng
-                                    </th>
-                                    <th rowspan="1" colspan="1">
                                         Lý do chi
                                     </th>
                                     <th rowspan="1" colspan="1">
@@ -75,7 +69,6 @@
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
                                     <td>{{ $data->id_nv }}</td>
-                                    <td>{{ $data->id_hd }}</td>
                                     <td>{{ $data->lydochi }}</td>
                                     <td>{{ $data->tongtien }}</td>
                                     <td>{{ $data->ngaychi }}</td>
@@ -88,6 +81,11 @@
                                         <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('phieuchi.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
+                                    </td>
+                                    <td>
+                                         <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.phieuchi', $data->id) }}">
+                                            <i class="material-icons">visibility</i>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
