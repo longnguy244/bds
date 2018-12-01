@@ -89,6 +89,11 @@
                                             <i class="material-icons">delete</i>
                                         </div>
                                     </td>
+                                    <td>
+                                         <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.phieuthu', $data->id) }}">
+                                            <i class="material-icons">visibility</i>
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

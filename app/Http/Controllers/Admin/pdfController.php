@@ -18,10 +18,12 @@ class pdfController extends Controller
     	return $pdf->download('hopdong.pdf');
     }
 
-    public function pdf($id)
+   
+
+    public function pdf_phieu_thu($id)
     {
-    	$data = BIENBAN::find($id);
-    	$pdf = PDF::loadView('admin.pages.bienban.pdf_bienban',compact('data'));
-    	return $pdf->download('bienban.pdf');
+        $data = PHIEUTHU::find($id);
+        $pdf = PDF::loadView('admin.pages.phieuthu.pdf_phieuthu',compact('data'));
+        return $pdf->download('bienban.pdf');
     }
 }

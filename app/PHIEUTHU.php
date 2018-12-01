@@ -14,8 +14,11 @@ class PHIEUTHU extends Model
 			'id_hd',
 			'lydothu',
 			'tongtien',
+			'tongtienbangchu',
 			'ngaythu',
 			'ghichu',
+			'CMND',
+			'nguoinoptien',
         ];
         
         public  $rules =
@@ -25,6 +28,9 @@ class PHIEUTHU extends Model
 			'lydothu'	=> 'required',
 			'tongtien'	=> 'required',
 			'ngaythu'	=> 'required',
+			'tongtienbangchu' => '',
+			'nguoinoptien'	=> '',
+			'CMND'	=> '',
 			'ghichu'	=> '',
         ];
 

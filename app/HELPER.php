@@ -109,7 +109,6 @@ function DTMD($id)
 {
 	$data = DB::table('motabds')->find($id);
 	echo $data->dientich;
-	# code...
 }
 
 function DTXD($id)

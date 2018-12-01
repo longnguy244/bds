@@ -113,4 +113,10 @@ class PhieuThuController extends Controller
         $this->model->destroy($id);
         return redirect(route('phieuthu.index'));
     }
+
+
+    public function pdf_phieu_thu($id){
+        $data = $this->model->find($id);
+        return view('admin.pages.phieuthu.show',compact('data'));
+    }
 }

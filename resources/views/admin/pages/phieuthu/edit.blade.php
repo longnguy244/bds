@@ -65,6 +65,25 @@
                         </a>
                         <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="Nhân viên" value="{{ old('id_nv', $data->id_nv) }}">
                     </div>
+                    <label for="nguoinoptien">
+                        Người nộp tiền
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="nguoinoptien" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ $data->nguoinoptien or old('nguoinoptien') }}">
+                        </div>
+                    </div>
+                    <label for="lydothu">
+                        Số CMND
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="CMND" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND', $data->CMND) }}">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class= "col-md-6">
                     <label for="lydothu">
                         Lý do thu
                     </label>
@@ -73,14 +92,20 @@
                             <input name="lydothu" type="text" id="lydothu" class="form-control" placeholder="Lý do thu" value="{{ old('lydothu', $data->lydothu) }}">
                         </div>
                     </div>
-                </div>
-                <div class= "col-md-6">
                     <label for="tongtien">
                         Tổng tiền
                     </label>
                     <div class="form-group">
                         <div class="form-line">
                             <input data-inputmask-mask="9{1,}" name="tongtien" type="text" id="tongtien" class="form-control" placeholder="Tổng tiền" value="{{ old('tongtien', $data->tongtien) }}">
+                        </div>
+                    </div>
+                    <label for="tongtienbangchu">
+                        Tổng tiền bằng chữ
+                    </label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input name="tongtienbangchu" type="text" id="tongtienbangchu" class="form-control" placeholder="Tổng tiền bằng chữ" value="{{ old('tongtienbangchu',$data->tongtienbangchu) }}">
                         </div>
                     </div>
                     <b>Ngày thu</b>
