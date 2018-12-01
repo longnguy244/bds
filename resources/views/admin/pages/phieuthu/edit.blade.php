@@ -33,6 +33,9 @@
                     <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
                         Quay Lại
                     </a>
+                     <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.phieuthu',$data->id) }}">
+                        <i class="fas fa-save"></i>  In
+                    </a>
                 </div>
                 <div class= "col-md-6">
                     <label for="hopdong">

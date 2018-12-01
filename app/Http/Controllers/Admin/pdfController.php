@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PDF;
 use App\HOPDONG;
+use App\PHIEUTHU;
 
 
 class pdfController extends Controller

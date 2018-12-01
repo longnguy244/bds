@@ -69,7 +69,7 @@
         <p>Ngày…. tháng…. năm….</p>                   
         <p><b> Người nộp tiền Người nhận tiền</b></p>
     </div>
-        <a href="{{ route('down.hopdong',$data->id) }}">Xuat File</a>
+        <a href="{{ route('down.phieuthu',$data->id) }}">Xuat File</a>
 
 </body>
 </html>
