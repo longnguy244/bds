@@ -42,8 +42,8 @@
                     <button type="submit" class="btn bg-brown btn-lg waves-effect">
                         Lưu
                     </button>
-                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ asset('admin/bds') }}">
-                        Quay Lại
+                    <a type="button" class="btn bg-blue btn-lg waves-effect" href="{{ route('motabds.edit', ['data' => $data->id]) }}">
+                        Xem chi tiết
                     </a>
                 </div>
                 <div class= "col-md-6">

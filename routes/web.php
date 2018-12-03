@@ -73,8 +73,10 @@ Route::get('web/phanhoi',function()
 
 
 
-// Feedback pages
+
+
     Route::group(['prefix' => 'admin'], function(){
+    // Feedback pages
         Route::get('/feedback/index','Admin\FeedbackController@getIndex')->name('get.feedback.index');
         Route::get('/feedback/create','Admin\FeedbackController@getCreate')->name('get.feedback.create');
         Route::post('/feedback/create','Admin\FeedbackController@postCreate')->name('post.feedback.create');
@@ -83,7 +85,16 @@ Route::get('web/phanhoi',function()
         Route::get('/feedback/delete/{id}','Admin\FeedbackController@getDelete')
             ->name('feedback.delete');
 
+    //Tieu chi
+        Route::get('tieuchi/list','Admin\TieuChiController@getIndex')->name('get.tieuchi.index');
+        Route::get('tieuchi/create','Admin\TieuChiController@getCreate')->name('get.tieuchi.create');
+        Route::post('tieuchi/create','Admin\TieuChiController@postCreate')->name('post.tieuchi.create');
+        Route::get('tieuchi/edit/{id}','Admin\TieuChiController@getEdit')->name('get.tieuchi.edit');
+        Route::post('tieuchi/edit/{id}','Admin\TieuChiController@postEdit')->name('post.tieuchi.edit');
+
+
     });
+
 
 
 //PDF
@@ -96,3 +107,11 @@ Route::get('web/phanhoi',function()
     //Phieuchi
     Route::get('/admin/pdf_phieuchi/{id}','Admin\pdfController@pdf_phieu_chi')->name('down.phieuchi');
     Route::get('/admin/phieuchi/pdf/{id}','Admin\PhieuChiController@pdf_phieu_chi')->name('print.phieuchi');
+    //Bienban
+    Route::get('/admin/pdf_bienban/{id}','Admin\pdfController@pdf_bien_ban')->name('down.bienban');
+    Route::get('/admin/bienban/pdf/{id}','Admin\BienBanController@PDF_BienBan')->name('print.bienban');
+
+//Chi tiet bds
+    Route::group(['prefix' => 'admin'], function(){
+        Route::get('/chitiet/create','Admin\MotaBDSController@create')->name('get.mota.create');
+    });

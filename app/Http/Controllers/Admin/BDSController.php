@@ -59,7 +59,7 @@ class BDSController extends Controller
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->create($request->all());
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
-        return redirect(route('bds.index'));
+        return redirect()->route('get.mota.create');
     }
 
     /**

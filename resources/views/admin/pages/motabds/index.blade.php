@@ -80,14 +80,14 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->id_bds }}</td>
+                                    <td>{{ TenBDS($data->id_bds) }}</td>
                                     <td>{{ $data->dientich }}</td>
                                     <td>{{ $data->chieudai }}</td>
                                     <td>{{ $data->chieurong }}</td>
                                     <td>{{ $data->dientichxd }}</td>
                                     <td>{{ $data->dientichsd }}</td>
                                     <td>
-                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('motabds.edit', ['data' => $data->id]) }}">
+                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('motabds.edit', ['data' => $data->id_bds]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
                                     </td>

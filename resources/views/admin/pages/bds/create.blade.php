@@ -28,7 +28,7 @@
             <div class="row clearfix">
                 <div class= "col-md-12">
                     <button type="submit" class="btn bg-brown btn-lg waves-effect">
-                        Lưu
+                       Thêm chi tiết
                     </button>
                     <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
                         Quay Lại

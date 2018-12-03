@@ -41,9 +41,9 @@
                         <span>Quản lý chủ sở hữu</span>
                     </a>
                 </li>
-                <li class="{{ $route=='motabds' ? 'active' : '' }}">
-                    <a href="{{ asset('admin/motabds') }}">
-                        <span>Chi tiết BĐS</span>
+                <li class="{{ $route=='tieuchi' ? 'active' : '' }}">
+                    <a href="{{ route('get.tieuchi.index') }}">
+                        <span>Tiêu chí</span>
                     </a>
                 </li>
             </ul>

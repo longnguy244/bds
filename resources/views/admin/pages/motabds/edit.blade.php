@@ -39,15 +39,7 @@
                         Bất Động Sản
                     </label>
                     <div class="form-group">
-                        <select class="selectpicker" id = "bds">
-                            <option value="">-- Please select --</option>
-                            @foreach($bds as $bds)
-                            <option value="{{ $bds->id }}">{{ $bds->ten_bds }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('bds.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
+                        <input type="text" id="id_bds" class="form-control" placeholder="id" value="{{ TenBDS($data->id_bds) }}">
                         <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
                     </div>
                     <label for="dientich">

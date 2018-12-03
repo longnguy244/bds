@@ -19,7 +19,7 @@ class HomeController extends Controller
     {
         return view('web.pages.home',[
             'bds' => BATDONGSAN::all()->take(6),
-            'data' => FEEDBACK::orderBy('created_at', 'DESC')->get()->take(6)
+            'data' => FEEDBACK::where('duyet',1)->orderBy('created_at', 'DESC')->get()->take(6)
         ]);
     }
 

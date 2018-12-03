@@ -4,6 +4,14 @@
     Thêm Mô Tả Bất Động Sản - DreamHouse
 @endsection
 
+@push('css')
+    <style type="text/css">
+        [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+            position: inherit;
+            opacity: 1;
+    </style>
+@endpush
+
 @section('main')
 
 @if($errors->any())
@@ -18,7 +26,7 @@
 <div class="card">
     <div class="header">
         <h2>
-            THÊM MÔ TẢ BẤT ĐỘNG SẢN
+            THÊM MÔ TẢ CHO BẤT ĐỘNG SẢN <span style="color: red">{{ $data->ten_bds }}</span>
         </h2>
     </div>
     <form name="formBds" method="POST" action="{{ route('motabds.store') }}">
@@ -34,21 +42,14 @@
                         Quay Lại
                     </a>
                 </div>
+                <h3>Tiện nghi</h3>
                 <div class= "col-md-6">
                     <label for="bds">
                         Bất Động Sản
                     </label>
                     <div class="form-group">
-                        <select class="selectpicker" id = "bds">
-                            <option value="">-- Please select --</option>
-                            @foreach($bds as $bds)
-                            <option value="{{ $bds->id }}">{{ $bds->ten_bds }}</option>
-                            @endforeach
-                        </select>
-                        <a type="button" class="btn bg-green waves-effect" href="{{ route('bds.create') }}">
-                            <i class="material-icons">add</i>
-                        </a>
-                        <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds') }}">
+                        <input type="text" class="form-control" readonly="" value="{{ $data->ten_bds }}">
+                        <input name="id_bds" type="hidden" id="id_bds" class="form-control" placeholder="id" value="{{ $data->id }}">
                     </div>
                     <label for="dientich">
                         Diện tích
@@ -133,6 +134,21 @@
                             </textarea>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12">
+                    <h3>Tiêu chí</h3>
+                    <table width="100%">
+                            <tr>
+                        @foreach ($tieuchi as $key => $val)
+                                <td>
+                                   <input type="checkbox" name="tieuchi" class="form-control" value="{{ $val->id }}">
+                                </td>
+                                <td>
+                                     {{ $val->tentieuchi }}
+                                </td>
+                        @endforeach
+                            </tr>
+                    </table>
                 </div>
             </div>
         </div>
