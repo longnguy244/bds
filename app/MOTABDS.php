@@ -17,6 +17,8 @@ class MOTABDS extends Model
 			'dientichxd',
 			'dientichsd',
 			'cautruc',
+			'phongngu',
+			'phongtam',
 			'tiennghi',
 			'ghichu',
         ];
@@ -29,9 +31,11 @@ class MOTABDS extends Model
 			'chieurong'	=> 'required',
 			'dientichxd'=> 'required',
 			'dientichsd'=> 'required',
-			'cautruc',
-			'tiennghi',
-			'ghichu',
+			'phongngu' => '',
+			'phongtam' => '',
+			'cautruc' => '',
+			'tiennghi' => '',
+			'ghichu' => '',
         ];
 
         public $messages = 

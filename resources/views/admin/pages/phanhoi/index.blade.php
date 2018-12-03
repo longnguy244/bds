@@ -36,6 +36,9 @@
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Tiêu đề
                                     </th>
+                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
+                                        Trạng thái
+                                    </th>
                                     <th rowspan="1" colspan="1" style="width: 20px;"> 
                                     </th>
                                     <th rowspan="1" colspan="1" style="width: 20px;"> 
@@ -53,6 +56,9 @@
                                     <th rowspan="1" colspan="1">
                                         Tiêu đề
                                     </th>
+                                    <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
+                                        Trạng thái
+                                    </th>
                                     <th rowspan="1" colspan="1">
                                     </th>
                                     <th rowspan="1" colspan="1">
@@ -65,6 +71,7 @@
                                     <td>{{ $data->ten }}</td>
                                     <td>{{ $data->email }}</td>
                                     <td>{{ $data->tieude }}</td>
+                                    <td>{{ $data->duyet }}</td>
                                     <td>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('get.feedback.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>

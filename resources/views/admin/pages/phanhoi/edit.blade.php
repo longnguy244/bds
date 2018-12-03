@@ -4,6 +4,17 @@
     Sửa Phản Hồi - DreamHouse
 @endsection
 
+@push('css')
+    <style type="text/css">
+
+        [type="radio"]:not(:checked), [type="radio"]:checked {
+            position: inherit;
+            left: -9999px;
+            opacity: 1;
+        }
+    </style>
+@endpush
+
 @section('main')
 
 @if($errors->any())
@@ -80,8 +91,8 @@
                         Trang thái
                     </label>
                     <div class="form-group">
-                        <input type="radio" class="form-control" name="duyet" value="0">Ẩn
-                        <input type="radio" class="form-control" name="duyet" value="1">Duyệt
+                        <input type="radio" class="form-float" name="duyet" @if($data->duyet==0) checked @endif value="0"> Ẩn<br>
+                        <input type="radio" class="form-float" name="duyet" @if($data->duyet==1) checked @endif value="1"> Duyệt
                     </div>
                 </div>
             </div>

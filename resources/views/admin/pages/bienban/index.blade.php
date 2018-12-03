@@ -70,7 +70,7 @@
                                         <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('bienbanhopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
-                                        <a type="button" class="btn bg-light-green waves-effect" href="{{ route('bienbanhopdong.show', ['data' => $data->id]) }}">
+                                        <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.bienban', ['data' => $data->id]) }}">
                                             <i class="material-icons">visibility</i>
                                         </a>
                                         </center>

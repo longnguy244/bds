@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\MOTABDS;
 use App\BATDONGSAN;
+use App\TIEUCHI;
 
 class MoTaBDSController extends Controller
 {
@@ -37,11 +38,14 @@ class MoTaBDSController extends Controller
     public function create()
     {
         return view('admin.pages.motabds.create',[
-            'auth'          => \Auth::user(),
-            'bds'          => BATDONGSAN::all(),
-            'route'        => $this->model->route
+            'auth'      => \Auth::user(),
+            'bds'       => BATDONGSAN::all(),
+            'route'     => $this->model->route,
+            'data'      => BATDONGSAN::orderBy('created_at','DESC')->first(),
+            'tieuchi'      => TIEUCHI::get(),
         ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -76,12 +80,12 @@ class MoTaBDSController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.pages.motabds.edit',[
-            'auth'          => \Auth::user(),
-            'bds'           => BATDONGSAN::all(),
-            'data'          => $this->model->find($id),
-            'route'         => $this->model->route
-        ]);
+        $data = MOTABDS::where('id_bds',$id)->first();
+        $auth = \Auth::user();
+        $bds = BATDONGSAN::all();
+        $route = $this->model->route;
+        return view('admin.pages.motabds.edit',compact('data','auth','bds','route'));
+            
     }
 
     /**
@@ -96,7 +100,7 @@ class MoTaBDSController extends Controller
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->find($id)->update($request->all());
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
-        return redirect(route('motabds.index'));
+        return redirect()->back();
     }
 
     /**
