@@ -47,21 +47,18 @@
 </head>
 <body>
     <div class="col-sm-12">
-        <table border="0">
+        <table border="0" width="100%">
         <tr>
-            <td>Công ty Môi giới Dreamhouse</td>
-            <td> </td>
-            <td>Mẫu số 01 - TT</td>
-        </tr>
-
-        <tr>
-            <td>Địa chỉ: Ninh Kiều, Cần Thơ</td>
-            <td> </td>
-            <td>(Ban hành theo Thông tư số 133/2016/TT-BTC ngày 26/8/2016 của Bộ Tài chính)</td>
-        </tr>
+            <td width="40%"><b>Công ty Môi giới Dreamhouse</b><br>
+            Địa chỉ: Ninh Kiều, Cần Thơ
+            </td>
+            <td width="20%"></td>
+            <td style="text-align: center;">
+            <b>Mẫu số 01 - TT</b><br>
+            (Ban hành theo Thông tư số 133/2016/TT-BTC ngày 26/8/2016 của Bộ Tài chính)</td>
+        </tr>  
     </table>
     </div>
-    
 
     <div class="center">
         <p><b>PHIẾU THU</b></p>
@@ -73,8 +70,19 @@
         <p>CMND:{{$data->CMND}}</p>
         <p>Lý do thu:{{$data->lydothu}}</p>
         <p>Số tiền: {{$data->tongtien}} (Viết bằng chữ):{{$data->tongtienbangchu}}</p>
-        <p>Ngày{{$data->ngaythu}}</p>                   
-        <p><b> Người nộp tiền Người nhận tiền</b></p>
+        <p>Ngày{{$data->ngaythu}}</p>  
+        <div>
+            <table border="0" width="100%">
+        <tr>
+            <td width="40%"><b>Người nộp tiền</b><br>
+            </td>
+            <td width="20%"></td>
+            <td style="text-align: center;">
+            <b>Người nhận tiền</b><br>
+            </td>
+        </tr>  
+    </table>
+        </div>                 
     </div>
         <a href="{{ route('down.phieuthu',$data->id) }}">Xuat File</a>
 
