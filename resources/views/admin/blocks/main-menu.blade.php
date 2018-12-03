@@ -69,6 +69,11 @@
                         <span>Bài viết</span>
                     </a>
                 </li>
+                <li class="{{ $route=='httt' ? 'active' : '' }}">
+                    <a href="{{ route('get.hinhthucthanhtoan.index') }}">
+                        <span>Hình thức thanh toán</span>
+                    </a>
+                </li>
             </ul>
         </li>
         <li class="{{ $route=='thanhpho' || $route=='quanhuyen' || $route=='phuongxa'? 'active' : '' }}">

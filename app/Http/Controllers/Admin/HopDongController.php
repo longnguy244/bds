@@ -9,6 +9,8 @@ use App\HOPDONG;
 use App\KHACHHANG;
 use App\BATDONGSAN;
 use App\NHANVIEN;
+use App\HINHTHUCTHANHTOAN;
+
 
 class HopDongController extends Controller
 {
@@ -43,7 +45,8 @@ class HopDongController extends Controller
             'nhanvien'      => NHANVIEN::all(),
             'customers'     => KHACHHANG::all(),
             'bds'           => BATDONGSAN::all(),
-            'route'         => $this->model->route
+            'route'         => $this->model->route,
+            'hinhthucthanhtoan'=> HINHTHUCTHANHTOAN::all()
         ]);
     }
 

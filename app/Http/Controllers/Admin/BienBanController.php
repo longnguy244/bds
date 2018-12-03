@@ -113,7 +113,8 @@ class BienBanController extends Controller
 
     public function PDF_BienBan($id){
         $data = $this->model->find($id);
-        $hopdong = HOPDONG::find($data->id);
+        $hopdong = HOPDONG::find($data->id_hd);
+        //dd($hopdong);
         return view('admin.pages.bienban.show',compact('data','hopdong'));
     }
 }

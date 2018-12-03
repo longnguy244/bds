@@ -91,7 +91,12 @@ Route::get('web/phanhoi',function()
         Route::post('tieuchi/create','Admin\TieuChiController@postCreate')->name('post.tieuchi.create');
         Route::get('tieuchi/edit/{id}','Admin\TieuChiController@getEdit')->name('get.tieuchi.edit');
         Route::post('tieuchi/edit/{id}','Admin\TieuChiController@postEdit')->name('post.tieuchi.edit');
-
+        //httt
+        Route::get('hinhthucthanhtoan/list','Admin\HTTTController@getList')->name('get.hinhthucthanhtoan.index');
+        Route::get('hinhthucthanhtoan/create','Admin\HTTTController@getCreate')->name('get.hinhthucthanhtoan.create');
+        Route::post('hinhthucthanhtoan/create','Admin\HTTTController@postCreate')->name('post.hinhthucthanhtoan.create');
+        Route::get('hinhthucthanhtoan/edit/{id}','Admin\HTTTController@getEdit')->name('get.hinhthucthanhtoan.edit');
+        Route::post('hinhthucthanhtoan/edit/{id}','Admin\HTTTController@postEdit')->name('post.hinhthucthanhtoan.edit');
 
     });
 

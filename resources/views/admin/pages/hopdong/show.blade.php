@@ -54,7 +54,7 @@
             <p>Điện thoại: 0939928143.Fax: 02727281918</p>
             Mã số thuế: 0224489769 Tài khoản số: 87294057241894. Mở tại ngân hàng: Vietcombank
             Do Ông (Bà): Ngụy Yến Nhi.Sinh năm: 1996 làm đại diện
-            <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B): {{TenKhachHang($data->id_kh)}}</b>
+            <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B): </b>
             <p>Ông/Bà: {{TenKhachHang($data->id_kh)}}. Sinh năm:{{NgaySinhKhachHang($data->id_kh)}}</p>
             <p>Giấy CMND: {{CMNDKhachHang($data->id_kh)}}.ngày cấp:{{CMNDNgaycap($data->id_kh)}} </p>
             <p>Hộ khẩu: {{HoKhauKH($data->id_kh)}}
@@ -68,18 +68,18 @@
                 <p>ĐIỀU 1: NỘI DUNG HỢP ĐỒNG</b></p>
                 <p>1.1 Bên B đồng ý giao cho Bên A thực hiện dịch vụ môi giới bán (hoặc cho thuê) bất động sản do Bên B là chủ sở hữu.</p>
                 <p>1.2 Đặc điểm của BĐS và giấy tờ pháp lý về BĐS là đối tượng của dịch vụ này được mô tả như sau:</p>
-                <p>Lọai bất động sản:{{Loaibds($data->id)}}</p>
-                <p>Địa chỉ:{{DCBDS($data->id)}}</p>
-                <p>Diện tích khuôn viên đất:{{DTMD($data->id)}} m2</p>
-                <p>Diện tích đất xây dựng:{{DTXD($data->id)}}m2</p>
-                <p>Diện tích sử dụng:{{DTSD($data->id)}}m2</p>
-                <p>Cấu trúc:{{cautruc($data->id)}}</p>
-                <p>Tiện nghi:{{tiennghi($data->id)}}</p>
+                <p>Lọai bất động sản:{{Loaibds($data->id_bds)}}</p>
+                <p>Địa chỉ:{{DCBDS($data->id_bds)}}</p>
+                <p>Diện tích khuôn viên đất:{{DTMD($data->id_bds)}} m2</p>
+                <p>Diện tích đất xây dựng:{{DTXD($data->id_bds)}}m2</p>
+                <p>Diện tích sử dụng:{{DTSD($data->id_bds)}}m2</p>
+                <p>Cấu trúc:{{cautruc($data->id_bds)}}</p>
+                <p>Tiện nghi:{{tiennghi($data->id_bds)}}</p>
                 <p>1.3 Giá bán bất động sản này được hai Bên thỏa thuận trên cơ sở giá do Bên A thẩm định là:{{$data->giaban}} VNĐ.(bằng chữ: …………………………………...………………………..………đồng)</p>
                 <p>1.3 Giá thuê bất động sản này được hai Bên thỏa thuận trên cơ sở giá do Bên A thẩm định là:{{$data->giathue}} VNĐ.(bằng chữ: …………………………………...………………………..………đồng)</p>
                 <p>Trong quá trình thực hiện hợp đồng nếu các bên xét thấy cần điều chỉnh giá bán, hai Bên phải thỏa thuận bằng văn bản.</p>
             <p><b> ĐIỀU 2: PHÍ DỊCH VỤ VÀ PHƯƠNG THỨC THANH TOÁN</b></p>
-                <p>2.1 Bên B đồng ý thanh toán cho Bên A số tiền môi giới là {{$data->huehong}}% ( đã bao gồm thuế VAT) trên giá trị giao dịch thực tế tương đương với số tiền là: {{$data->phi_mg}}.VNĐ. (Số tiền bằng chữ: ……………………………………………………….…………….đồng.</p>
+                <p>2.1 Bên B đồng ý thanh toán cho Bên A số tiền môi giới là {{$data->phi_mg}} VNĐ ( đã bao gồm thuế VAT) (Số tiền bằng chữ: ……………………………………………………….…………….đồng.</p>
                 <p>2.2 Số tiền dịch vụ này không bao gồm các chi phí liên quan khác phát sinh ngoài dịch vụ môi giới tư vấn bán tài sản mà bên A thực hiện.</p>
                 <p>2.3 Phí môi giới được Bên B thanh toán cho Bên A một lần bằng tiền mặt trong vòng 12 (mười hai) ngày kể từ ngày giao dịch thành công. Trong trường hợp khách hàng đã đặt cọc mà chịu mất cọc thì bên B thanh toán cho bên A trong vòng 03 (ba) ngày kể từ ngày được xác định là khách hàng chấp nhận mất cọc.</p>
                 <p><b>ĐIỀU 3: THỜI GIAN THỰC HIỆN DỊCH VỤ</b></p>

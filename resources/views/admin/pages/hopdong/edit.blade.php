@@ -38,17 +38,7 @@
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
-                <div class= "col-md-12">
-                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
-                        Lưu
-                    </button>
-                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
-                        Quay Lại
-                    </a>
-                    <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.hopdong',$data->id) }}">
-                        <i class="fas fa-save"></i>  In
-                    </a>
-                </div>
+                
                 <div class= "col-md-6">
                     <label for="bds">
                         Bất động sản
@@ -163,6 +153,17 @@
                             </textarea>
                         </div>
                     </div>
+                    <div class= "col-md-12">
+                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
+                        Lưu
+                    </button>
+                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
+                        Quay Lại
+                    </a>
+                    <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.hopdong',$data->id) }}">
+                        <i class="fas fa-save"></i>  In
+                    </a>
+                </div>
                 </div>
             </div>
         </div>

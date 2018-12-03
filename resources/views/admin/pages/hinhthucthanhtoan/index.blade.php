@@ -17,7 +17,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('loaibds.create') }}">
+                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('get.hinhthucthanhtoan.create') }}">
                             Thêm
                         </a>
                     </div>
@@ -66,12 +66,12 @@
                                     <td>{{ $data->ten_httt }}</td>
                                     <td>{{ $data->ghichu }}</td>
                                     <td>
-                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('hinhthucthanhtoan.edit', ['data' => $data->id]) }}">
+                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('get.hinhthucthanhtoan.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
                                     </td>
                                     <td>
-                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hinhthucthanhtoan.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
+                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '');" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
                                         </div>
                                     </td>

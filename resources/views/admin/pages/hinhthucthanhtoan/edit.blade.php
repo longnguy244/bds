@@ -21,8 +21,7 @@
             SỬA HÌNH THỨC THANH TOÁN
         </h2>
     </div>
-    <form name="formlLoaibds" method="POST" action="{{ route('hinhthucthanhtoan.update', ['data' => $data->id]) }}">
-	{{ method_field('PUT') }}
+    <form name="formlLoaibds" method="POST" action="">
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
@@ -40,7 +39,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="ten_loaibds" type="text" id="loaibds_name" class="form-control" placeholder="Tên loại bất động sản" value="{{ old('ten_httt', $data->ten_httt) }}">
+                            <input name="ten_httt" type="text" id="loaibds_name" class="form-control" placeholder="Tên hình thức thanh toán" value="{{ old('ten_httt', $data->ten_httt) }}">
                         </div>
                     </div>
                     <label for="loaibds_note">

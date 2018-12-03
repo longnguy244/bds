@@ -34,14 +34,7 @@
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
-                <div class= "col-md-12">
-                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
-                        Lưu
-                    </button>
-                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
-                        Quay Lại
-                    </a>
-                </div>
+                
                 <h3>Tiện nghi</h3>
                 <div class= "col-md-6">
                     <label for="bds">
@@ -134,6 +127,14 @@
                             </textarea>
                         </div>
                     </div>
+                    <div class= "col-md-12">
+                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
+                        Lưu
+                    </button>
+                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
+                        Quay Lại
+                    </a>
+                </div>
                 </div>
                 <div class="col-md-12">
                     <h3>Tiêu chí</h3>

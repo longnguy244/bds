@@ -113,7 +113,7 @@ function DTMD($id)
 
 function DTXD($id)
 {
-	$data = DB::table('motabds')->find($id);
+	$data = DB::table('motabds')->where('id_bds',$id)->first();
 	echo $data->dientichxd;
 	# code...
 }
