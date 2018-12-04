@@ -23,6 +23,7 @@ class BDSController extends Controller
         $thanhpho = THANHPHO::get();
         $loai = LOAIBDS::get();
         $chitietbds = MOTABDS::get();
+        
         return view('web.pages.batdongsan',compact('bds','thanhpho','loai','chitietbds'));
     }
 
@@ -31,9 +32,22 @@ class BDSController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getSearch(Request $request)
     {
-        //
+            $thanhpho = THANHPHO::get();
+            $loai = LOAIBDS::get();
+            $chitietbds = MOTABDS::get();
+
+            $bds = BATDONGSAN::join('loaibds','batdongsan.id_loaibds','=','loaibds.id')
+                            ->join('thanhpho','thanhpho.id','=','batdongsan.id_tp')
+                            ->join('motabds','motabds.id_bds','=','batdongsan.id')
+                            ->where('ten_bds','like','%'.$request->name.'%')
+                            ->where('phongngu',$request->phongngu)
+                            ->where('phongtam',$request->phongtam)
+                            ->where('id_tp',$request->thanhpho)
+                            ->where('id_loaibds',$request->loai)
+                            ->orderBy('batdongsan.created_at','DESC')->paginate(9);
+            return view('web.pages.batdongsan',compact('bds','thanhpho','loai','chitietbds'));
     }
 
     /**

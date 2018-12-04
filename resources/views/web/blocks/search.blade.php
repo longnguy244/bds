@@ -8,18 +8,18 @@
                         <p>Tìm kiếm tổ ấm riêng mình</p>
                     </div>
                     <!-- Search Form -->
-                    <form action="#" method="post" id="advanceSearch">
+                    <form action="{{ route('get.search') }}" method="get" id="advanceSearch">
                         <div class="row">
 
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
-                                    <input type="input" class="form-control" name="input" placeholder="Từ khóa">
+                                    <input type="input" class="form-control" name="name" placeholder="Từ khóa">
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
-                                    <select class="form-control" id="cities">
+                                    <select class="form-control" id="cities" name="thanhpho">
                                         <option>Tất cả thành phố</option>
                                         @foreach($thanhpho as $key => $val)
                                             <option value="{{ $val->id }}">{{ $val->ten_tp }}</option>
@@ -30,7 +30,7 @@
 
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
-                                    <select class="form-control" id="catagories">
+                                    <select class="form-control" id="catagories" name="loai">
                                         <option>Tất cả loại</option>
                                         @foreach($loai as $key => $val)
                                             <option value="{{ $val->id }}">{{ $val->ten_loaibds }}</option>
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-4 col-lg-3">
+                            <!-- <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
                                     <select class="form-control" id="offers">
                                         <option>Tất cả chiết khấu</option>
@@ -50,7 +50,7 @@
                                         <option>10% OFF</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> 
 
                             <div class="col-12 col-md-4 col-xl-3">
                                 <div class="form-group">
@@ -60,33 +60,28 @@
                                         <option>Listings 2</option>
                                         <option>Listings 3</option>
                                         <option>Listings 4</option>
-                                        <option>Listings 5</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-12 col-md-4 col-xl-2">
                                 <div class="form-group">
-                                    <select class="form-control" id="bedrooms">
+                                    <select class="form-control" id="bedrooms" name="phongngu">
                                         <option>Phòng ngủ</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5+</option>
+                                        @foreach($chitietbds as $key => $val)
+                                            <option value="{{ $val->phongngu }}">{{ $val->phongngu }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
 
                             <div class="col-12 col-md-4 col-xl-2">
                                 <div class="form-group">
-                                    <select class="form-control" id="bathrooms">
-                                        <option>Phòng tắm</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5+</option>
+                                    <select class="form-control" id="bathrooms" name="phongtam">
+                                        <option value="0">Phòng tắm</option>
+                                        @foreach($chitietbds as $key => $val)
+                                            <option value="{{ $val->phongtam }}">{{ $val->phongtam }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

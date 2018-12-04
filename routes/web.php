@@ -122,3 +122,9 @@ Route::get('web/phanhoi',function()
     Route::group(['prefix' => 'admin'], function(){
         Route::get('/chitiet/create','Admin\MotaBDSController@create')->name('get.mota.create');
     });
+
+
+//seacrh
+    Route::group(['prefix' => 'index'], function(){
+        Route::get('/search','Web\BDSController@getSearch')->name('get.search');
+    });
