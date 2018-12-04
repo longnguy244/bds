@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 use App\BATDONGSAN;
+use App\THANHPHO;
+use App\LOAIBDS;
+use App\MOTABDS;
+
 class BDSController extends Controller
 {
     /**
@@ -16,7 +20,10 @@ class BDSController extends Controller
     public function index(Request $request)
     {
         $bds =  BATDONGSAN::orderBy('created_at','DESC')->paginate(9);
-        return view('web.pages.batdongsan',compact('bds'));
+        $thanhpho = THANHPHO::get();
+        $loai = LOAIBDS::get();
+        $chitietbds = MOTABDS::get();
+        return view('web.pages.batdongsan',compact('bds','thanhpho','loai','chitietbds'));
     }
 
     /**

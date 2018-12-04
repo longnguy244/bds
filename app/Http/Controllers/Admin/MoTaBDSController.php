@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\MOTABDS;
 use App\BATDONGSAN;
 use App\TIEUCHI;
+use App\TIEUCHIBDS;
 
 class MoTaBDSController extends Controller
 {
@@ -20,6 +21,7 @@ class MoTaBDSController extends Controller
     {
         $this->model    = $model;
     }
+
     
     public function index()
     {
@@ -29,6 +31,8 @@ class MoTaBDSController extends Controller
             'route'         => $this->model->route,
         ]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -56,9 +60,16 @@ class MoTaBDSController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, $this->model->rules, $this->model->messages);
-        $this->model->create($request->all());
+        $this->model->create($request->only('id_bds','dientich','chieudai','chieurong','dientichxd','dientichsd','phongngu','phongtam','cautruc','tiennghi','ghichu'));
+
+        foreach ($request->tieuchi as $key => $id){
+            $tieuchi = new TIEUCHIBDS();
+            $tieuchi->id_tieuchi = $id;
+            $tieuchi->id_bds = $request->input('id_bds');
+            $tieuchi->save();
+        }
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
-        return redirect(route('motabds.index'));
+        return redirect(route('bds.index'));
     }
 
     /**
@@ -82,9 +93,12 @@ class MoTaBDSController extends Controller
     {
         $data = MOTABDS::where('id_bds',$id)->first();
         $auth = \Auth::user();
-        $bds = BATDONGSAN::all();
+        $bds = BATDONGSAN::where('id',$id)->first();
+        $tieuchi = TIEUCHI::get();
+        $tieuchibds = TIEUCHIBDS::where('id_bds',$id)->get();
+
         $route = $this->model->route;
-        return view('admin.pages.motabds.edit',compact('data','auth','bds','route'));
+        return view('admin.pages.motabds.edit',compact('data','auth','bds','route','tieuchi','tieuchibds'));
             
     }
 
@@ -96,9 +110,31 @@ class MoTaBDSController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
         $this->validate($request, $this->model->rules, $this->model->messages);
-        $this->model->find($id)->update($request->all());
+        $this->model->find($id)->update($request->only('id_bds','dientich','chieudai','chieurong','dientichxd','dientichsd','phongngu','phongtam','cautruc','tiennghi','ghichu'));
+
+            $data = MOTABDS::find($id);
+
+            $deleteTC = TIEUCHIBDS::where('id_bds',$id)->get();
+            foreach ($deleteTC as $key => $delete) {
+                $delete->delete();
+            }
+
+            if($request->tieuchi != null){
+                foreach ($request->tieuchi as $key => $id_tieuchi){
+                
+                    $tieuchibds = TIEUCHIBDS::where('id_tieuchi','=',$id_tieuchi)->where('id_bds',$data->id_bds)->first();
+                    if($tieuchibds == null){
+                        $tieuchi = new TIEUCHIBDS();
+                        $tieuchi->id_tieuchi = $id_tieuchi;
+                        $tieuchi->id_bds = $request->input('id_bds');
+                        $tieuchi->save();
+                }
+            }
+
+
+        }
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
         return redirect()->back();
     }

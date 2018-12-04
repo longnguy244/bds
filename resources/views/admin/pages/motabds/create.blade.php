@@ -9,6 +9,7 @@
         [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
             position: inherit;
             opacity: 1;
+        }
     </style>
 @endpush
 
@@ -42,7 +43,11 @@
                         Quay Lại
                     </a>
                 </div>
-                <h3>Tiện nghi</h3>
+                <div class="col-md-12">
+                    <h3>
+                        Tiện nghi
+                    </h3>
+                </div>
                 <div class= "col-md-6">
                     <label for="bds">
                         Bất Động Sản
@@ -137,17 +142,17 @@
                 </div>
                 <div class="col-md-12">
                     <h3>Tiêu chí</h3>
-                    <table width="100%">
-                            <tr>
+                    <table width="60%">
                         @foreach ($tieuchi as $key => $val)
+                            <tr>
                                 <td>
-                                   <input type="checkbox" name="tieuchi" class="form-control" value="{{ $val->id }}">
+                                   <input type="checkbox" name="tieuchi[]" class="form-control" value="{{ $val->id }}">
                                 </td>
                                 <td>
                                      {{ $val->tentieuchi }}
                                 </td>
-                        @endforeach
                             </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

@@ -4,6 +4,15 @@
     Sửa Mô Tả Bất Động Sản - DreamHouse
 @endsection
 
+@push('css')
+    <style type="text/css">
+        [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+            position: inherit;
+            opacity: 1;
+        }
+    </style>
+@endpush
+
 @section('main')
 
 @if($errors->any())
@@ -18,7 +27,7 @@
 <div class="card">
     <div class="header">
         <h2>
-            SỬA MÔ TẢ BẤT ĐỘNG SẢN
+            SỬA MÔ TẢ BẤT ĐỘNG SẢN <span style="color: red; text-transform: uppercase;">{{ TenBDS($data->id_bds) }}</span>
         </h2>
     </div>
     <form name="formBds" method="POST" action="{{ route('motabds.update', ['data' => $data->id]) }}">
@@ -36,10 +45,10 @@
                 </div>
                 <div class= "col-md-6">
                     <label for="bds">
-                        Bất Động Sản
+                        Tên bất động sản
                     </label>
                     <div class="form-group">
-                        <input type="text" id="id_bds" class="form-control" placeholder="id" value="{{ TenBDS($data->id_bds) }}">
+                        <span style="color: red; font-weight: bold; font-size: 18px;">{{ TenBDS($data->id_bds) }}</span>
                         <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
                     </div>
                     <label for="dientich">
@@ -125,6 +134,26 @@
                             </textarea>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-12">
+                    <h3>Tiêu chí</h3>
+                    <table width="60%">
+                        @foreach ($tieuchi as $key => $val)
+                            <tr>
+                                <td>
+                                   <input type="checkbox" name="tieuchi[]" class="form-control" value="{{ $val->id }}" 
+                                        @foreach ($tieuchibds as $key => $data)
+                                           @if($data->id_bds == $bds->id && $data->id_tieuchi == $val->id) 
+                                                checked 
+                                            @endif
+                                        @endforeach >
+                                </td>
+                                <td>
+                                     {{ $val->tentieuchi }}
+                                </td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>

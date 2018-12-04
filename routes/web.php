@@ -111,6 +111,8 @@ Route::get('web/phanhoi',function()
     Route::get('/admin/pdf_bienban/{id}','Admin\pdfController@pdf_bien_ban')->name('down.bienban');
     Route::get('/admin/bienban/pdf/{id}','Admin\BienBanController@PDF_BienBan')->name('print.bienban');
 
+
+
 //Chi tiet bds
     Route::group(['prefix' => 'admin'], function(){
         Route::get('/chitiet/create','Admin\MotaBDSController@create')->name('get.mota.create');

@@ -21,16 +21,9 @@
                                 <div class="form-group">
                                     <select class="form-control" id="cities">
                                         <option>Tất cả thành phố</option>
-                                        <option>Riga</option>
-                                        <option>Melbourne</option>
-                                        <option>Vienna</option>
-                                        <option>Vancouver</option>
-                                        <option>Toronto</option>
-                                        <option>Calgary</option>
-                                        <option>Adelaide</option>
-                                        <option>Perth</option>
-                                        <option>Auckland</option>
-                                        <option>Helsinki</option>
+                                        @foreach($thanhpho as $key => $val)
+                                            <option value="{{ $val->id }}">{{ $val->ten_tp }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -39,11 +32,9 @@
                                 <div class="form-group">
                                     <select class="form-control" id="catagories">
                                         <option>Tất cả loại</option>
-                                        <option>Apartment</option>
-                                        <option>Bar</option>
-                                        <option>Farm</option>
-                                        <option>House</option>
-                                        <option>Store</option>
+                                        @foreach($loai as $key => $val)
+                                            <option value="{{ $val->id }}">{{ $val->ten_loaibds }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -100,8 +91,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-8 col-lg-12 col-xl-5 d-flex">
-                                <!-- Space Range -->
+                            <!-- <div class="col-12 col-md-8 col-lg-12 col-xl-5 d-flex">
                                 <div class="slider-range">
                                     <div data-min="120" data-max="820" data-unit=" sq. ft" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="120" data-value-max="820">
                                         <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
@@ -111,7 +101,6 @@
                                     <div class="range">120 sq. ft - 820 sq. ft</div>
                                 </div>
 
-                                <!-- Distance Range -->
                                 <div class="slider-range">
                                     <div data-min="10" data-max="1300" data-unit=" mil" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="10" data-value-max="1300">
                                         <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
@@ -202,7 +191,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-12 d-flex justify-content-between align-items-end">
                                 <!-- More Filter -->
