@@ -48,6 +48,8 @@
                         Tiện nghi
                     </h3>
                 </div>
+
+                <h3>Tiện nghi</h3>
                 <div class= "col-md-6">
                     <label for="bds">
                         Bất Động Sản
@@ -139,6 +141,7 @@
                             </textarea>
                         </div>
                     </div>
+                
                 </div>
                 <div class="col-md-12">
                     <h3>Tiêu chí</h3>
@@ -154,6 +157,14 @@
                             </tr>
                         @endforeach
                     </table>
+                </div>
+                <div class= "col-md-12">
+                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
+                        Lưu
+                    </button>
+                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
+                        Quay Lại
+                    </a>
                 </div>
             </div>
         </div>

@@ -40,14 +40,7 @@
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
-                <div class= "col-md-12">
-                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
-                        Lưu
-                    </button>
-                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
-                        Quay Lại
-                    </a>
-                </div>
+                
                 <div class= "col-md-6">
                     <label for="bds">
                         Bất động sản
@@ -104,6 +97,25 @@
                             </a>
                         </div>
                         <input name="id_nv" type="text" id="id_nv" class="form-control hidden" placeholder="Nhân viên" value="{{ old('id_nv') }}">
+                    </div>
+                    <label for="httt">
+                        Hình thức thanh toán
+                    </label>
+                    <div class="form-group row">
+                        <div class="col-md-10">
+                            <select class="form-control select2" name="id_httt"  id = "httt">
+                                <option value="">-- Please select --</option>
+                                @foreach($hinhthucthanhtoan as $hinhthucthanhtoan)
+                                <option value="{{ $hinhthucthanhtoan->id }}">{{ $hinhthucthanhtoan->ten_httt }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <a type="button" class="btn bg-green waves-effect" href="{{ route('get.hinhthucthanhtoan.create') }}">
+                                <i class="material-icons">add</i>
+                            </a>
+                        </div>
+                        <input name="id_httt" type="text" id="id_httt" class="form-control hidden" placeholder="Hình thức thanh toán" value="{{ old('id_httt') }}">
                     </div>
                     <label for="ten_hd">
                         Tên hợp đồng
@@ -177,6 +189,14 @@
                             </textarea>
                         </div>
                     </div>
+                    <div class= "col-md-12">
+                    <button type="submit" class="btn bg-brown btn-lg waves-effect">
+                        Lưu
+                    </button>
+                    <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
+                        Quay Lại
+                    </a>
+                </div>
                 </div>
             </div>
         </div>

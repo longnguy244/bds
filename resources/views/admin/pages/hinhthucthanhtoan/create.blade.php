@@ -21,7 +21,7 @@
             THÊM HÌNH THỨC THANH TOÁN
         </h2>
     </div>
-    <form name="forLoaibds" method="POST" action="{{ route('hinhthucthanhtoan.store') }}">
+    <form name="forLoaibds" method="POST" action="">
 	{{ method_field('POST') }}
     {{ csrf_field() }}
         <div class="body">
@@ -40,7 +40,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="ten_loaibds" type="text" id="loaibds_name" class="form-control" placeholder="Tên hình thức thanh toán" value="{{ old('ten_httt') }}">
+                            <input name="ten_httt" type="text" id="loaibds_name" class="form-control" placeholder="Tên hình thức thanh toán" value="{{ old('ten_httt') }}">
                         </div>
                     </div>
                     <label for="loaibds_note">
