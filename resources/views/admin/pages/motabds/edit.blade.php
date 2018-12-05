@@ -41,8 +41,10 @@
                         Tên bất động sản
                     </label>
                     <div class="form-group">
-                        <span style="color: red; font-weight: bold; font-size: 18px;">{{ TenBDS($data->id_bds) }}</span>
-                        <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
+                        <div class="form-line">
+                            <input type="text" style="color: red; font-weight: bold; font-size: 18px;"  class="form-control" value="{{ TenBDS($data->id_bds) }}">
+                            <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
+                        </div>
                     </div>
                     <label for="dientich">
                         Diện tích

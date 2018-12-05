@@ -20,7 +20,7 @@
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
                                     <select class="form-control" id="cities" name="thanhpho">
-                                        <option>Tất cả thành phố</option>
+                                        <option value="">Tất cả thành phố</option>
                                         @foreach($thanhpho as $key => $val)
                                             <option value="{{ $val->id }}">{{ $val->ten_tp }}</option>
                                         @endforeach
@@ -31,13 +31,14 @@
                             <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
                                     <select class="form-control" id="catagories" name="loai">
-                                        <option>Tất cả loại</option>
+                                        <option value="">Tất cả loại</option>
                                         @foreach($loai as $key => $val)
                                             <option value="{{ $val->id }}">{{ $val->ten_loaibds }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
+                            
 
                             <!-- <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
@@ -67,26 +68,22 @@
                             <div class="col-12 col-md-4 col-xl-2">
                                 <div class="form-group">
                                     <select class="form-control" id="bedrooms" name="phongngu">
-                                        <option>Phòng ngủ</option>
-                                        @foreach($chitietbds as $key => $val)
-                                            <option value="{{ $val->phongngu }}">{{ $val->phongngu }}</option>
-                                        @endforeach
+                                        <option value="">Phòng ngủ</option>
+                                        @for($i = 0; $i <=10; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-4 col-xl-2">
+                            <div class="col-12 col-md-4 col-lg-3">
                                 <div class="form-group">
-                                    <select class="form-control" id="bathrooms" name="phongtam">
-                                        <option value="0">Phòng tắm</option>
-                                        @foreach($chitietbds as $key => $val)
-                                            <option value="{{ $val->phongtam }}">{{ $val->phongtam }}</option>
-                                        @endforeach
-                                    </select>
+                                    @foreach($tieuchi as $key => $val)
+                                        <input type="checkbox" name="tieuchi" value="{{ $val->id }}"> {{ $val->tentieuchi }}<br>
+                                    @endforeach
                                 </div>
                             </div>
-
-                            <!-- <div class="col-12 col-md-8 col-lg-12 col-xl-5 d-flex">
+                            <!-- <div class="col-12 col-md-12 col-lg-12 col-xl-5 d-flex">
                                 <div class="slider-range">
                                     <div data-min="120" data-max="820" data-unit=" sq. ft" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="120" data-value-max="820">
                                         <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
@@ -96,13 +93,13 @@
                                     <div class="range">120 sq. ft - 820 sq. ft</div>
                                 </div>
 
-                                <div class="slider-range">
-                                    <div data-min="10" data-max="1300" data-unit=" mil" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="10" data-value-max="1300">
+                                <div class="slider-range" style="min-width: 100%">
+                                    <div data-min="10" data-max="1000" data-unit=" mét vuông" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="10" data-value-max="1000">
                                         <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
                                         <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                                         <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
                                     </div>
-                                    <div class="range">10 mil - 1300 mil</div>
+                                    <div class="range">10 mét vuông - 1000 mét vuông</div>
                                 </div>
                             </div>
 
