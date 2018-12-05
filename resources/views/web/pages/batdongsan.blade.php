@@ -71,7 +71,7 @@
                             <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
 
                             <div class="tag">
-                                <span>For Sale</span>
+                                <span></span>
                             </div>
                             <div class="list-price">
                                 @if(isset($val->hopdong))
@@ -83,8 +83,8 @@
                         <div class="property-content">
                             <a href="{{ asset('/'.$val->alias) }}"><h5>{{ $val->ten_bds }}</h5></a>
                             <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $val->diachi_bds }}</p>
-                            <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                            <div class="property-meta-data d-flex align-items-end justify-content-between">
+                            <p></p>
+                            {{-- <div class="property-meta-data d-flex align-items-end justify-content-between">
                                 <div class="new-tag">
                                     <img src="{{ asset('south/img/icons/new.png') }}" alt="">
                                 </div>
@@ -97,10 +97,10 @@
                                     <span>2</span>
                                 </div>
                                 <div class="space">
-                                    <img src="{{ asset('south/img/icons/space.png') }}" alt="">
+                                    <img src="{{ asset('south/img/icons/bed.jpg') }}" alt="">
                                     <span>120 sq ft</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
