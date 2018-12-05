@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="featured-properties-slides owl-carousel wow fadeInUp" data-wow-delay="350ms">
-
+                        @foreach($bds as $key => $val)
                         <!-- Single Slide -->
                         <div class="single-featured-property">
                             <!-- Property Thumbnail -->
@@ -57,27 +57,22 @@
                                 <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
 
                                 <div class="tag">
-                                    <span>For Sale</span>
+                                    <span>{{ $val->hinhthuc }}</span>
                                 </div>
                                 <div class="list-price">
-                                    <p>$945 679</p>
+                                    <p>{{ $val->gia }}</p>
                                 </div>
                             </div>
                             <!-- Property Content -->
                             <div class="property-content">
-                                <h5>Villa in Los Angeles</h5>
-                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">Upper Road 3411, no.34 CA</p>
-                                <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
+                                <h5>{{ $val->ten_bds }}</h5>
+                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $val->diachi_bds }}</p>
                                 <div class="property-meta-data d-flex align-items-end justify-content-between">
                                     <div class="new-tag">
                                         <img src="{{ asset('south/img/icons/new.png') }}" alt="">
                                     </div>
                                     <div class="bathroom">
                                         <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="garage">
-                                        <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
                                         <span>2</span>
                                     </div>
                                     <div class="space">
@@ -88,119 +83,9 @@
                             </div>
                         </div>
 
-                        <!-- Single Slide -->
-                        <div class="single-featured-property">
-                            <!-- Property Thumbnail -->
-                            <div class="property-thumb">
-                                <img src="{{ asset('south/img/bg-img/feature2.jpg') }}" alt="">
+                        @endforeach
 
-                                <div class="tag">
-                                    <span>For Sale</span>
-                                </div>
-                                <div class="list-price">
-                                    <p>$945 679</p>
-                                </div>
-                            </div>
-                            <!-- Property Content -->
-                            <div class="property-content">
-                                <h5>Town House in Los Angeles</h5>
-                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">Upper Road 3411, no.34 CA</p>
-                                <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                                <div class="property-meta-data d-flex align-items-end justify-content-between">
-                                    <div class="new-tag">
-                                        <img src="{{ asset('south/img/icons/new.png') }}" alt="">
-                                    </div>
-                                    <div class="bathroom">
-                                        <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="garage">
-                                        <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="space">
-                                        <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                        <span>120 sq ft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Slide -->
-                        <div class="single-featured-property">
-                            <!-- Property Thumbnail -->
-                            <div class="property-thumb">
-                                <img src="{{ asset('south/img/bg-img/feature3.jpg') }}" alt="">
-
-                                <div class="tag">
-                                    <span>For Sale</span>
-                                </div>
-                                <div class="list-price">
-                                    <p>$945 679</p>
-                                </div>
-                            </div>
-                            <!-- Property Content -->
-                            <div class="property-content">
-                                <h5>Villa in Los Angeles</h5>
-                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">Upper Road 3411, no.34 CA</p>
-                                <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                                <div class="property-meta-data d-flex align-items-end justify-content-between">
-                                    <div class="new-tag">
-                                        <img src="{{ asset('south/img/icons/new.png') }}" alt="">
-                                    </div>
-                                    <div class="bathroom">
-                                        <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="garage">
-                                        <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="space">
-                                        <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                        <span>120 sq ft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Slide -->
-                        <div class="single-featured-property">
-                            <!-- Property Thumbnail -->
-                            <div class="property-thumb">
-                                <img src="{{ asset('south/img/bg-img/feature4.jpg') }}" alt="">
-
-                                <div class="tag">
-                                    <span>For Sale</span>
-                                </div>
-                                <div class="list-price">
-                                    <p>$945 679</p>
-                                </div>
-                            </div>
-                            <!-- Property Content -->
-                            <div class="property-content">
-                                <h5>Town House in Los Angeles</h5>
-                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">Upper Road 3411, no.34 CA</p>
-                                <p>Integer nec bibendum lacus. Suspendisse dictum enim sit amet libero malesuada.</p>
-                                <div class="property-meta-data d-flex align-items-end justify-content-between">
-                                    <div class="new-tag">
-                                        <img src="{{ asset('south/img/icons/new.png') }}" alt="">
-                                    </div>
-                                    <div class="bathroom">
-                                        <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="garage">
-                                        <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
-                                        <span>2</span>
-                                    </div>
-                                    <div class="space">
-                                        <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                        <span>120 sq ft</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

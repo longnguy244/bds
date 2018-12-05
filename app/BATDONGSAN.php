@@ -19,6 +19,8 @@ class BATDONGSAN extends Model
 			'soCNQSDD',
 			'ghichu',
 			'toado',
+			'hinhthuc',
+			'gia'
         ];
         
         public  $rules =
@@ -32,6 +34,9 @@ class BATDONGSAN extends Model
 			'soCNQSDD'		=> 'required|unique:batdongsan,soCNQSDD',
 			'ghichu',
 			'toado'			=> 'required',
+			'hinhthuc',
+			'gia',
+
         ];
 
         public $messages = 

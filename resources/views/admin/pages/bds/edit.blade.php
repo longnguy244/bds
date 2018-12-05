@@ -86,9 +86,17 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="ten_bds" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('hinhanh', $data->hinhanh) }}">
+                            <input name="hinhanh" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('hinhanh', $data->hinhanh) }}">
                         </div>
                     </div>
+                    <label for="gia">
+                            Giá bán
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input name="gia" type="number" id="ten_bds" class="form-control" placeholder="Nhập giá" value="{{ old('ten_bds',$data->gia) }}">
+                            </div>
+                        </div>
                 </div>
                 <div class= "col-md-6">
                     <label for="ten_bds">
@@ -98,6 +106,17 @@
                         <div class="form-line">
                             <input name="ten_bds" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds', $data->ten_bds) }}">
                         </div>
+                    </div>
+                    <label for="ten_bds">
+                        Hình thức
+                    </label>
+                    <div class="form-group">
+                        <select class="form-control" name="hinhthuc">
+                            <option value="">Chọn hình thức</option>}
+                            option
+                            <option @if($data->hinhthuc=='Cho thuê') selected @endif value="Cho thuê">Cho thuê</option>
+                            <option @if($data->hinhthuc=='Bán') selected @endif value="Bán">Bán</option>
+                        </select>
                     </div>
                     <label for="bds_address">
                         Địa chỉ

@@ -1,5 +1,18 @@
 @extends('web.layouts.base')
 
+@push('css')
+    <style type="text/css" media="screen">
+        .content p{
+            margin-bottom: 10px;
+            margin-left: 10px;
+            color: #635b5b
+        }
+        .content p span{
+            color: black;
+        }
+    </style>
+@endpush
+
 @section('title')
     {{ $bds->ten_bds }} - DreamHouse
 @endsection
@@ -55,8 +68,23 @@
                         <hr>
                         <h6>Địa chỉ</h6>
                         <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
+                        <div class="content">
+                            
                         <h6>Chi tiết</h6>
+                        <p><span>Diện tích:</span> {{ $chitiet->dientich }} mét vuông</p>
+                        <p><span>Chiều dài:</span> {{ $chitiet->chieudai }}m</p>
+                        <p><span>Chiều rộng:</span> {{ $chitiet->chieurong }}m</p>
+                        <p><span>Diện tích xây dựng:</span> {{ $chitiet->dientichxd }} mét vuông</p>
+                        <p><span>Diện tích sử dụng:</span> {{ $chitiet->dientichsd }} mét vuông</p>
+                        <p><span>Số phòng ngủ:</span> {{ $chitiet->phongngu }} phòng</p>
+                        <p><span>Số phòng tắm:</span> {{ $chitiet->phongtam }} phòng</p>
+                        <p><span>Cấu trúc:</span> {{ $chitiet->cautruc }}</p>
+                        <p><span>Tiện nghi:</span> {{ $chitiet->tiennghi }}</p>
+
+                        <h6>Ghi chú</h6>
+                        <p>{{ $chitiet->ghichu }}</p><hr>
                         <p>{{ $bds->ghichu }}</p>
+                        </div>
                         <!-- Meta -->
                         <div class="property-meta-data d-flex align-items-end">
                             <div class="new-tag">
@@ -64,15 +92,11 @@
                             </div>
                             <div class="bathroom">
                                 <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                <span>2</span>
-                            </div>
-                            <div class="garage">
-                                <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
-                                <span>2</span>
+                                <span>{{ $chitiet->phongtam }}</span>
                             </div>
                             <div class="space">
                                 <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                <span>120 sq ft</span>
+                                <span>{{ $chitiet->dientichsd }}m2</span>
                             </div>
                         </div>
                         <br>
