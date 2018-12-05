@@ -31,8 +31,8 @@
             <li><a href="{{ asset('/vechungtoi') }}">Về chúng tôi</a></li>
             <li><a href="{{ asset('/batdongsan') }}">Bất động sản</a></li>
             <li><a href="{{ asset('/baiviet') }}">Bài viết</a></li>
-            <li><a href="{{ asset('/lienhe') }}">Liên hệ</a></li>
-            <li><a href="{{ route('web.phanhoi') }}">Phản hồi</a></li>
+{{--             <li><a href="{{ asset('/lienhe') }}">Liên hệ</a></li>
+ --}}            <li><a href="{{ route('web.phanhoi') }}">Phản hồi</a></li>
         </ul>
 
         <!-- Search Form -->
