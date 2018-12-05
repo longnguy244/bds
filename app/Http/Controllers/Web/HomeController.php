@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\BATDONGSAN;
 use App\FEEDBACK;
+use App\MOTABDS;
 
 class HomeController extends Controller
 {
@@ -26,9 +27,9 @@ class HomeController extends Controller
 
     public function detailBDS($aliasBDS)
     {
-        return view('web.pages.chitiet_bds',
-        [
-            'bds' => BATDONGSAN::where('alias', $aliasBDS)->first(),
-        ]);
+
+        $bds = BATDONGSAN::where('alias', $aliasBDS)->first();
+        $chitiet = MOTABDS::where('id_bds',$bds->id)->first();
+        return view('web.pages.chitiet_bds',compact('bds','chitiet'));
     }
 }

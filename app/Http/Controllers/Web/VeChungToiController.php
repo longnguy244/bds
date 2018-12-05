@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\BATDONGSAN;
+use App\FEEDBACK;
+use App\MOTABDS;
 
 class VeChungToiController extends Controller
 {
@@ -14,8 +17,9 @@ class VeChungToiController extends Controller
      */
     public function index()
     {
-        return view('web.pages.vechungtoi',[
-        ]);
+        $bds = BATDONGSAN::get();
+        
+        return view('web.pages.vechungtoi',compact('bds'));
     }
 
     /**

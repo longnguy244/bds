@@ -116,7 +116,7 @@ class MoTaBDSController extends Controller
 
             $data = MOTABDS::find($id);
 
-            $deleteTC = TIEUCHIBDS::where('id_bds',$id)->get();
+            $deleteTC = TIEUCHIBDS::where('id_bds',$data->id_bds)->get();
             foreach ($deleteTC as $key => $delete) {
                 $delete->delete();
             }
@@ -130,11 +130,9 @@ class MoTaBDSController extends Controller
                         $tieuchi->id_tieuchi = $id_tieuchi;
                         $tieuchi->id_bds = $request->input('id_bds');
                         $tieuchi->save();
+                    }
                 }
             }
-
-
-        }
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
         return redirect()->back();
     }

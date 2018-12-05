@@ -137,7 +137,7 @@
                         @foreach ($tieuchi as $key => $val)
                             <tr>
                                 <td>
-                                   <input type="checkbox" name="tieuchi[]" class="form-control" value="{{ $val->id }}" 
+                                   <input type="checkbox" name="tieuchi[]" class="" value="{{ $val->id }}" 
                                         @foreach ($tieuchibds as $key => $data)
                                            @if($data->id_bds == $bds->id && $data->id_tieuchi == $val->id) 
                                                 checked 

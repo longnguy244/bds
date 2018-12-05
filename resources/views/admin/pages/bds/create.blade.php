@@ -73,14 +73,7 @@
                         </a>
                         <input name="id_tp" type="text" id="id_tp" class="form-control hidden" placeholder="id" value="{{ old('id_tp') }}">
                     </div>
-                    <label for="ten_bds">
-                        Hinh anh
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="hinhanh" type="file" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds') }}">
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class= "col-md-6">
                     <label for="ten_bds">
@@ -91,6 +84,15 @@
                             <input name="ten_bds" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds') }}">
                         </div>
                     </div>
+                    <label for="ten_bds">
+                        Chọn hình thức
+                    </label>
+                    <div class="form-group">
+                        <select class="form-control" name="hinhthuc">
+                            <option value="Cho thuê">Cho thuê</option>
+                            <option value="Bán">Bán</option>
+                        </select>
+                    </div>
                     <label for="alias">
                         Alias
                     </label>
@@ -99,20 +101,43 @@
                             <input name="alias" type="text" id="alias" class="form-control" placeholder="Alias" value="{{ old('alias') }}">
                         </div>
                     </div>
-                    <label for="bds_address">
-                        Địa chỉ
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="diachi_bds" type="text" id="diachi_bds" class="form-control" placeholder="Địa chỉ" value="{{ old('diachi_bds') }}">
+                </div>
+
+                <div class="col-md-12 row"> 
+                    <div class="col-md-6">
+                        <label for="hinhanh">
+                            Hinh anh
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input name="hinhanh" type="file" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds') }}">
+                            </div>
+                        </div>
+                        <label for="gia">
+                            Giá bán
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input name="gia" type="number" id="ten_bds" class="form-control" placeholder="Nhập giá" value="{{ old('ten_bds') }}">
+                            </div>
                         </div>
                     </div>
-                    <label for="bds_num">
-                        Số CNQSDĐ
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="soCNQSDD" type="text" id="soCNQSDD" class="form-control" placeholder="Số Chứng nhận quyền sử dụng đất" value="{{ old('soCNQSDD') }}">
+                    <div class="col-md-6">
+                        <label for="bds_address">
+                            Địa chỉ
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input name="diachi_bds" type="text" id="diachi_bds" class="form-control" placeholder="Địa chỉ" value="{{ old('diachi_bds') }}">
+                            </div>
+                        </div>
+                        <label for="bds_num">
+                            Số CNQSDĐ
+                        </label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <input name="soCNQSDD" type="text" id="soCNQSDD" class="form-control" placeholder="Số Chứng nhận quyền sử dụng đất" value="{{ old('soCNQSDD') }}">
+                            </div>
                         </div>
                     </div>
                 </div>

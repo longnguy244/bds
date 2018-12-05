@@ -139,7 +139,7 @@
                         @foreach ($tieuchi as $key => $val)
                             <tr>
                                 <td>
-                                   <input type="checkbox" name="tieuchi[]" class="form-control" value="{{ $val->id }}">
+                                   <input type="checkbox" name="tieuchi[]" class="" value="{{ $val->id }}">
                                 </td>
                                 <td>
                                      {{ $val->tentieuchi }}
