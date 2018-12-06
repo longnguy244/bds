@@ -18,10 +18,17 @@
                 <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                     <!-- Property Thumbnail -->
                     <div class="property-thumb">
-                        <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
-
                         <div class="tag">
-                            
+                            <div class="property-thumb">
+                                <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
+
+                                <div class="tag">
+                                    <span>{{ $bds->hinhthuc }}</span>
+                                </div>
+                                <div class="list-price">
+                                    <p>{{ number_format($bds->gia) }} VND</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="list-price">
                             @if(isset($bds->hopdong))
@@ -34,23 +41,19 @@
                         <a href="{{ asset('/'.$bds->alias) }}"><h5>{{ $bds->ten_bds }}</h5></a>
                         <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
                         <p></p>
-                        {{-- <div class="property-meta-data d-flex align-items-end justify-content-between">
+                        <div class="property-meta-data d-flex align-items-end justify-content-between">
                             <div class="new-tag">
                                 <img src="{{ asset('south/img/icons/new.png') }}" alt="">
                             </div>
                             <div class="bathroom">
                                 <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                <span>2</span>
-                            </div>
-                            <div class="garage">
-                                <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
-                                <span>2</span>
+                                <span>{{ $bds->phongtam }}</span>
                             </div>
                             <div class="space">
                                 <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                <span>120 sq ft</span>
+                                <span>{{ $bds->dientichsd }}</span>
                             </div>
-                        </div> --}}
+                        </div> 
                     </div>
                 </div>
             </div>

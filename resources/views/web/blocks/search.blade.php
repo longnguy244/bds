@@ -76,13 +76,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 col-md-4 col-lg-3">
-                                <div class="form-group">
-                                    @foreach($tieuchi as $key => $val)
-                                        <input type="checkbox" name="tieuchi" value="{{ $val->id }}"> {{ $val->tentieuchi }}<br>
-                                    @endforeach
-                                </div>
-                            </div>
+                            
                             <!-- <div class="col-12 col-md-12 col-lg-12 col-xl-5 d-flex">
                                 <div class="slider-range">
                                     <div data-min="120" data-max="820" data-unit=" sq. ft" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="120" data-value-max="820">
@@ -101,89 +95,21 @@
                                     </div>
                                     <div class="range">10 mét vuông - 1000 mét vuông</div>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-12 search-form-second-steps">
                                 <div class="row">
-
-                                    <div class="col-12 col-md-4 col-lg-3">
-                                        <div class="form-group">
-                                            <select class="form-control" id="types">
-                                                <option>All Types</option>
-                                                <option>Apartment <span>(30)</span></option>
-                                                <option>Land <span>(69)</span></option>
-                                                <option>Villas <span>(103)</span></option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4 col-lg-3">
-                                        <div class="form-group">
-                                            <select class="form-control" id="catagories2">
-                                                <option>All Catagories</option>
-                                                <option>Apartment</option>
-                                                <option>Bar</option>
-                                                <option>Farm</option>
-                                                <option>House</option>
-                                                <option>Store</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4 col-lg-3">
-                                        <div class="form-group">
-                                            <select class="form-control" id="Actions">
-                                                <option>All Actions</option>
-                                                <option>Sales</option>
-                                                <option>Booking</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4 col-lg-3">
-                                        <div class="form-group">
-                                            <select class="form-control" id="city2">
-                                                <option>All City</option>
-                                                <option>City 1</option>
-                                                <option>City 2</option>
-                                                <option>City 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control" id="Actions3">
-                                                <option>All Actions</option>
-                                                <option>Sales</option>
-                                                <option>Booking</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control" id="city3">
-                                                <option>All City</option>
-                                                <option>City 1</option>
-                                                <option>City 2</option>
-                                                <option>City 3</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-12 col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control" id="city5">
-                                                <option>All City</option>
-                                                <option>City 1</option>
-                                                <option>City 2</option>
-                                                <option>City 3</option>
-                                            </select>
-                                        </div>
+                                    <div class=" col-md-10  row">
+                                            <input type="hidden" name="tieuchi[]" value="0">
+                                            @foreach($tieuchi as $key => $val)
+                                            <div class="col-md-3 m-b-20">
+                                                <input type="checkbox" name="tieuchi[]" value="{{ $val->id }}">
+                                                <span>{{ $val->tentieuchi }}</span>
+                                            </div>
+                                            @endforeach
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <div class="col-12 d-flex justify-content-between align-items-end">
                                 <!-- More Filter -->
