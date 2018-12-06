@@ -60,12 +60,12 @@
                                     <span>{{ $val->hinhthuc }}</span>
                                 </div>
                                 <div class="list-price">
-                                    <p>{{ $val->gia }}</p>
+                                    <p>{{ number_format($val->gia) }} VND</p>
                                 </div>
                             </div>
                             <!-- Property Content -->
                             <div class="property-content">
-                                <h5>{{ $val->ten_bds }}</h5>
+                                <a href="{{ asset('/'.$val->alias) }}"><h5>{{ $val->ten_bds }}</h5></a>
                                 <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $val->diachi_bds }}</p>
                                 <div class="property-meta-data d-flex align-items-end justify-content-between">
                                     <div class="new-tag">
@@ -73,11 +73,11 @@
                                     </div>
                                     <div class="bathroom">
                                         <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                        <span>2</span>
+                                        <span>{{ $val->phongtam }}</span>
                                     </div>
                                     <div class="space">
                                         <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                        <span>120 sq ft</span>
+                                        <span>{{ $val->dientichsd }} m2</span>
                                     </div>
                                 </div>
                             </div>

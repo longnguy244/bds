@@ -80,7 +80,7 @@
                         <p><span>Số phòng tắm:</span> {{ $chitiet->phongtam }} phòng</p>
                         <p><span>Cấu trúc:</span> {{ $chitiet->cautruc }}</p>
                         <p><span>Tiện nghi:</span> {{ $chitiet->tiennghi }}</p>
-
+                        <br>
                         <h6>Ghi chú</h6>
                         <p>{{ $chitiet->ghichu }}</p><hr>
                         <p>{{ $bds->ghichu }}</p>

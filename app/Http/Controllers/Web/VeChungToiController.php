@@ -17,8 +17,7 @@ class VeChungToiController extends Controller
      */
     public function index()
     {
-        $bds = BATDONGSAN::get();
-        
+        $bds = BATDONGSAN::join('motabds','batdongsan.id','=','motabds.id_bds')->get();
         return view('web.pages.vechungtoi',compact('bds'));
     }
 

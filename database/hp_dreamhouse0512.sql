@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2018 at 09:22 AM
+-- Generation Time: Dec 05, 2018 at 12:18 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -42,13 +42,6 @@ CREATE TABLE `baiviet` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
---
--- Dumping data for table `baiviet`
---
-
-INSERT INTO `baiviet` (`id`, `id_bds`, `ten_bv`, `hinhanh`, `alias`, `noidung`, `trangthai`, `view`, `ghichu`, `created_at`, `updated_at`) VALUES
-(1, 1, 'acd', NULL, 'acd', '<p>rgwb, .ulnbrgff.k,mnbv</p>', 'Đang bán', NULL, 'sửvrqerag', '2018-10-13 11:08:03', '2018-10-13 11:08:03');
-
 -- --------------------------------------------------------
 
 --
@@ -76,10 +69,9 @@ CREATE TABLE `batdongsan` (
 --
 
 INSERT INTO `batdongsan` (`id`, `id_csh`, `id_loaibds`, `id_tp`, `ten_bds`, `alias`, `hinhanh`, `diachi_bds`, `soCNQSDD`, `ghichu`, `created_at`, `updated_at`, `toado`) VALUES
-(1, 1, 1, 1, 'ABC', 'abc', NULL, '128a nc', '12344ffsv', 'Không có', '2018-10-13 11:07:12', '2018-11-03 00:07:24', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>'),
-(2, 1, 1, 2, 'Nhà ở', 'nha-o', NULL, 'a/b/c', '11231231413', 'Không có', '2018-11-03 00:07:42', '2018-11-03 00:07:42', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>'),
-(4, 2, 1, 1, 'Đất đai', 'dat-dai', NULL, 'c/a/a', '121312312414', 'ấdasd', '2018-11-03 00:14:29', '2018-11-03 00:14:29', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6897254011333!2d105.76446294988199!3d10.042441992786818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAyJzMyLjgiTiAxMDXCsDQ1JzYwLjAiRQ!5e0!3m2!1sen!2s!4v1541228641947\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>'),
-(5, 3, 3, 2, 'Biệt thự vùng quê', 'btvungque', NULL, '123 Nguyễn Văn Cừ, Huyện Tam Bình', '123654789', NULL, '2018-11-25 11:38:29', '2018-11-25 11:39:40', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9343.283621097726!2d105.92986948758944!3d10.068996809848286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a07ae77c3f416d%3A0x593ae20bca601713!2sCoffee+Hello!5e0!3m2!1svi!2s!4v1543171088403\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>');
+(1, 1, 1, 1, 'Chồi vịt', 'choi-vit', NULL, 'Ngoài ruộng', '123321', NULL, '2018-12-03 01:31:27', '2018-12-03 01:31:27', 'Dứ ruộng nên k có'),
+(2, 2, 2, 1, 'Chuồng heo', 'chuong-heo', NULL, 'Sau nhà', '222222', NULL, '2018-12-03 01:33:52', '2018-12-03 01:33:52', 'Sau lưng nhà tui'),
+(3, 1, 2, 1, 'Bãi chăn bò', 'bai-chan-bo', NULL, 'Dưới đồi', '00000000', NULL, '2018-12-04 02:40:04', '2018-12-04 02:40:04', 'Đâu đó kế cái đồi á');
 
 -- --------------------------------------------------------
 
@@ -178,10 +170,10 @@ CREATE TABLE `feedbacks` (
 --
 
 INSERT INTO `feedbacks` (`id`, `ten`, `email`, `sdt`, `tieude`, `noidung`, `duyet`, `created_at`, `updated_at`) VALUES
-(4, '1', 'nhib1400894@student.ctu.edu.vn', '1', '1', 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.', 1, '2018-11-16 02:02:10', '2018-11-16 02:51:07'),
-(5, '1', 'nhib1400894@student.ctu.edu.vn', '1', '1', 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.', NULL, '2018-11-16 02:49:47', '2018-11-16 02:49:47'),
-(6, '1', '1', '1', '1', '1', 0, '2018-11-16 02:51:45', '2018-11-16 02:51:45'),
-(7, '1', 'addjkjk@gmail.com', '1', '1', '1', 0, '2018-11-16 02:52:24', '2018-11-16 02:52:24');
+(4, 'Trần Văn A', 'nhib1400894@student.ctu.edu.vn', '123', 'nOtHING', 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.', 0, '2018-11-16 02:02:10', '2018-12-02 23:33:03'),
+(5, '1', 'nhib1400894@student.ctu.edu.vn', '1', '1', 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit amet tellus blandit. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mat tis effic iturut magna.', 1, '2018-11-16 02:49:47', '2018-12-02 23:28:55'),
+(6, '1', '1', '1', '1', '1', 1, '2018-11-16 02:51:45', '2018-12-02 23:29:08'),
+(7, '1', 'addjkjk@gmail.com', '1', '1', '1', 1, '2018-11-16 02:52:24', '2018-12-02 23:29:22');
 
 -- --------------------------------------------------------
 
@@ -238,14 +230,6 @@ CREATE TABLE `hopdong` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `hopdong`
---
-
-INSERT INTO `hopdong` (`id`, `id_bds`, `id_kh`, `id_httt`, `id_nv`, `ten_hd`, `giaban`, `giathue`, `phi_mg`, `phi_dangbai`, `huehong`, `solanthanhtoan`, `thoihanthanhtoan`, `thoihanhopdong`, `ngaylaphd`, `ghichu`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, NULL, 2, 'HỢP ĐỒNG MÔI GIỚI BDS', '120000000000', '1000000000', '123', '12345', '2342', NULL, NULL, '2018-03-01', '2018-01-03', 'FVSVV', '2018-10-13 12:18:07', '2018-10-13 12:18:07'),
-(2, 4, 1, NULL, 2, 'HỢP ĐỒNG MUA BÁN NHÀ ĐẤT 1', '1', '43', '3425', '42341', '54223', '2', 'từ 14/10/2018 đến 20/11/2018', '2018-07-10', '2018-10-30', NULL, '2018-11-07 20:38:19', '2018-11-07 20:38:19');
 
 -- --------------------------------------------------------
 
@@ -354,7 +338,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2018_07_18_165133_create_PHIEUTHU_table', 1),
 (16, '2018_07_18_165148_create_PHIEUCHI_table', 1),
 (17, '2018_07_18_165200_create_MENUS_table', 1),
-(18, '2018_11_06_103058_create_feedbacks_table', 2);
+(18, '2018_11_06_103058_create_feedbacks_table', 2),
+(19, '2018_12_02_114034_add_phongngu_table', 3),
+(20, '2018_12_03_052055_create_tieuchi_bds_table', 4);
 
 -- --------------------------------------------------------
 
@@ -374,16 +360,19 @@ CREATE TABLE `motabds` (
   `tiennghi` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ghichu` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `phongngu` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phongtam` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `motabds`
 --
 
-INSERT INTO `motabds` (`id`, `id_bds`, `dientich`, `chieudai`, `chieurong`, `dientichxd`, `dientichsd`, `cautruc`, `tiennghi`, `ghichu`, `created_at`, `updated_at`) VALUES
-(1, 2, '120', '12', '10', '120', '120', 'nhà cấp 4', 'tivi tủ lạnh', 'gần trường học', '2018-11-21 11:00:49', '2018-11-21 11:00:49'),
-(2, 5, '160', '160', '16', '120', '150', '1 trệt, 1 gác lửng', 'Phòng bếp sử dụng bếp âm, có tủ lạnh thể hệ mới, Phòng khách có sofa cao cấp', NULL, '2018-11-25 11:43:21', '2018-11-25 11:43:21');
+INSERT INTO `motabds` (`id`, `id_bds`, `dientich`, `chieudai`, `chieurong`, `dientichxd`, `dientichsd`, `cautruc`, `tiennghi`, `ghichu`, `created_at`, `updated_at`, `phongngu`, `phongtam`) VALUES
+(1, 1, '16', '4', '4', '15', '9', 'Không có', 'Không có luôn', NULL, '2018-12-03 01:32:21', '2018-12-03 22:01:52', '1', '0'),
+(2, 2, '30', '10', '3', '30', '30', 'Máng ăn, vòi nước uống', 'Có mùng tránh mũi', NULL, '2018-12-03 02:25:45', '2018-12-03 21:05:13', '3', '3'),
+(3, 3, '300000', '10000', '3000', '10000', '10000', 'Có đá', 'Có hồ', NULL, '2018-12-04 02:41:23', '2018-12-04 02:41:23', '2', '0');
 
 -- --------------------------------------------------------
 
@@ -453,11 +442,11 @@ CREATE TABLE `phanquyen` (
 CREATE TABLE `phieuchi` (
   `id` int(10) UNSIGNED NOT NULL,
   `id_nv` int(10) UNSIGNED NOT NULL,
-  `id_hd` int(10) UNSIGNED NOT NULL,
   `nguoinhantien` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `CMND` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lydochi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tongtien` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tongtienbangchu` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngaychi` date NOT NULL,
   `ghichu` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -484,13 +473,6 @@ CREATE TABLE `phieuthu` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `phieuthu`
---
-
-INSERT INTO `phieuthu` (`id`, `id_nv`, `id_hd`, `nguoinoptien`, `CMND`, `lydothu`, `tongtien`, `tongtienbangchu`, `ngaythu`, `ghichu`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Nguyễn Văn B', '12345667', '12', '111111', 'aaaa', '2011-11-11', NULL, '2018-12-01 00:58:58', '2018-12-01 01:07:45');
 
 -- --------------------------------------------------------
 
@@ -553,12 +535,49 @@ INSERT INTO `thanhpho` (`id`, `ten_tp`, `ghichu`, `created_at`, `updated_at`) VA
 --
 
 CREATE TABLE `tieuchi` (
-  `id` int(11) NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `tentieuchi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ghichu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `tieuchi`
+--
+
+INSERT INTO `tieuchi` (`id`, `tentieuchi`, `ghichu`, `created_at`, `updated_at`) VALUES
+(1, 'Gần trường', 'Gần trường học', '2018-12-02 20:19:35', '2018-12-02 20:19:35'),
+(2, 'Gần chợ', 'Gần chợ', '2018-12-02 20:19:48', '2018-12-02 21:10:53'),
+(3, 'Gần bệnh viện', 'Gần bệnh viện', '2018-12-02 20:20:11', '2018-12-02 23:11:01'),
+(4, 'Gần trạm xăng', 'Gần trạm xăng', '2018-12-02 20:21:15', '2018-12-02 23:11:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tieuchi_bds`
+--
+
+CREATE TABLE `tieuchi_bds` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_tieuchi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_bds` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tieuchi_bds`
+--
+
+INSERT INTO `tieuchi_bds` (`id`, `id_tieuchi`, `id_bds`, `created_at`, `updated_at`) VALUES
+(3, '1', '2', '2018-12-03 22:06:27', '2018-12-03 22:06:27'),
+(4, '2', '2', '2018-12-03 22:06:27', '2018-12-03 22:06:27'),
+(5, '1', '1', '2018-12-03 22:06:46', '2018-12-03 22:06:46'),
+(6, '2', '1', '2018-12-03 22:06:46', '2018-12-03 22:06:46'),
+(7, '3', '1', '2018-12-03 22:06:46', '2018-12-03 22:06:46'),
+(8, '4', '1', '2018-12-03 22:06:46', '2018-12-03 22:06:46'),
+(9, '1', '3', '2018-12-04 02:41:24', '2018-12-04 02:41:24');
 
 -- --------------------------------------------------------
 
@@ -707,8 +726,7 @@ ALTER TABLE `phanquyen`
 --
 ALTER TABLE `phieuchi`
   ADD PRIMARY KEY (`id`) USING BTREE,
-  ADD KEY `phieuchi_id_nv_foreign` (`id_nv`) USING BTREE,
-  ADD KEY `phieuchi_id_hd_foreign` (`id_hd`) USING BTREE;
+  ADD KEY `phieuchi_id_nv_foreign` (`id_nv`) USING BTREE;
 
 --
 -- Indexes for table `phieuthu`
@@ -745,6 +763,12 @@ ALTER TABLE `tieuchi`
   ADD PRIMARY KEY (`id`) USING BTREE;
 
 --
+-- Indexes for table `tieuchi_bds`
+--
+ALTER TABLE `tieuchi_bds`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -759,13 +783,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `baiviet`
 --
 ALTER TABLE `baiviet`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `batdongsan`
 --
 ALTER TABLE `batdongsan`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `bienbanthanhly`
@@ -795,7 +819,7 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `hopdong`
 --
 ALTER TABLE `hopdong`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `khachhang`
@@ -819,13 +843,13 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `motabds`
 --
 ALTER TABLE `motabds`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `nhanvien`
@@ -843,7 +867,7 @@ ALTER TABLE `phieuchi`
 -- AUTO_INCREMENT for table `phieuthu`
 --
 ALTER TABLE `phieuthu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `phuongxa`
@@ -862,6 +886,18 @@ ALTER TABLE `quanhuyen`
 --
 ALTER TABLE `thanhpho`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tieuchi`
+--
+ALTER TABLE `tieuchi`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tieuchi_bds`
+--
+ALTER TABLE `tieuchi_bds`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -922,7 +958,6 @@ ALTER TABLE `motabds`
 -- Constraints for table `phieuchi`
 --
 ALTER TABLE `phieuchi`
-  ADD CONSTRAINT `phieuchi_id_hd_foreign` FOREIGN KEY (`id_hd`) REFERENCES `hopdong` (`id`),
   ADD CONSTRAINT `phieuchi_id_nv_foreign` FOREIGN KEY (`id_nv`) REFERENCES `nhanvien` (`id`);
 
 --
