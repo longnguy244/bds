@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Khách Hàng - DreamHouse
+    Chủ sở hữu - DreamHouse
 @endsection
 
 @section('main')
