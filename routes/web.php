@@ -87,6 +87,15 @@ Route::get('web/phanhoi',function()
         Route::get('/feedback/delete/{id}','Admin\FeedbackController@getDelete')
             ->name('feedback.delete');
 
+    //Hoadon
+        Route::get('/hoadon/index','Admin\HoaDonController@getIndex')->name('get.hoadon.index');
+        Route::get('/hoadon/create','Admin\HoaDonController@getCreate')->name('get.hoadon.create');
+        Route::post('/hoadon/create','Admin\HoaDonController@postCreate')->name('post.hoadon.create');
+        Route::get('/hoadon/edit/{id}','Admin\HoaDonController@getEdit')->name('get.hoadon.edit');
+        Route::post('/hoadon/edit/{id}','Admin\HoaDonController@postEdit')->name('post.hoadon.edit');
+        Route::get('/hoadon/delete/{id}','Admin\HoaDonController@getDelete')
+            ->name('hoadon.delete');
+
     //Tieu chi
         Route::get('tieuchi/list','Admin\TieuChiController@getIndex')->name('get.tieuchi.index');
         Route::get('tieuchi/create','Admin\TieuChiController@getCreate')->name('get.tieuchi.create');

@@ -21,7 +21,7 @@
             THÊM HÓA ĐƠN
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('phieuthu.store') }}">
+    <form name="formBds" method="POST" action="{{ route('post.hoadon.create') }}">
 	{{ method_field('POST') }}
     {{ csrf_field() }}
         <div class="body">
@@ -70,7 +70,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="nguoinoptien" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ old('nguoinoptien') }}">
+                            <input name="" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ old('nguoinoptien') }}">
                         </div>
                     </div>
                     <label for="lydothu">
@@ -78,7 +78,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="CMND" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND') }}">
+                            <input name="" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND') }}">
                         </div>
                     </div>
                     
@@ -105,7 +105,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="tongtienbangchu" type="text" id="tongtienbangchu" class="form-control" placeholder="Tổng tiền bằng chữ" value="{{ old('tongtienbangchu') }}">
+                            <input name="tongtienchu" type="text" id="tongtienbangchu" class="form-control" placeholder="Tổng tiền bằng chữ" value="{{ old('tongtienbangchu') }}">
                         </div>
                     </div>
                     <b>Ngày thu</b>

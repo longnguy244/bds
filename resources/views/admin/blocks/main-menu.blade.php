@@ -123,6 +123,11 @@
                 <span>Thu-Chi</span>
             </a>
             <ul class="ml-menu">
+                <li class="{{ $route=='hoadon' ? 'active' : '' }}">
+                    <a href="{{ route('get.hoadon.index') }}">
+                        <span>Hóa đơn</span>
+                    </a>
+                </li>
                 <li class="{{ $route=='phieuthu' ? 'active' : '' }}">
                     <a href="{{ asset('admin/phieuthu') }}">
                         <span>Phiếu thu</span>

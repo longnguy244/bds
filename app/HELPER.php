@@ -138,3 +138,10 @@ function Tiennghi($id)
 	echo $data->tiennghi;
 	# code...
 }
+
+function Tenhopdong($id)
+{
+	$data = DB::table('hopdong')->find($id);
+	echo $data->ten_hd;
+	# code...
+}

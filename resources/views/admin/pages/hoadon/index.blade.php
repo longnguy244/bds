@@ -17,7 +17,7 @@
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                 <div class="row">
                     <div class="col-sm-6">
-                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('phieuthu.create') }}">
+                        <a type="button" class="btn bg-brown btn-lg waves-effect" href="{{ route('get.hoadon.create') }}">
                             Thêm
                         </a>
                     </div>
@@ -28,10 +28,10 @@
                             <thead>
                                 <tr role="row">
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID nhân viên
+                                        Tên nhân viên
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
-                                        ID hợp đồng
+                                        Tên hợp đồng
                                     </th>
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Lý do thu
@@ -51,10 +51,10 @@
                             <tfoot>
                                 <tr>
                                     <th rowspan="1" colspan="1">
-                                        ID nhân viên
+                                        Tên nhân viên
                                     </th>
                                     <th rowspan="1" colspan="1">
-                                        ID hợp đồng
+                                        Tên hợp đồng
                                     </th>
                                     <th rowspan="1" colspan="1">
                                         Lý do thu
@@ -74,20 +74,22 @@
                             <tbody>
                             @foreach($data as $data)
                                 <tr role="row" class="odd">
-                                    <td>{{ $data->id_nv }}</td>
-                                    <td>{{ $data->id_hd }}</td>
+                                    <td>{{ TenNhanVien($data->id_nv) }}</td>
+                                    <td>{{ Tenhopdong($data->id_hd) }}</td>
                                     <td>{{ $data->lydothu }}</td>
                                     <td>{{ $data->tongtien }}</td>
                                     <td>{{ $data->ngaythu }}</td>
                                     <td>
-                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('phieuthu.edit', ['data' => $data->id]) }}">
+                                        <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('get.hoadon.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>
                                         </a>
                                     </td>
                                     <td>
-                                        <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('phieuthu.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
+                                        {{-- <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete')" class="btn bg-red waves-effect">
                                             <i class="material-icons">delete</i>
-                                        </div>
+                                        </div> --}}
+                                        
+                                        <a href="{{ route('hoadon.delete', $data->id) }}" data-target="#cfmDel" class="btn bg-red waves-effect" ><i class="material-icons" >delete</i></a>
                                     </td>
                                     <td>
                                          <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.phieuthu', $data->id) }}">
@@ -108,13 +110,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form method="POST" action="" role="form" id="formDelete">
-                    {{ method_field('DELETE') }}
-                    {{ csrf_field() }}
                     <h3>Bạn có chắc muốn xóa dữ liệu này?</h3><br>
                     <button type="submit" class="btn bg-red btn-lg waves-effect">Xóa</button>
                     <button class="btn bg-blue-grey btn-lg waves-effect" data-dismiss="modal">Hủy</button>
-                </form>
             </div>
         </div>
     </div>
