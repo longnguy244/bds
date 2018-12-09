@@ -26,7 +26,7 @@ class KHACHHANG extends Model
         'ten_kh'        => 'required',
         'ngaysinh_kh'   => '',
         'diachi_kh'     => 'required',
-        'phone_kh'      => 'required,phone_kh|max:11',
+        'phone_kh'      => 'required,phone_kh|max:10',
         'email_kh'      => '',
         'cmnd_kh'       => 'required|unique:nhanvien,cmnd_kh',
         'ngaycap_kh'    => 'required',
