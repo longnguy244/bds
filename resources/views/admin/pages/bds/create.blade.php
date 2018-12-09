@@ -21,7 +21,7 @@
             THÊM BẤT ĐỘNG SẢN
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('bds.store') }}">
+    <form name="formBds" method="POST" action="{{ route('bds.store') }}" enctype="multipart/form-data">
 	{{ method_field('POST') }}
     {{ csrf_field() }}
         <div class="body">
@@ -106,11 +106,11 @@
                 <div class="col-md-12 row"> 
                     <div class="col-md-6">
                         <label for="hinhanh">
-                            Hinh anh
+                            Hình ảnh
                         </label>
                         <div class="form-group">
                             <div class="form-line">
-                                <input name="hinhanh" type="file" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('ten_bds') }}">
+                                <input name="hinhanh" type="file" id="hinhanh" class="form-control" value="{{ old('hinhanh') }}">
                             </div>
                         </div>
                         <label for="gia">

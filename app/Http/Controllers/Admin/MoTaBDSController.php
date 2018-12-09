@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
-
 use App\MOTABDS;
 use App\BATDONGSAN;
 use App\TIEUCHI;
 use App\TIEUCHIBDS;
+use App\HINHANHBDS;
+
 
 class MoTaBDSController extends Controller
 {
@@ -59,15 +61,34 @@ class MoTaBDSController extends Controller
      */
     public function store(Request $request)
     {
+
+
+        if(Input::hasFile('imgDetail')){
+            foreach ($request->imgDetail as $key => $hinh) {
+                $imgDetail = new HINHANHBDS();
+                if(isset($hinh)){
+                    $imgDetail->hinhanh = $request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension();
+                    $imgDetail->id_bds = $request->input('id_bds');
+                    $hinh->move('upload/bds/detail/',$request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension());
+                    $imgDetail->save();
+                }
+            }
+        }
+
+        if($request->tieuchi){
+            foreach ($request->tieuchi as $key => $id){
+                $tieuchi = new TIEUCHIBDS();
+                $tieuchi->id_tieuchi = $id;
+                $tieuchi->id_bds = $request->input('id_bds');
+                $tieuchi->save();
+            }
+        }
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->create($request->only('id_bds','dientich','chieudai','chieurong','dientichxd','dientichsd','phongngu','phongtam','cautruc','tiennghi','ghichu'));
 
-        foreach ($request->tieuchi as $key => $id){
-            $tieuchi = new TIEUCHIBDS();
-            $tieuchi->id_tieuchi = $id;
-            $tieuchi->id_bds = $request->input('id_bds');
-            $tieuchi->save();
-        }
+        
+
+        
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect(route('bds.index'));
     }
@@ -91,14 +112,17 @@ class MoTaBDSController extends Controller
      */
     public function edit($id)
     {
+        
+
         $data = MOTABDS::where('id_bds',$id)->first();
         $auth = \Auth::user();
         $bds = BATDONGSAN::where('id',$id)->first();
+        $hinhanh = HINHANHBDS::where('id_bds',$bds->id)->get();
         $tieuchi = TIEUCHI::get();
         $tieuchibds = TIEUCHIBDS::where('id_bds',$id)->get();
 
         $route = $this->model->route;
-        return view('admin.pages.motabds.edit',compact('data','auth','bds','route','tieuchi','tieuchibds'));
+        return view('admin.pages.motabds.edit',compact('data','auth','bds','route','tieuchi','tieuchibds','hinhanh'));
             
     }
 
@@ -111,6 +135,19 @@ class MoTaBDSController extends Controller
      */
     public function update(Request $request, $id)
     {   
+
+        if(Input::hasFile('imgDetail')){
+            foreach ($request->imgDetail as $key => $hinh) {
+                $imgDetail = new HINHANHBDS();
+                if(isset($hinh)){
+                    $imgDetail->hinhanh = $request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension();
+                    $imgDetail->id_bds = $request->input('id_bds');
+                    $hinh->move('upload/bds/detail/',$request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension());
+                    $imgDetail->save();
+                }
+            }
+        }
+
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->find($id)->update($request->only('id_bds','dientich','chieudai','chieurong','dientichxd','dientichsd','phongngu','phongtam','cautruc','tiennghi','ghichu'));
 
@@ -148,4 +185,6 @@ class MoTaBDSController extends Controller
         $this->model->destroy($id);
         return redirect(route('motabds.index'));
     }
+
+
 }

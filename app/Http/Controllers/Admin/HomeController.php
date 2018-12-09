@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\File;
+use App\MOTABDS;
+use App\BATDONGSAN;
+use App\TIEUCHI;
+use App\TIEUCHIBDS;
+use App\HINHANHBDS;
+use Request;
 use App\Home;
 
 class HomeController extends Controller
@@ -90,5 +96,21 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+     public function getDeleteHinhAnh($id)
+    {
+        if(Request::ajax()){
+            $id_hinh = (int)Request::get('id_hinh');
+            $hinh = HINHANHBDS::find($id_hinh);
+            if(!empty($hinh)){
+                $img = 'upload/bds/detail/'.$hinh->hinhanh;
+                if(File::exists($img)){
+                    File::delete($img);
+                }
+                $hinh->delete();
+            }
+            return "OK";
+        }
     }
 }

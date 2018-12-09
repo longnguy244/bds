@@ -20,9 +20,11 @@
 // });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
+
     Route::get('/', function(){
         return redirect('/login');
     });
+    
     Route::resource('home', 'Admin\HomeController');
     Route::resource('customer', 'Admin\KhachHangController');
     Route::resource('position', 'Admin\ChucVuController');
@@ -98,6 +100,12 @@ Route::get('web/phanhoi',function()
         Route::get('hinhthucthanhtoan/edit/{id}','Admin\HTTTController@getEdit')->name('get.hinhthucthanhtoan.edit');
         Route::post('hinhthucthanhtoan/edit/{id}','Admin\HTTTController@postEdit')->name('post.hinhthucthanhtoan.edit');
 
+
+
+
+    //Xoa
+        Route::get('delete/hinhanhbds/{id}','Admin\HomeController@getDeleteHinhAnh');
+
     });
 
 
@@ -128,3 +136,4 @@ Route::get('web/phanhoi',function()
     Route::group(['prefix' => 'index'], function(){
         Route::get('/search','Web\BDSController@getSearch')->name('get.search');
     });
+

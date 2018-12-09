@@ -56,8 +56,21 @@ class BDSController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->model->rules, $this->model->messages);
-        $this->model->create($request->all());
+
+        if($request->hinhanh != null){
+            $hinhanh = $request->alias.'.'.$request->file('hinhanh')->getClientOriginalExtension();
+            $request->file('hinhanh')->move('upload/bds',$hinhanh);
+            $this->validate($request, $this->model->rules, $this->model->messages);
+            $this->model->create($request->only('id_csh','id_loaibds','id_tp','ten_bds','alias','diachi_bds','soCNQSDD','ghichu','toado','hinhthuc','gia'));
+            $bds = $this->model->orderBy('created_at','DESC')->first();
+            $bds->hinhanh = $hinhanh;
+            $bds->update();
+        }else{
+            $this->validate($request, $this->model->rules, $this->model->messages);
+            $this->model->create($request->only('id_csh','id_loaibds','id_tp','ten_bds','alias','diachi_bds','soCNQSDD','ghichu','toado','hinhthuc','gia','hinhanh'));   
+        }
+
+
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect()->route('get.mota.create');
     }
@@ -114,7 +127,26 @@ class BDSController extends Controller
             'ghichu',
             'toado'         => 'required',
         ], $this->model->messages);
-        $this->model->find($id)->update($request->all());
+        $this->model->find($id)->update($request->only('id_csh','id_loaibds','id_tp','ten_bds','alias','diachi_bds','soCNQSDD','ghichu','toado','hinhthuc','gia'));
+
+
+        $bds = $this->model->find($id);
+        if($request->hinhanh != null && $bds->hinhanh != null){
+            if(file_exists("upload/bds/".$bds->hinhanh))
+            {
+                unlink("upload/bds/".$bds->hinhanh);
+            }
+            $hinhanh = $request->alias.'.'.$request->file('hinhanh')->getClientOriginalExtension();
+            $bds->hinhanh = $hinhanh;
+            $bds->update();
+            $request->file('hinhanh')->move('upload/bds',$hinhanh);
+        }else{
+            $hinhanh = $request->alias.'.'.$request->file('hinhanh')->getClientOriginalExtension();
+            $bds->hinhanh = $hinhanh;
+            $bds->update();
+            $request->file('hinhanh')->move('upload/bds',$hinhanh);
+        }   
+
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
         return redirect()->back();
     }

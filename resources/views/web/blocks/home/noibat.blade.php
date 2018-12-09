@@ -20,7 +20,7 @@
                     <div class="property-thumb">
                         <div class="tag">
                             <div class="property-thumb">
-                                <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
+                                <img src="{{ url('upload/bds/'.$bds->hinhanh) }}" alt="">
 
                                 <div class="tag">
                                     <span>{{ $bds->hinhthuc }}</span>
