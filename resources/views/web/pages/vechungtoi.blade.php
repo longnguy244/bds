@@ -54,7 +54,7 @@
                         <div class="single-featured-property">
                             <!-- Property Thumbnail -->
                             <div class="property-thumb">
-                                <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
+                                <img src="{{ url('upload/bds/'.$val->hinhanh) }}" alt="">
 
                                 <div class="tag">
                                     <span>{{ $val->hinhthuc }}</span>

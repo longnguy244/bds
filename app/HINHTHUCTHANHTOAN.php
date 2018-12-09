@@ -15,4 +15,4 @@ class HINHTHUCTHANHTOAN extends Model
 		'hinhthucthanhtoan'
 	];
 	
-	}
+}

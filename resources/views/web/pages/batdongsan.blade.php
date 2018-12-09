@@ -68,16 +68,14 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="{{ asset('south/img/bg-img/feature1.jpg') }}" alt="">
+                            <img src="{{ url('upload/bds/'.$val->hinhanh) }}" alt="{{ $val->hinhanh }}">
 
                             <div class="tag">
-                                <span></span>
-                            </div>
-                            <div class="list-price">
-                                @if(isset($val->hopdong))
-                                <p>${{ $val->hopdong->giaban }}</p>
-                                @endif
-                            </div>
+                                    <span>{{ $val->hinhthuc }}</span>
+                                </div>
+                                <div class="list-price">
+                                    <p>{{ number_format($val->gia) }} VND</p>
+                                </div>
                         </div>
                         <!-- Property Content -->
                         <div class="property-content">

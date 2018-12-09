@@ -48,9 +48,11 @@
                     <!-- Single Listings Slides -->
                     <div class="single-listings-sliders owl-carousel">
                         <!-- Single Slide -->
-                        <img src="{{ asset('south/img/bg-img/hero4.jpg') }}" alt="">
+                        <img src="{{ url('upload/bds/'.$bds->hinhanh) }}" height="10px" width="50%">
                         <!-- Single Slide -->
-                        <img src="{{ asset('south/img/bg-img/hero5.jpg') }}" alt="">
+                        @foreach($hinhanh as $key => $hinhanh)
+                        <img src="{{ url('upload/bds/detail/'.$hinhanh->hinhanh) }}" height="10px" width="50%" alt="">
+                        @endforeach
                     </div>
                 </div>
             </div>

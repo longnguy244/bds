@@ -30,7 +30,7 @@
             THÊM MÔ TẢ CHO BẤT ĐỘNG SẢN <span style="color: red">{{ $data->ten_bds }}</span>
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('motabds.store') }}">
+    <form name="formBds" method="POST" action="{{ route('motabds.store') }}" enctype="multipart/form-data">
 	{{ method_field('POST') }}
     {{ csrf_field() }}
         <div class="body">
@@ -133,21 +133,32 @@
                     </div>
                 
                 </div>
-                <div class="col-md-12">
-                    <h3>Tiêu chí</h3>
-                    <table width="60%">
-                        @foreach ($tieuchi as $key => $val)
-                            <tr>
-                                <td>
-                                   <input type="checkbox" name="tieuchi[]" class="" value="{{ $val->id }}">
-                                </td>
-                                <td>
-                                     {{ $val->tentieuchi }}
-                                </td>
-                            </tr>
-                        @endforeach
-                    </table>
+                <div class="col-md-12 row">
+                    <div class="col-md-6">
+                        <h3>Tiêu chí</h3>
+                        <table width="60%">
+                            @foreach ($tieuchi as $key => $val)
+                                <tr>
+                                    <td>
+                                       <input type="checkbox" name="tieuchi[]" class="" value="{{ $val->id }}">
+                                    </td>
+                                    <td>
+                                         {{ $val->tentieuchi }}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+                    <div class="row col-md-6 container-fluid">
+                        @for($i=1; $i<=3; $i++)
+                        <label for="imgdetail">
+                            Ảnh chi tiết {{ $i }}
+                        </label>
+                        <input name="imgDetail[]" type="file" id="imgdetail" class="form-control m-b-15" value="">
+                        @endfor
+                    </div>
                 </div>
+                
                 <div class= "col-md-12 m-t-30">
                     <center>
                         <button type="submit" class="btn bg-brown btn-lg waves-effect">

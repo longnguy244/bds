@@ -33,12 +33,23 @@
             SỬA BẤT ĐỘNG SẢN
         </h2>
     </div>
-    <form name="formBds" method="POST" action="{{ route('bds.update', ['data' => $data->id]) }}">
+
+    <form name="formBds" method="POST" action="{{ route('bds.update', ['data' => $data->id]) }}" enctype="multipart/form-data">
 	{{ method_field('PUT') }}
     {{ csrf_field() }}
         <div class="body">
             <div class="row clearfix">
-                
+                <div class="col-md-12 row">
+                    <div class="col-md-4">
+                        @if($data->hinhanh)
+                        <img src="{{ url('upload/bds/'.$data->hinhanh) }}" width="100%">
+                        <input type="file" class="form-control" name="hinhanh" value="">
+                        @else
+                        <img src="#" width="100%">
+                        <input type="file" class="form-control" name="hinhanh" value="">
+                        @endif
+                    </div>
+                </div>
                 <div class= "col-md-6">
                     <label for="customer">
                         Khách hàng
@@ -80,15 +91,6 @@
                         </a>
                         <input name="id_tp" type="text" id="id_tp" class="form-control hidden" placeholder="id" value="{{ old('id_tp', $data->id_tp) }}">
                     </div>
-                    
-                    <label for="ten_bds">
-                        Hinh anh
-                    </label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input name="hinhanh" type="text" id="ten_bds" class="form-control" placeholder="Tên bất động sản" value="{{ old('hinhanh', $data->hinhanh) }}">
-                        </div>
-                    </div>
                     <label for="gia">
                             Giá bán
                         </label>
@@ -112,7 +114,7 @@
                     </label>
                     <div class="form-group">
                         <select class="form-control" name="hinhthuc">
-                            <option value="">Chọn hình thức</option>}
+                            <option value="">--Chọn hình thức--</option>}
                             option
                             <option @if($data->hinhthuc=='Cho thuê') selected @endif value="Cho thuê">Cho thuê</option>
                             <option @if($data->hinhthuc=='Bán') selected @endif value="Bán">Bán</option>
