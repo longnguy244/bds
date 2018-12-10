@@ -55,7 +55,7 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <a type="button" class="btn bg-green waves-effect" href="{{ route('bds.create') }}">
+                            <a  target="_blank" type="button" class="btn bg-green waves-effect" href="{{ route('bds.create') }}">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -74,7 +74,7 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <a type="button" class="btn bg-green waves-effect" href="{{ route('customer.create') }}">
+                            <a  target="_blank" type="button" class="btn bg-green waves-effect" href="{{ route('customer.create') }}">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
@@ -111,11 +111,10 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <a type="button" class="btn bg-green waves-effect" href="{{ route('get.hinhthucthanhtoan.create') }}">
+                            <a  target="_blank" type="button" class="btn bg-green waves-effect" href="{{ route('get.hinhthucthanhtoan.create') }}">
                                 <i class="material-icons">add</i>
                             </a>
                         </div>
-                        <input name="id_httt" type="text" id="id_httt" class="form-control hidden" placeholder="Hình thức thanh toán" value="{{ old('id_httt') }}">
                     </div>
                     <label for="ten_hd">
                         Tên hợp đồng
@@ -126,7 +125,7 @@
                         </div>
                     </div>
                     <label for="giaban">
-                        Giá bán
+                        Giá
                     </label>
                     <div class="form-group">
                         <div class="form-line">
@@ -134,11 +133,11 @@
                         </div>
                     </div>
                     <label for="giathue">
-                        Giá thuê
+                        Giá tiền bằng chữ
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-mask="9{1,}" name="giathue" type="text" id="giathue" class="form-control" placeholder="Giá thuê" value="{{ old('giathue') }}">
+                            <input name="giathue" type="text" id="giathue" class="form-control" placeholder="Giá tiền bằng chữ" value="{{ old('giathue') }}">
                         </div>
                     </div>
                     
@@ -153,15 +152,15 @@
                         </div>
                     </div>
                     <label for="phi_dangbai">
-                        Phí đăng bài
+                        Phí môi giới bằng chữ
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-mask="9{1,}" name="phi_dangbai" type="text" id="phi_dangbai" class="form-control" placeholder="Phí đăng bài" value="{{ old('phi_dangbai') }}">
+                            <input name="phi_dangbai" type="text" id="phi_dangbai" class="form-control" placeholder="Phí đăng bài" value="{{ old('phi_dangbai') }}">
                         </div>
                     </div>
                     <label for="huehong">
-                        Huê hồng
+                        Số lần thanh toán
                     </label>
                     <div class="form-group">
                         <div class="form-line">

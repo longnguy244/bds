@@ -62,7 +62,7 @@
 
     <div class="center">
         <p><b>PHIẾU THU</b></p>
-        <p>Ngày{{$data->ngaythu}}</p>
+        <p>Ngày: {{ date_format(new dateTime($data->ngaythu),'d/m/Y')}}</p>
     </div>
 
     <div class="noidung">
@@ -70,7 +70,7 @@
         <p>CMND:{{$data->CMND}}</p>
         <p>Lý do thu:{{$data->lydothu}}</p>
         <p>Số tiền: {{$data->tongtien}} (Viết bằng chữ):{{$data->tongtienbangchu}}</p>
-        <p>Ngày{{$data->ngaythu}}</p>  
+        <p>Ngày{{ date_format(new dateTime($data->ngaythu),'d/m/Y')}}</p>  
         <div>
             <table border="0" width="100%">
         <tr>
@@ -84,7 +84,7 @@
     </table>
         </div>                 
     </div>
-        <a href="{{ route('down.phieuthu',$data->id) }}">Xuat File</a>
+        <a href="{{ route('down.hoadon',$data->id) }}">Xuat File</a>
 
 </body>
 </html>

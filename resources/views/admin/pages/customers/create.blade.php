@@ -55,7 +55,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input data-inputmask-mask="9{10,11}" name="phone_kh" type="text" id="customer_phone" class="form-control" placeholder="Số điện thoại" value="{{ old('phone_kh') }}">
+                            <input data-inputmask-mask="9{10}" name="phone_kh" type="text" id="customer_phone" class="form-control" placeholder="Số điện thoại" value="{{ old('phone_kh') }}">
                         </div>
                     </div>
                     <label for="customer_email">

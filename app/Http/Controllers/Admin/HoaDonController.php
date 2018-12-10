@@ -58,4 +58,9 @@ class HoaDonController extends Controller
  		return redirect()->route('get.hoadon.index');
  	}
 
+ 	public function pdf_hoa_don($id){
+        $data = $this->model->find($id);
+        return view('admin.pages.hoadon.show',compact('data'));
+    }
+
 }

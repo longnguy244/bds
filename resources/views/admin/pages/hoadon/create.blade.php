@@ -70,7 +70,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ old('nguoinoptien') }}">
+                            <input name="nguoinoptien" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ old('nguoinoptien') }}">
                         </div>
                     </div>
                     <label for="lydothu">
@@ -78,7 +78,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND') }}">
+                            <input name="CMND" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND') }}">
                         </div>
                     </div>
                     

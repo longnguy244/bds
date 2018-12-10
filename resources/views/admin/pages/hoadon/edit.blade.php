@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Sửa Phiếu Thu - DreamHouse
+    Sửa Hóa Đơn - DreamHouse
 @endsection
 
 @section('main')
@@ -18,7 +18,7 @@
 <div class="card">
     <div class="header">
         <h2>
-            SỬA PHIẾU THU
+            SỬA HÓA ĐƠN
         </h2>
     </div>
     <form name="formBds" method="POST" action="{{ route('post.hoadon.edit', ['data' => $data->id]) }}">
@@ -32,7 +32,7 @@
                     <a type="button" class="btn bg-grey btn-lg waves-effect" href="{{ URL::previous() }}">
                         Quay Lại
                     </a>
-                     <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.phieuthu',$data->id) }}">
+                     <a type="button" class="btn waves-effect" style="background-color: blue; color: white; padding: 7px 20px; font-size: 15px;" href="{{ route('print.hoadon',$data->id) }}">
                         <i class="fas fa-save"></i>  In
                     </a>
                 </div>
@@ -72,7 +72,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ $data->nguoinoptien or old('nguoinoptien') }}">
+                            <input name="nguoinoptien" type="text" id="nguoinoptien" class="form-control" placeholder="Tên người nộp" value="{{ $data->nguoinoptien or old('nguoinoptien') }}">
                         </div>
                     </div>
                     <label for="lydothu">
@@ -80,7 +80,7 @@
                     </label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input name="" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND', $data->CMND) }}">
+                            <input name="CMND" type="text" id="CMND" class="form-control" placeholder="Số chứng minh nhân dân" value="{{ old('CMND', $data->CMND) }}">
                         </div>
                     </div>
                     

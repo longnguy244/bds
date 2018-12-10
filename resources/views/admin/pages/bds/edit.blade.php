@@ -43,10 +43,10 @@
                     <div class="col-md-4">
                         @if($data->hinhanh)
                         <img src="{{ url('upload/bds/'.$data->hinhanh) }}" width="100%">
-                        <input type="file" class="form-control" name="hinhanh" value="">
+                        <input type="file" class="form-control" name="hinhanh">
                         @else
-                        <img src="#" width="100%">
-                        <input type="file" class="form-control" name="hinhanh" value="">
+                        <img src="#" width="100%" alt="Chưa có hình">
+                        <input type="file" class="form-control" name="hinhanh">
                         @endif
                     </div>
                 </div>

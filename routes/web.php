@@ -133,6 +133,8 @@ Route::get('web/phanhoi',function()
     Route::get('/admin/pdf_bienban/{id}','Admin\pdfController@pdf_bien_ban')->name('down.bienban');
     Route::get('/admin/bienban/pdf/{id}','Admin\BienBanController@PDF_BienBan')->name('print.bienban');
 
+    Route::get('/admin/pdf_hoadon/{id}','Admin\pdfController@pdf_hoa_don')->name('down.hoadon');
+    Route::get('/admin/hoadon/pdf/{id}','Admin\HoaDonController@pdf_hoa_don')->name('print.hoadon');
 
 
 //Chi tiet bds

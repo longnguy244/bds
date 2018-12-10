@@ -44,6 +44,7 @@ class HopDongController extends Controller
             'auth'          => \Auth::user(),
             'nhanvien'      => NHANVIEN::all(),
             'customers'     => KHACHHANG::all(),
+            'hinhthucthanhtoan'=> HINHTHUCTHANHTOAN::all(),
             'bds'           => BATDONGSAN::all(),
             'route'         => $this->model->route,
             'hinhthucthanhtoan'=> HINHTHUCTHANHTOAN::all()
@@ -92,6 +93,7 @@ class HopDongController extends Controller
             'customers'     => KHACHHANG::get(),
             'nhanvien'      => NHANVIEN::all(),
             'bds'           => BATDONGSAN::all(),
+            'hinhthucthanhtoan'=> HINHTHUCTHANHTOAN::all(),
             'data'          => $this->model->find($id),
             'route'         => $this->model->route
         ]);
@@ -109,7 +111,7 @@ class HopDongController extends Controller
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->find($id)->update($request->all());
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
-        return redirect(route('hopdong.index'));
+        return redirect()->back();
     }
 
     /**

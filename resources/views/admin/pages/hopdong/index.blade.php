@@ -89,7 +89,7 @@
                                     <td>{{ TenBDS($data->id_bds) }}</td>
                                     <td>{{ $data->giaban }}</td>
                                     <td>{{ $data->giathue }}</td>
-                                    <td>{{ $data->hinhthucthanhtoan }}</td>
+                                    <td>{{ Tenhttt($data->id_httt) }}</td>
                                     <td>{{ $data->ngaylaphd }}</td>
                                     <td><center>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('hopdong.edit', ['data' => $data->id]) }}">

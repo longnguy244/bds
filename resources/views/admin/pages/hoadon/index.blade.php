@@ -1,7 +1,7 @@
 @extends('admin.layouts.base')
 
 @section('title')
-    Phiếu Thu - DreamHouse
+    Hóa Đơn - DreamHouse
 @endsection
 
 @section('main')
@@ -92,7 +92,7 @@
                                         <a href="{{ route('hoadon.delete', $data->id) }}" data-target="#cfmDel" class="btn bg-red waves-effect" ><i class="material-icons" >delete</i></a>
                                     </td>
                                     <td>
-                                         <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.phieuthu', $data->id) }}">
+                                         <a type="button" class="btn bg-light-green waves-effect" href="{{ route('print.hoadon', $data->id) }}">
                                             <i class="material-icons">visibility</i>
                                         </a>
                                     </td>

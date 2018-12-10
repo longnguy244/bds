@@ -9,6 +9,8 @@ use App\HOPDONG;
 use App\PHIEUTHU;
 use App\PHIEUCHI;
 use App\BIENBANHOPDONG;
+use App\HOADON;
+
 
 
 class pdfController extends Controller
@@ -40,5 +42,12 @@ class pdfController extends Controller
         $data = PHIEUCHI::find($id);
         $pdf = PDF::loadView('admin.pages.phieuchi.pdf_phieuchi',compact('data'));
         return $pdf->download('phieuchi'.$data->id.'.pdf');
+    }
+
+    public function pdf_hoa_don($id)
+    {
+        $data = HOADON::find($id);
+        $pdf = PDF::loadView('admin.pages.phieuthu.pdf_hoadon',compact('data'));
+        return $pdf->download('hoadon-'.$data->id_hd.'-'.$data->id.'.pdf');
     }
 }

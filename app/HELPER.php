@@ -145,3 +145,10 @@ function Tenhopdong($id)
 	echo $data->ten_hd;
 	# code...
 }
+
+function Tenhttt($id)
+{
+	$data = DB::table('hinhthucthanhtoan')->find($id);
+	echo $data->ten_httt;
+	# code...
+}

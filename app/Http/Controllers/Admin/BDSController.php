@@ -127,10 +127,12 @@ class BDSController extends Controller
             'ghichu',
             'toado'         => 'required',
         ], $this->model->messages);
+
         $this->model->find($id)->update($request->only('id_csh','id_loaibds','id_tp','ten_bds','alias','diachi_bds','soCNQSDD','ghichu','toado','hinhthuc','gia'));
 
 
         $bds = $this->model->find($id);
+        
         if($request->hinhanh != null && $bds->hinhanh != null){
             if(file_exists("upload/bds/".$bds->hinhanh))
             {
@@ -140,11 +142,11 @@ class BDSController extends Controller
             $bds->hinhanh = $hinhanh;
             $bds->update();
             $request->file('hinhanh')->move('upload/bds',$hinhanh);
-        }else{
-            $hinhanh = $request->alias.'.'.$request->file('hinhanh')->getClientOriginalExtension();
-            $bds->hinhanh = $hinhanh;
-            $bds->update();
-            $request->file('hinhanh')->move('upload/bds',$hinhanh);
+        // }else{
+        //     $hinhanh = $request->alias.'.'.$request->file('hinhanh')->getClientOriginalExtension();
+        //     $bds->hinhanh = $hinhanh;
+        //     $bds->update();
+        //     $request->file('hinhanh')->move('upload/bds',$hinhanh);
         }   
 
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');

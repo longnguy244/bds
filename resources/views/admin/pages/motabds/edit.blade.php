@@ -51,7 +51,7 @@
                         </label>
                         <div class="form-group">
                             <div class="form-line">
-                                <input type="text" style="color: red; font-weight: bold; font-size: 18px;"  class="form-control" value="{{ TenBDS($data->id_bds) }}">
+                                <input type="text" readonly style="color: red; font-weight: bold; font-size: 18px;"  class="form-control" value="{{ TenBDS($data->id_bds) }}">
                                 <input name="id_bds" type="text" id="id_bds" class="form-control hidden" placeholder="id" value="{{ old('id_bds', $data->id_bds) }}">
                             </div>
                         </div>
@@ -134,7 +134,8 @@
                         </label>
                         <div class="form-group">
                             <div class="form-line">
-                                <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú" value="{{ old('ghichu', $data->ghichu) }}">
+                                <textarea name="ghichu" id="bds_note" rows="5" class="form-control no-resize" placeholder="Ghi chú">
+                                    {{ old('ghichu', $data->ghichu) }}
                                 </textarea>
                             </div>
                         </div>
