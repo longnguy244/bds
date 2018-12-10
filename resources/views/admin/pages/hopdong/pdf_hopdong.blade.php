@@ -54,7 +54,7 @@
             <p>Điện thoại: 0939928143.Fax: 02727281918</p>
             Mã số thuế: 0224489769 Tài khoản số: 87294057241894. Mở tại ngân hàng: Vietcombank
             Do Ông (Bà): Ngụy Yến Nhi.Sinh năm: 1996 làm đại diện
-            <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B): {{TenKhachHang($data->id_kh)}}</b>
+            <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B): </b>
             <p>Ông/Bà: {{TenKhachHang($data->id_kh)}}. Sinh năm:{{NgaySinhKhachHang($data->id_kh)}}</p>
             <p>Giấy CMND: {{CMNDKhachHang($data->id_kh)}}.ngày cấp:{{CMNDNgaycap($data->id_kh)}} </p>
             <p>Hộ khẩu: {{HoKhauKH($data->id_kh)}}
@@ -68,20 +68,20 @@
                 <p>ĐIỀU 1: NỘI DUNG HỢP ĐỒNG</b></p>
                 <p>1.1 Bên B đồng ý giao cho Bên A thực hiện dịch vụ môi giới bán (hoặc cho thuê) bất động sản do Bên B là chủ sở hữu.</p>
                 <p>1.2 Đặc điểm của BĐS và giấy tờ pháp lý về BĐS là đối tượng của dịch vụ này được mô tả như sau:</p>
-                <p>Lọai bất động sản:{{Loaibds($data->id)}}</p>
-                <p>Địa chỉ:{{DCBDS($data->id)}}</p>
-                <p>Diện tích khuôn viên đất:{{DTMD($data->id)}} m2</p>
-                <p>Diện tích đất xây dựng:{{DTXD($data->id)}}m2</p>
-                <p>Diện tích sử dụng:{{DTSD($data->id)}}m2</p>
-                <p>Cấu trúc:{{cautruc($data->id)}}</p>
-                <p>Tiện nghi:{{tiennghi($data->id)}}</p>
-                <p>1.3 Giá bán bất động sản này được hai Bên thỏa thuận trên cơ sở giá do Bên A thẩm định là:{{$data->giaban}} VNĐ.(bằng chữ: …………………………………...………………………..………đồng)</p>
+                <p>Lọai bất động sản:{{Loaibds($data->id_bds)}}</p>
+                <p>Địa chỉ:{{DCBDS($data->id_bds)}}</p>
+                <p>Diện tích khuôn viên đất:{{DTMD($data->id_bds)}} m2</p>
+                <p>Diện tích đất xây dựng:{{DTXD($data->id_bds)}}m2</p>
+                <p>Diện tích sử dụng:{{DTSD($data->id_bds)}}m2</p>
+                <p>Cấu trúc:{{cautruc($data->id_bds)}}</p>
+                <p>Tiện nghi:{{tiennghi($data->id_bds)}}</p>
+                <p>1.3 Giá {{ $bds->hinhthuc }} bất động sản này được hai Bên thỏa thuận trên cơ sở giá do Bên A thẩm định là:{{$data->giaban}} VNĐ.(bằng chữ: …………………………………...………………………..………đồng)</p>
                 <p>1.3 Giá thuê bất động sản này được hai Bên thỏa thuận trên cơ sở giá do Bên A thẩm định là:{{$data->giathue}} VNĐ.(bằng chữ: …………………………………...………………………..………đồng)</p>
                 <p>Trong quá trình thực hiện hợp đồng nếu các bên xét thấy cần điều chỉnh giá bán, hai Bên phải thỏa thuận bằng văn bản.</p>
             <p><b> ĐIỀU 2: PHÍ DỊCH VỤ VÀ PHƯƠNG THỨC THANH TOÁN</b></p>
-                <p>2.1 Bên B đồng ý thanh toán cho Bên A số tiền môi giới là {{$data->huehong}}% ( đã bao gồm thuế VAT) trên giá trị giao dịch thực tế tương đương với số tiền là: {{$data->phi_mg}}.VNĐ. (Số tiền bằng chữ: ……………………………………………………….…………….đồng.</p>
+                <p>2.1 Bên B đồng ý thanh toán cho Bên A số tiền môi giới là {{$data->phi_mg}} VNĐ ( đã bao gồm thuế VAT) (Số tiền bằng chữ: ……………………………………………………….…………….đồng.</p>
                 <p>2.2 Số tiền dịch vụ này không bao gồm các chi phí liên quan khác phát sinh ngoài dịch vụ môi giới tư vấn bán tài sản mà bên A thực hiện.</p>
-                <p>2.3 Phí môi giới được Bên B thanh toán cho Bên A một lần bằng tiền mặt trong vòng 12 (mười hai) ngày kể từ ngày giao dịch thành công. Trong trường hợp khách hàng đã đặt cọc mà chịu mất cọc thì bên B thanh toán cho bên A trong vòng 03 (ba) ngày kể từ ngày được xác định là khách hàng chấp nhận mất cọc.</p>
+                <p>2.3 Phí môi giới được Bên B thanh toán cho Bên A một lần bằng tiền mặt trong vòng 7 (mười hai) ngày kể từ ngày giao dịch thành công. Trong trường hợp khách hàng đã đặt cọc mà chịu mất cọc thì bên B thanh toán cho bên A trong vòng 03 (ba) ngày kể từ ngày được xác định là khách hàng chấp nhận mất cọc.</p>
                 <p><b>ĐIỀU 3: THỜI GIAN THỰC HIỆN DỊCH VỤ</b></p>
                 <p>3.1 Từ {{$data->ngaylaphd}} đến {{$data->thoihanhopdong}}</p>
                 <p>3.2 Hết thời hạn này hai bên có thể thỏa thuận thêm và được ký kết bằng một phụ lục hợp đồng.</p>
@@ -92,8 +92,8 @@
                 <p>4.4 Khách hàng của bên A là người được nhân viên bên A hoặc bất kỳ người nào được bên A giới thiệu hoặc khách hàng của bên A giới thiệu khách hàng khác đến bên B để ký hợp đồng, đặt cọc giữ chỗ hay tìm hiểu để sau đó ký hợp đồng mua bán với bên B. Nếu trước khi ký hợp đồng mua bán bất động sản mà khách hàng yêu cầu thay đổi người đứng tên trên hợp đồng thì vẫn được xem là khách hàng của bên A.</p>
                 <p>4.5 Giá bán bất động sản theo khoản 2.1 Điều 2 nêu trên theo thỏa thuận giữa bên A và bên B (Gọi là giá bán ban đầu)</p>
                 <p>4.6 Trường hợp bên A giới thiệu khách mua cho bên B và khách mua đã trả giá theo giá bán ban đầu nhưng bên B không bán thì coi như bên A đã thực hiện xong hợp đồng, bên B vẫn phải thanh tóan cho bên A: 5% (Bằng chữ:…... phần trăm) trên giá bán thực tế. (Việc không bán bao gồm sự xác nhận không bán bằng văn bản của người bán hoặc sau 3 (ba) ngày kể từ ngày người mua xác nhận mua nhưng người bán không nhận tiền đặt cọc).</p>
-                <p>4.7 Trong thời gian thực hiện hợp đồng hoặc sau ngày chấm dứt hợp đồng này nếu khách hàng do bên A giới thiệu hoặc khách hàng đó giới thiệu khách hàng khác đến mua căn hộ của bên B thì bên A vẫn được hưởng phí môi giới như mức phí môi giới đã thỏa thuận tại khoản 2.1 Điều 2 của Hợp đồng này.</p>
-                <p>(Có thể quy định một khoảng thời gian cụ thể: 6 tháng; một năm hoặc 2 năm …cho phù hợp với Điều khoản trên)</p>
+                <p>4.7 Trong thời gian thực hiện hợp đồng hoặc trong vòng 6 tháng sau ngày chấm dứt hợp đồng này nếu khách hàng do bên A giới thiệu hoặc khách hàng đó giới thiệu khách hàng khác đến mua căn hộ của bên B thì bên A vẫn được hưởng phí môi giới như mức phí môi giới đã thỏa thuận tại khoản 2.1 Điều 2 của Hợp đồng này.</p>
+        
                 <p><b> ĐIỀU 5: QUYỀN VÀ NGHĨA VỤ CỦA BÊN A</b></p>
                 <p>5.1. Quyền của bên A:</p>
                 <p>a) Yêu cầu bên B cung cấp hồ sơ, thông tin, tài liệu liên quan đến bất động sản;</p>
@@ -127,7 +127,18 @@
                 <p>Các bên cam kết cùng nhau thực hiện hợp đồng. Nếu trong quá trình thực hiện có phát sinh vướng mắc các bên sẽ trao đổi trên tinh thần hợp tác, trường hợp hai bên không thỏa thuận được việc tranh chấp sẽ được phán quyết bởi tòa án.</p>
                 <p>Hợp đồng này có hiệu lực kể từ {{$data->ngaylaphd}}. đến {{$data->thoihanhopdong}}.</p>
                 <p>Hợp đồng được lập thành 02 (hai) bản mỗi bên giữ một bản và có giá trị như nhau.</p>
-                <p><b>ĐẠI DIỆN BÊN A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ĐẠI DIỆN BÊN B</b></p>
+                 <div>
+            <table border="0" width="100%">
+        <tr>
+            <td width="40%"><b>ĐẠI DIỆN BÊN A</b><br>
+            </td>
+            <td width="20%"></td>
+            <td style="text-align: center;">
+            <b>ĐẠI DIỆN BÊN B</b><br>
+            </td>
+        </tr>  
+    </table>
+        </div> 
 
         </div>
       

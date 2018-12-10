@@ -127,7 +127,18 @@
                 <p>Các bên cam kết cùng nhau thực hiện hợp đồng. Nếu trong quá trình thực hiện có phát sinh vướng mắc các bên sẽ trao đổi trên tinh thần hợp tác, trường hợp hai bên không thỏa thuận được việc tranh chấp sẽ được phán quyết bởi tòa án.</p>
                 <p>Hợp đồng này có hiệu lực kể từ {{$data->ngaylaphd}}. đến {{$data->thoihanhopdong}}.</p>
                 <p>Hợp đồng được lập thành 02 (hai) bản mỗi bên giữ một bản và có giá trị như nhau.</p>
-                <p><b>ĐẠI DIỆN BÊN A&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ĐẠI DIỆN BÊN B</b></p>
+                 <div>
+            <table border="0" width="100%">
+        <tr>
+            <td width="40%"><b>ĐẠI DIỆN BÊN A</b><br>
+            </td>
+            <td width="20%"></td>
+            <td style="text-align: center;">
+            <b>ĐẠI DIỆN BÊN B</b><br>
+            </td>
+        </tr>  
+    </table>
+        </div> 
 
         </div>
         <a href="{{ route('down.hopdong',$data->id) }}">Xuat File</a>
