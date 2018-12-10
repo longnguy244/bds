@@ -78,7 +78,7 @@
                                     <td>{{ Tenhopdong($data->id_hd) }}</td>
                                     <td>{{ $data->lydothu }}</td>
                                     <td>{{ $data->tongtien }}</td>
-                                    <td>{{ $data->ngaythu }}</td>
+                                    <td>{{ date_format(new dateTime($data->ngaythu),'d/m/Y')}}</td>
                                     <td>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('get.hoadon.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>

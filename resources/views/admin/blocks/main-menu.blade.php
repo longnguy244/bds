@@ -27,7 +27,7 @@
         </li>
         <li class="{{ $route=='batdongsan' || $route=='motabds' || $route=='chusohuu'? 'active' : '' }}">
             <a class="menu-toggle" href="javascript:void(0);">
-                <i class="material-icons">people</i>
+                <i class="material-icons">explore</i>
                 <span>Bất động sản</span>
             </a>
             <ul class="ml-menu">
@@ -136,6 +136,29 @@
                 <li class="{{ $route=='phieuchi' ? 'active' : '' }}">
                     <a href="{{ asset('admin/phieuchi') }}">
                         <span>Phiếu chi</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="{{ $route=='thang' || $route=='quy' || $route=='nam'? 'active' : '' }}">
+            <a class="menu-toggle" href="javascript:void(0);">
+                <i class="material-icons">insert_chart</i>
+                <span>Thống kê</span>
+            </a>
+            <ul class="ml-menu">
+                <li class="{{ $route=='nam' ? 'active' : '' }}">
+                    <a href="{{ asset('admin/thongke/nam') }}">
+                        <span>Theo năm</span>
+                    </a>
+                </li>
+                <li class="{{ $route=='quy' ? 'active' : '' }}">
+                    <a href="{{ asset('admin/thongke/quy') }}">
+                        <span>Theo quý</span>
+                    </a>
+                </li>
+                <li class="{{ $route=='thang' ? 'active' : '' }}">
+                    <a href="{{ asset('admin/thongke/thang') }}">
+                        <span>Theo tháng</span>
                     </a>
                 </li>
             </ul>

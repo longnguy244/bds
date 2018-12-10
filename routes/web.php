@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::resource('hopdong', 'Admin\HopDongController');
     Route::resource('phieuthu', 'Admin\PhieuThuController');
     Route::resource('phieuchi', 'Admin\PhieuChiController');
-    Route::resource('bienbanhopdong', 'Admin\BienBanController');
+    Route::resource('bienbanhopdong', 'Admin\BienBanController');   
     
     Route::group(['prefix' => 'chusohuu'], function(){
         Route::get('/danh-sach','Admin\ChuSoHuuController@getList')->name('get.list.chusohuu');
@@ -86,6 +86,12 @@ Route::get('web/phanhoi',function()
         Route::post('/feedback/edit/{id}','Admin\FeedbackController@postEdit')->name('post.feedback.edit');
         Route::get('/feedback/delete/{id}','Admin\FeedbackController@getDelete')
             ->name('feedback.delete');
+
+
+    //Thống kê
+        Route::get('/thongke/thang','Admin\ThongKeController@getThang')->name('get.thongke.thang');
+        Route::get('/thongke/quy','Admin\ThongKeController@getQuy')->name('get.thongke.quy');
+        Route::get('/thongke/nam','Admin\ThongKeController@getNam')->name('get.thongke.nam');
 
     //Hoadon
         Route::get('/hoadon/index','Admin\HoaDonController@getIndex')->name('get.hoadon.index');
