@@ -150,7 +150,8 @@ class BDSController extends Controller
         }   
 
         session()->flash('flash_message', 'Cập nhật dữ liệu thành công');
-        return redirect()->back();
+        // return redirect()->back();
+        return redirect()->route('bds.index');
     }
 
     /**

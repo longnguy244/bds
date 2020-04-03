@@ -117,10 +117,10 @@
                         <div class="realtor-info">
                             <img src="{{ asset('south/img/bg-img/listing.jpg') }}" alt="">
                             <div class="realtor---info">
-                                <h2>Ngụy Yến Nhi</h2>
+                                <h2>Ngụy Quới Long</h2>
                                 <p>Chăm sóc khách hàng</p>
-                                <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0939928143</h6>
-                                <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Nhinguy@gmail.com</h6>
+                                <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0856789450</h6>
+                                <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Longnguy@gmail.com</h6>
                             </div>
                             <div class="realtor--contact-form">
                                 <form action="#" method="post">

@@ -46,8 +46,8 @@
                         </div> --}}
                         <!-- Address -->
                         <div class="address mt-30">
-                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0939928143</h6>
-                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Nhinguy@gmail.com</h6>
+                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt=""> 0856789450</h6>
+                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt=""> Longnguy@gmail.com</h6>
                             <h6><img src="{{ asset('south/img/icons/location.png') }}" alt=""> 1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</h6>
                         </div>
                     </div>

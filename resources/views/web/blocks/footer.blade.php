@@ -11,7 +11,6 @@
                         <div class="widget-title">
                             <h6>Dreamhouse</h6>
                         </div>
-
                         <img src="{{ asset('south/img/bg-img/footer.jpg') }}" alt="">
                         <div class="footer-logo my-4">
                             <img src="{{ asset('south/img/core-img/logo.png') }}" alt="">
@@ -36,8 +35,8 @@
                         </div>
                         <!-- Address -->
                         <div class="address">
-                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt="">0939928143</h6>
-                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt="">Nhinguy@gmail.com</h6>
+                            <h6><img src="{{ asset('south/img/icons/phone-call.png') }}" alt="">0856789450</h6>
+                            <h6><img src="{{ asset('south/img/icons/envelope.png') }}" alt="">Longnguy@gmail.com</h6>
                             <h6><img src="{{ asset('south/img/icons/location.png') }}" alt="">1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</h6>
                         </div>
                     </div>
