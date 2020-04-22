@@ -53,7 +53,7 @@
             <p>Địa chỉ:  1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</p>
             <p>Điện thoại:  0856789450.Fax:  02727281918</p>
             Mã số thuế:  0224489769 Tài khoản số:  87294057241894. Mở tại ngân hàng:  Vietcombank
-            Do Ông (Bà):  Ngụy Quới Long.Sinh năm:  1996 làm đại diện
+            Do Ông (Bà):  Ngụy Quới Long.Sinh năm:  1997 làm đại diện
             <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B):  </b>
             <p>Ông/Bà:  {{TenKhachHang($data->id_kh)}}. Sinh năm: {{NgaySinhKhachHang($data->id_kh)}}</p>
             <p>Giấy CMND:  {{CMNDKhachHang($data->id_kh)}}.ngày cấp: {{CMNDNgaycap($data->id_kh)}} </p>

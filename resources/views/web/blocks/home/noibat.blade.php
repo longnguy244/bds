@@ -12,7 +12,7 @@
         </div>
 
         <div class="row">
-            @foreach($bds as $bds)
+            @foreach($bds as $bds1)
             <!-- Single Featured Property -->
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
@@ -20,26 +20,26 @@
                     <div class="property-thumb">
                         <div class="tag">
                             <div class="property-thumb">
-                                <img src="{{ url('upload/bds/'.$bds->hinhanh) }}" alt="">
+                                <img src="{{ url('upload/bds/'.$bds1->hinhanh) }}" alt="">
 
                                 <div class="tag">
-                                    <span>{{ $bds->hinhthuc }}</span>
+                                    <span>{{ $bds1->hinhthuc }}</span>
                                 </div>
                                 <div class="list-price">
-                                    <p>{{ number_format($bds->gia) }} VND</p>
+                                    <p>{{ number_format($bds1->gia) }} VND</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="list-price">
-                            @if(isset($bds->hopdong))
-                            <p>${{ $bds->hopdong->giaban }}</p>
+                        <!-- <div class="list-price">
+                            @if(isset($bds1->hopdong))
+                            <p>${{ $bds1->hopdong->giaban }}</p>
                             @endif
-                        </div>
+                        </div> -->
                     </div>
                     <!-- Property Content -->
                     <div class="property-content">
-                        <a href="{{ asset('/'.$bds->alias) }}"><h5>{{ $bds->ten_bds }}</h5></a>
-                        <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
+                        <a href="{{ asset('/'.$bds1->alias) }}"><h5>{{ $bds1->ten_bds }}</h5></a>
+                        <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds1->diachi_bds }}</p>
                         <p></p>
                         <div class="property-meta-data d-flex align-items-end justify-content-between">
                             <div class="new-tag">
@@ -47,11 +47,11 @@
                             </div>
                             <div class="bathroom">
                                 <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
-                                <span>{{ $bds->phongtam }}</span>
+                                <span>{{ $bds1->phongtam }}</span>
                             </div>
                             <div class="space">
                                 <img src="{{ asset('south/img/icons/space.png') }}" alt="">
-                                <span>{{ $bds->dientichsd }}</span>
+                                <span>{{ $bds1->dientichsd }}</span>
                             </div>
                         </div> 
                     </div>

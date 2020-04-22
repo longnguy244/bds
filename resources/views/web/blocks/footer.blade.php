@@ -79,15 +79,15 @@
                         <div class="featured-properties-slides owl-carousel">
                             <!-- Single Slide -->
                             <div class="single-featured-properties-slide">
-                                <a href="#"><img src="{{ asset('south/img/bg-img/fea-product.jpg') }}" alt=""></a>
+                                <a href="#"><img src="{{ asset('upload/bds/1.jpg') }}" alt=""></a>
                             </div>
                             <!-- Single Slide -->
                             <div class="single-featured-properties-slide">
-                                <a href="#"><img src="{{ asset('south/img/bg-img/fea-product.jpg') }}" alt=""></a>
+                                <a href="#"><img src="{{ asset('upload/bds/hh.jpg') }}" alt=""></a>
                             </div>
                             <!-- Single Slide -->
                             <div class="single-featured-properties-slide">
-                                <a href="#"><img src="{{ asset('south/img/bg-img/fea-product.jpg') }}" alt=""></a>
+                                <a href="#"><img src="{{ asset('upload/bds/zz.jpg') }}" alt=""></a>
                             </div>
                         </div>
                     </div>
