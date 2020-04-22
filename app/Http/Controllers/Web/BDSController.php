@@ -21,7 +21,7 @@ class BDSController extends Controller
      */
     public function index(Request $request)
     {
-        $bds =  BATDONGSAN::orderBy('created_at','DESC')->paginate(9);
+        $bds =  BATDONGSAN::where('status',10)->orderBy('created_at','DESC')->paginate(9);
         $thanhpho = THANHPHO::get();
         $loai = LOAIBDS::get();
         $chitietbds = MOTABDS::get();
@@ -265,5 +265,12 @@ class BDSController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function sell($id){
+        $bds = BATDONGSAN::find($id);
+        $bds->status = 0;
+        $bds->update();
+        return redirect()->back();
     }
 }

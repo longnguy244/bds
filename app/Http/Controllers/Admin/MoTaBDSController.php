@@ -137,13 +137,17 @@ class MoTaBDSController extends Controller
     {   
 
         if(Input::hasFile('imgDetail')){
+            // dd('error');
             foreach ($request->imgDetail as $key => $hinh) {
                 $imgDetail = new HINHANHBDS();
                 if(isset($hinh)){
                     $imgDetail->hinhanh = $request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension();
                     $imgDetail->id_bds = $request->input('id_bds');
-                    $hinh->move('upload/bds/detail/',$request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension());
-                    $imgDetail->save();
+                    if($hinh->move('upload/bds/detail/',$request->input('id_bds').'-'.date('Y-m-d-H-i-s').'-'.$key.'.'.$hinh->getClientOriginalExtension())){
+                        $imgDetail->save();
+                    }else{
+                        dd('error');
+                    }
                 }
             }
         }

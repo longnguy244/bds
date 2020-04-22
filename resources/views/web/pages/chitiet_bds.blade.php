@@ -10,6 +10,11 @@
         .content p span{
             color: black;
         }
+
+        .modal{
+            top: 80px;
+            z-index: 10000;
+        }
     </style>
 @endpush
 
@@ -67,6 +72,8 @@
                             @endif
                         </div>
                         <h5>{{ $bds->ten_bds }}</h5>
+                        <h4>{{ number_format($bds->gia) }} VND</h4>
+                        <button class="btn btn south-btn"data-toggle="modal" data-target="#myModal">MUA</button>
                         <hr>
                         <h6>Địa chỉ</h6>
                         <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
@@ -125,13 +132,13 @@
                             <div class="realtor--contact-form">
                                 <form action="#" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="realtor-name" placeholder="Your Name">
+                                        <input required type="text" class="form-control" id="realtor-name" placeholder="Your Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="number" class="form-control" id="realtor-number" placeholder="Your Number">
+                                        <input required type="number" class="form-control" id="realtor-number" placeholder="Your Number">
                                     </div>
                                     <div class="form-group">
-                                        <input type="enumber" class="form-control" id="realtor-email" placeholder="Your Mail">
+                                        <input required type="enumber" class="form-control" id="realtor-email" placeholder="Your Mail">
                                     </div>
                                     <div class="form-group">
                                         <textarea name="message" class="form-control" id="realtor-message" cols="30" rows="10" placeholder="Your Message"></textarea>
@@ -155,7 +162,102 @@
     </section>
     <!-- ##### Listings Content Area End ##### -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <form action="#" method="post">
+            {{ csrf_field() }}
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="">Họ tên</label>
+                    <input required type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Địa chỉ</label>
+                    <input required type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Số CMND</label>
+                    <input required type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Hình thức thanh toán</label>
+                    <select required id="hinhthuc" class="form-control">
+                        <option value="">Chọn hình thức thanh toán</option>
+                        <option value="0">Thẻ nội địa</option>
+                        <option value="1">Thẻ tín dụng</option>
+                    </select>
+                </div>
+                <div class="creditcard" style="display: none">
+                    <div class="form-group">
+                        <label for="">Ngân hàng</label>
+                        <select id="hinhthuc" class="form-control">
+                            <option value="sacombank">Sacombank</option>
+                            <option value="vietcombank">Vietcombank</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Chủ thẻ</label>
+                        <input  type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mã thẻ</label>
+                        <input  type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ngày hết hạn</label>
+                        <input  type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="mastercard" style="display: none">
+                    <div class="form-group">
+                        <label for="">Chủ thẻ</label>
+                        <input  type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mã thẻ</label>
+                        <input  type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ngày hết hạn</label>
+                        <input   type="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">CCV</label>
+                        <input   type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!-- <a href="{{ route('get.sell',$bds->id) }}" class="btn south-btn">Mua</a> -->
+                <button type="submit" class="btn south-btn">Mua</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+
     <!-- ##### Footer Area Start ##### -->
     @include('web.blocks.footer')
     <!-- ##### Footer Area End ##### -->
 @endsection
+
+@push('js')
+<script>
+    $('#hinhthuc').change(function(){
+        if($(this).val() == 0 ){
+            $('.mastercard').hide();
+            $('.creditcard').show();
+        }else{
+            $('.creditcard').hide();
+            $('.mastercard').show();
+        }
+    })
+</script>
+@endpush

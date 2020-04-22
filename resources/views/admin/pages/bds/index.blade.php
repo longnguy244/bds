@@ -42,6 +42,7 @@
                                     <th aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: auto;">
                                         Số CNQSDĐ
                                     </th>
+                                    <th>Trạng thái</th>
                                     <th rowspan="1" colspan="1" style="width: 20px;"> 
                                     </th>
                                     <th rowspan="1" colspan="1" style="width: 20px;"> 
@@ -65,6 +66,7 @@
                                     <th rowspan="1" colspan="1">
                                         Số CNQSDĐ
                                     </th>
+                                    <th>Trạng thái</th>
                                     <th rowspan="1" colspan="1">
                                     </th>
                                     <th rowspan="1" colspan="1">
@@ -79,6 +81,13 @@
                                     <td>{{ TenThanhPho($data->id_tp) }}</td>
                                     <td>{{ $data->diachi_bds }}</td>
                                     <td>{{ $data->soCNQSDD }}</td>
+                                    <td rowspan="1" colspan="1">
+                                        @if($data->status == 10)
+                                            <div style="color:green">Đang bán</div>
+                                        @else
+                                            <div style="color:red">Đã bán</div>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a type="button" class="btn bg-blue-grey waves-effect" href="{{ route('bds.edit', ['data' => $data->id]) }}">
                                             <i class="material-icons">edit</i>

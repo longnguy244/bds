@@ -51,9 +51,9 @@
             <p>Hôm nay ngày tháng năm. Tại:  Trung tâm môi giới bất động sản Dreamhouse.<br>Chúng tôi gồm có: </p>   
             <p><b>BÊN MÔI GIỚI (BÊN A):  TRUNG TÂM MÔI GIỚI BẤT ĐỘNG SẢN DREAMHOUSE</b></p>
             <p>Địa chỉ:  1234 Võ Văn Kiệt, Quận Ninh Kiều, TPCT</p>
-            <p>Điện thoại:  0939928143.Fax:  02727281918</p>
+            <p>Điện thoại:  0856789450.Fax:  02727281918</p>
             Mã số thuế:  0224489769 Tài khoản số:  87294057241894. Mở tại ngân hàng:  Vietcombank
-            Do Ông (Bà):  Ngụy Yến Nhi.Sinh năm:  1996 làm đại diện
+            Do Ông (Bà):  Ngụy Quới Long.Sinh năm:  1997 làm đại diện
             <p><b>BÊN ĐƯỢC MÔI GIỚI (BÊN B):  </b>
             <p>Ông/Bà:  {{TenKhachHang($data->id_kh)}}. Sinh năm: {{NgaySinhKhachHang($data->id_kh)}}</p>
             <p>Giấy CMND:  {{CMNDKhachHang($data->id_kh)}}.ngày cấp: {{CMNDNgaycap($data->id_kh)}} </p>

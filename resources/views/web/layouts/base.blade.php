@@ -53,14 +53,14 @@
             <button class="btn float-right border-0 close">X</button>
             </div>
             <div class="card-body">
-                <div class="card-content">
-                
+                <div class="card-content chat-content p-3">
+                    
                 </div>
                 <div class="input-checkbox mt-2">
-                <form action="">
-                    <input type="text" class="form-control float-left" style="width: 86%">
-                    <button class="btn btn-info ml-2">Gửi</button>
-                </form>
+                <!-- <form action=""> -->
+                    <input type="text" class="form-control float-left text-chat" style="width: 86%">
+                    <button class="btn btn-info ml-2 button-send">Gửi</button>
+                <!-- </form> -->
                 </div>
             </div>
         </div>
@@ -88,7 +88,13 @@
             });
             $(".icon-chatbox").click(function(){
                 $(".card-chatbox").show();
-            })
+            });
+
+            $('.button-send').click(function(){
+                var text = $('.text-chat').val();
+                $('.chat-content').append('<p class="p-1" style="border: 1px solid black">'+text+'<p>');
+                $('.text-chat').val('');
+            });
         </script>
 
     </body>
