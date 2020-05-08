@@ -68,14 +68,13 @@
                     <div class="single-featured-property mb-50 wow fadeInUp" data-wow-delay="100ms">
                         <!-- Property Thumbnail -->
                         <div class="property-thumb">
-                            <img src="{{ url('upload/bds/'.$val->hinhanh) }}" alt="{{ $val->hinhanh }}">
-
+                            <img src="{{ url('upload/bds/'.$val->hinhanh) }}" onerror="this.src='{{ url('upload/Not-found.jpg') }}'" alt="{{ $val->hinhanh }}">
                             <div class="tag">
-                                    <span>{{ $val->hinhthuc }}</span>
-                                </div>
-                                <div class="list-price">
-                                    <p>{{ number_format($val->gia) }} VND</p>
-                                </div>
+                                <span>{{ $val->hinhthuc }}</span>
+                            </div>
+                            <div class="list-price">
+                                <p>{{ number_format($val->gia) }} VND</p>
+                            </div>
                         </div>
                         <!-- Property Content -->
                         <div class="property-content">

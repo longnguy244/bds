@@ -19,8 +19,10 @@ class CreateKHACHHANGTable extends Migration
             $table->string('ten_kh');
             $table->date('ngaysinh_kh')->nullable();
             $table->string('diachi_kh');
-            $table->string('phone_kh');
-            $table->string('email_kh')->nullable();
+            $table->string('phone_kh')->unique();
+            $table->string('email_kh')->unique();
+            $table->string('password');
+            $table->rememberToken();
             $table->string('hokhau');
             $table->string('cmnd_kh');
             $table->date('ngaycap_kh');

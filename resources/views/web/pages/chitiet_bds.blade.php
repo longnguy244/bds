@@ -50,6 +50,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                <!-- <iframe src="https://storage.googleapis.com/vrview/2.0/index.html?preview=https://www.sketchuptextureclub.com/public/models/m/sketchuptexture-3d-models-5021_44.jpg&image=https://www.sketchuptextureclub.com/public/models/m/sketchuptexture-3d-models-5021_44.jpg&is_stereo=true&"></iframe> -->
                     <!-- Single Listings Slides -->
                     <div class="single-listings-sliders owl-carousel">
                         <!-- Single Slide -->
@@ -73,7 +74,8 @@
                         </div>
                         <h5>{{ $bds->ten_bds }}</h5>
                         <h4>{{ number_format($bds->gia) }} VND</h4>
-                        <button class="btn btn south-btn"data-toggle="modal" data-target="#myModal">MUA</button>
+                        <!-- <button class="btn btn south-btn" data-toggle="modal" data-target="#myModal" >MUA</button> -->
+                        <a href="{{ route('thanhtoan', $bds->id) }}"><button class="btn btn south-btn">MUA</button></a>
                         <hr>
                         <h6>Địa chỉ</h6>
                         <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $bds->diachi_bds }}</p>
@@ -163,85 +165,98 @@
     <!-- ##### Listings Content Area End ##### -->
 
     <!-- Modal -->
+    @if(Auth::guard('customer')->check())
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        </div>
-        <form action="#" method="post">
-            {{ csrf_field() }}
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="">Họ tên</label>
-                    <input required type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Địa chỉ</label>
-                    <input required type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Số CMND</label>
-                    <input required type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="">Hình thức thanh toán</label>
-                    <select required id="hinhthuc" class="form-control">
-                        <option value="">Chọn hình thức thanh toán</option>
-                        <option value="0">Thẻ nội địa</option>
-                        <option value="1">Thẻ tín dụng</option>
-                    </select>
-                </div>
-                <div class="creditcard" style="display: none">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <form action="#" method="post">
+                {{ csrf_field() }}
+                <div class="modal-body">
                     <div class="form-group">
-                        <label for="">Ngân hàng</label>
-                        <select id="hinhthuc" class="form-control">
-                            <option value="sacombank">Sacombank</option>
-                            <option value="vietcombank">Vietcombank</option>
+                        <label for="">Họ tên</label>
+                        <input required type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Địa chỉ</label>
+                        <input required type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Số CMND</label>
+                        <input required type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Hình thức thanh toán</label>
+                        <select required id="hinhthuc" class="form-control">
+                            <option value="">Chọn hình thức thanh toán</option>
+                            <option value="0">Thẻ nội địa</option>
+                            <option value="1">Thẻ tín dụng</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="">Chủ thẻ</label>
-                        <input  type="text" class="form-control">
+                    <div class="creditcard" style="display: none">
+                        <div class="form-group">
+                            <label for="">Ngân hàng</label>
+                            <select id="hinhthuc" class="form-control">
+                                <option value="sacombank">Sacombank</option>
+                                <option value="vietcombank">Vietcombank</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Chủ thẻ</label>
+                            <input  type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mã thẻ</label>
+                            <input  type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ngày hết hạn</label>
+                            <input  type="date" class="form-control">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="">Mã thẻ</label>
-                        <input  type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Ngày hết hạn</label>
-                        <input  type="date" class="form-control">
+                    <div class="mastercard" style="display: none">
+                        <div class="form-group">
+                            <label for="">Chủ thẻ</label>
+                            <input  type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mã thẻ</label>
+                            <input  type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ngày hết hạn</label>
+                            <input   type="date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="">CCV</label>
+                            <input   type="text" class="form-control">
+                        </div>
                     </div>
                 </div>
-                <div class="mastercard" style="display: none">
-                    <div class="form-group">
-                        <label for="">Chủ thẻ</label>
-                        <input  type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Mã thẻ</label>
-                        <input  type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Ngày hết hạn</label>
-                        <input   type="date" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="">CCV</label>
-                        <input   type="text" class="form-control">
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!-- <a href="{{ route('get.sell',$bds->id) }}" class="btn south-btn">Mua</a> -->
+                    <button type="submit" class="btn south-btn">Mua</button>
                 </div>
+            </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <!-- <a href="{{ route('get.sell',$bds->id) }}" class="btn south-btn">Mua</a> -->
-                <button type="submit" class="btn south-btn">Mua</button>
-            </div>
-        </form>
         </div>
     </div>
+    @else
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" style="max-width: 400px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Vui lòng đăng nhập để thực hiện</h5>
+                    <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+            </div>
+        </div>
     </div>
+    @endif
 
     <!-- ##### Footer Area Start ##### -->
     @include('web.blocks.footer')

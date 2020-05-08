@@ -43,6 +43,24 @@
                 height: 350px;
                 background: #80808026;
             }
+
+            .login
+            {
+                border: 2px solid #947054;
+                border-radius: 5px;
+            }
+
+            .login:hover
+            {
+                background: #947054;
+            }
+
+            .property-thumb > img
+            {
+                width: 100%;
+                height: 253px;
+                object-fit: cover;
+            }
         </style>
     </head>
     <body>

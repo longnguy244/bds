@@ -2,12 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class KHACHHANG extends Model
+class KHACHHANG extends Authenticatable
 {
+    use Notifiable;
 	public $route = 'khachhang';
-	protected $table = 'khachhang';
+    protected $table = 'khachhang';
+    protected $guard = 'khachhang';
     protected $fillable = 
     [
         'ten_kh',
@@ -15,6 +19,7 @@ class KHACHHANG extends Model
         'diachi_kh',
         'phone_kh',
         'email_kh',
+        'password',
         'cmnd_kh',
         'ngaycap_kh',
         'ghichu',
@@ -43,4 +48,9 @@ class KHACHHANG extends Model
         'phone_kh.max'          => 'Điện thoại nhân viên không được vượt quá :max ký tự',
         'cmnd_kh.unique'        => 'CMND nhân viên là duy nhất',
     ];
+
+    public function messages()
+    {
+        return $this->hasMany(MESSAGE::class, user_id);
+    }
 }

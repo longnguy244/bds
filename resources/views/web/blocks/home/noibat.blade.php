@@ -20,8 +20,7 @@
                     <div class="property-thumb">
                         <div class="tag">
                             <div class="property-thumb">
-                                <img src="{{ url('upload/bds/'.$bds1->hinhanh) }}" alt="">
-
+                                <img src="{{ url('upload/bds/'.$bds1->hinhanh) }}" onerror="this.src='{{ url('upload/Not-found.jpg') }}'" alt="">
                                 <div class="tag">
                                     <span>{{ $bds1->hinhthuc }}</span>
                                 </div>

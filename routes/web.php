@@ -53,6 +53,43 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
 Auth::routes();
 
+// Đăng ký khách
+Route::get('dangky', 'Web\RegisterController@getRegister')->name('get.dangky');
+Route::post('dangky', 'Web\RegisterController@postRegister')->name('post.dangky');
+
+// Đăng nhập khách
+Route::get('dangnhap', 'Web\LoginController@getLogin');
+Route::post('dangnhap', 'Web\LoginController@postLogin');
+
+//Đăng xuất
+Route::post('dangxuat', [ 'as' => 'dangxuat', 'uses' => 'Web\LogoutController@getLogout']);
+
+Route::group(['middleware' => 'customer'], function(){
+    Route::get('/chat',function(){
+        return view('web.pages.chat');
+    });
+    Route::get('/messages', function () {
+        return App\Message::all();
+    });
+    // Route::post('messages', function () {
+    //     // Store the new message
+    //     $user = Auth::guard('customer')->user();
+    //     $user->messages()->create([
+    //         'message' => request()->get('message')
+    //     ]);
+    //     broadcast(new MessagePosted($message, $user))->toOthers();
+    //     return ['status' => 'OK'];
+    // });
+});
+
+Route::get('thanhtoan/{id}', 'Web\PaymentController@payment')->name('thanhtoan');
+Route::post('thanhtoan', 'Web\PaymentController@payment_accept')->name('post.thanhtoan');
+Route::get('checkpayment', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
+
+Broadcast::channel('chatroom', function ($user) {
+    return $user;
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'Web\HomeController@index');
 
@@ -63,12 +100,9 @@ Route::get('lienhe', 'Web\LienHeController@index');
 Route::get('/{aliasBDS}', 'Web\HomeController@detailBDS');
 Route::get('/baiviet/{aliasBV}', 'Web\BaiVietController@detailBV');
 
-
-
 Route::get('web/phanhoi',function(){
     return view('web.pages.phanhoi');
 })->name('web.phanhoi');
-
 
 
 
