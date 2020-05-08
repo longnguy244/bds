@@ -73,6 +73,7 @@ class HopDongController extends Controller
      */
     public function show($id)
     {
+        // dd($this->model->find($id));
         return view('admin.pages.hopdong.show', [
             'data'          => $this->model->find($id),
             'customers'     => KHACHHANG::get(),
