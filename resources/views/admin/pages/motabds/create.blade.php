@@ -45,7 +45,7 @@
                         Bất Động Sản
                     </label>
                     <div class="form-group">
-                        <input type="text" class="form-control" readonly="" value="{{ $data->ten_bds }}">
+                        <input type="text" class="form-con  trol" readonly="" value="{{ $data->ten_bds }}">
                         <input name="id_bds" type="hidden" id="id_bds" class="form-control" placeholder="id" value="{{ $data->id }}">
                     </div>
                     <label for="dientich">
