@@ -84,8 +84,10 @@
                                     <td rowspan="1" colspan="1">
                                         @if($data->status == 10)
                                             <div style="color:green">Đang bán</div>
-                                        @else
+                                        @elseif($data->status == 0)
                                             <div style="color:red">Đã bán</div>
+                                        @else
+                                            <div style="color:blue">Đã cọc</div>
                                         @endif
                                     </td>
                                     <td>

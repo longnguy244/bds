@@ -1,21 +1,21 @@
 <template lang="html">
   <div class="chat-message">
-    <p>{{ message.message }}</p>
-    <small>{{ message.user.ten_kh }}</small>
+    <p>{{ messages }}</p>
+    <small>{{ messages }}</small>
   </div>
 </template>
 
 <script>
 export default {
-    props: ['message']
+    props: ['messages']
 }
 </script>
 
 <style lang="css">
-.chat-message {
-  padding: 1rem;
-}
-.chat-message > p {
-  margin-bottom: .5rem;
-}
+  .chat-message {
+    padding: 1rem;
+  }
+  .chat-message > p {
+    margin-bottom: .5rem;
+  }
 </style>

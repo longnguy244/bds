@@ -169,17 +169,12 @@
                         <span style="float: right; font-size: 25px">5.000.000đ</span>
                     </p>
                     <div class="south-buttons-area mb-100">
-                        <form method="POST" action="{{ route('post.thanhtoan') }}" onsubmit="return validateForm()">
-						{{ csrf_field() }}
                         @if(Auth::guard('customer')->check())
                             <input type="hidden" name="kh_id" id="kh_id" value="{{ Auth::guard('customer')->user()->id }}">
                         @else
                             <input type="hidden" name="kh_id" id="kh_id" value="">
                         @endif
-                            <input type="hidden" name="bds_id" value="{{ $bds->id }}">
-                            <input type="hidden" name="sotien" value="{{ $bds->gia }}">
-                            <button class="btn south-btn m-1" style="width: 100%;" type="submit">Xác nhận thanh toán</button>
-                        </form>
+                            <a href="{{ route('check.thanhtoan', $bds->id) }}"><button class="btn south-btn m-1" style="width: 100%;" type="submit">Xác nhận thanh toán</button></a>
                     </div>
                 </div>
             </div>
@@ -199,13 +194,8 @@
                 if (kh_id == '')
                 {
                     alert('Vui lòng đăng nhập để thực hiện chức năng này');
+                    return false;
                 }
-                else
-                {
-                    alert('Bạn đã đặt cọc thành công')
-                    return true;
-                }
-                return false;
             }
     </script>
 @endpush

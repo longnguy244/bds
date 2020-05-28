@@ -98,6 +98,11 @@
 
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         
+        <!-- Paypal -->
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=AUXZmIPpxSb1omskpiG3bEK1THQT7Y_L7TJGCntapHOGk_AcRP0pvO93gSuSAnLj-5Is4wGBFf8OUPU6"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+        </script>
+        
         @stack('js')
         <script>
             $(".card-chatbox").hide();

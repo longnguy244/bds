@@ -12,11 +12,6 @@ use App\KHACHHANG;
 
 class LoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
     public function username()
     {
         return $this->email_kh;

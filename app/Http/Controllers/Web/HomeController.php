@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('web.pages.home',[
-            'bds' => BATDONGSAN::join('motabds','batdongsan.id','=','motabds.id_bds')->get()->take(6),
+            'bds' => BATDONGSAN::join('motabds','batdongsan.id','=','motabds.id_bds')->where('status','10')->get()->take(6),
             'data' => FEEDBACK::where('duyet',1)->orderBy('created_at', 'DESC')->get()->take(6)
         ]);
     }

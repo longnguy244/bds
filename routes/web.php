@@ -84,7 +84,7 @@ Route::group(['middleware' => 'customer'], function(){
 
 Route::get('thanhtoan/{id}', 'Web\PaymentController@payment')->name('thanhtoan');
 Route::post('thanhtoan', 'Web\PaymentController@payment_accept')->name('post.thanhtoan');
-Route::get('checkpayment', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
+Route::get('checkpayment/{id}', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
 
 Broadcast::channel('chatroom', function ($user) {
     return $user;

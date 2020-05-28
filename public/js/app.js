@@ -60,209 +60,18 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 12);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(1);
-module.exports = __webpack_require__(2);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-__webpack_require__(24);
-
-window.Vue = __webpack_require__(50);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example', __webpack_require__(54));
-Vue.component('chat-message', __webpack_require__(57));
-Vue.component('chat-log', __webpack_require__(63));
-Vue.component('chat-composer', __webpack_require__(68));
-
-var app = new Vue({
-    el: '#app',
-    data: {
-
-        messages: []
-    },
-    methods: {
-        addMessage: function addMessage(message) {
-            // Add to existing messages
-            this.messages.push(message);
-        },
-        created: function created() {
-            var _this = this;
-
-            axios.get('/messages').then(function (response) {
-                _this.messages = response.data;
-                // console.log(response);
-            });
-        }
-    }
-});
-
-// const app = new Vue({
-//     el: '#app',
-//     data: {
-//         messages: []
-//     },
-//     methods: {
-//         addMessage(message) {
-//             // Add to existing messages
-//             this.messages.push(message);
-
-//             // Persist to the database etc
-//             axios.post('/messages', message).then(response => {
-//                 // Do whatever;
-//             })
-//         }
-//     },
-//     created() {
-//         axios.get('/messages').then(response => {
-//             this.messages = response.data;
-//         });
-//         Echo.join('chatroom')
-//             .here((users) => {
-//                 this.usersInRoom = users;
-//             })
-//             .joining((user) => {
-//                 this.usersInRoom.push(user);
-//             })
-//             .leaving((user) => {
-//                 this.usersInRoom = this.usersInRoom.filter(u => u != user)
-//             })
-//             .listen('MessagePosted', (e) => {
-//                 this.messages.push({
-//                     message: e.message.message,
-//                     user: e.user
-//                 });
-//             });
-//     }
-// });
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
-var bind = __webpack_require__(18);
-var isBuffer = __webpack_require__(31);
+var bind = __webpack_require__(6);
+var isBuffer = __webpack_require__(21);
 
 /*global toString:true*/
 
@@ -565,7 +374,7 @@ module.exports = {
 
 
 /***/ }),
-/* 14 */
+/* 1 */
 /***/ (function(module, exports) {
 
 var g;
@@ -592,7 +401,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 15 */
+/* 2 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -701,14 +510,14 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 16 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(13);
-var normalizeHeaderName = __webpack_require__(33);
+var utils = __webpack_require__(0);
+var normalizeHeaderName = __webpack_require__(23);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -724,10 +533,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(20);
+    adapter = __webpack_require__(8);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(20);
+    adapter = __webpack_require__(8);
   }
   return adapter;
 }
@@ -798,10 +607,92 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(7)))
 
 /***/ }),
-/* 17 */
+/* 4 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -820,7 +711,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(60)
+var listToStyles = __webpack_require__(50)
 
 /*
 type StyleObject = {
@@ -1029,7 +920,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-/* 18 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1047,7 +938,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 19 */
+/* 7 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -1237,19 +1128,19 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 20 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
-var settle = __webpack_require__(34);
-var buildURL = __webpack_require__(36);
-var parseHeaders = __webpack_require__(37);
-var isURLSameOrigin = __webpack_require__(38);
-var createError = __webpack_require__(21);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(39);
+var utils = __webpack_require__(0);
+var settle = __webpack_require__(24);
+var buildURL = __webpack_require__(26);
+var parseHeaders = __webpack_require__(27);
+var isURLSameOrigin = __webpack_require__(28);
+var createError = __webpack_require__(9);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(29);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1346,7 +1237,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(40);
+      var cookies = __webpack_require__(30);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1424,13 +1315,13 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 21 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(35);
+var enhanceError = __webpack_require__(25);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1449,7 +1340,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 22 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1461,7 +1352,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 23 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1487,13 +1378,107 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 24 */
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(13);
+module.exports = __webpack_require__(63);
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+__webpack_require__(14);
+
+window.Vue = __webpack_require__(40);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('example', __webpack_require__(44));
+Vue.component('chat-message', __webpack_require__(47));
+Vue.component('chat-log', __webpack_require__(53));
+Vue.component('chat-composer', __webpack_require__(58));
+
+var app = new Vue({
+    el: '#app',
+    data: {
+
+        messages: []
+    },
+    methods: {
+        addMessage: function addMessage(message) {
+            // Add to existing messages
+            this.messages.push(message);
+        },
+        created: function created() {
+            var _this = this;
+
+            axios.get('/messages').then(function (response) {
+                _this.messages = response.data;
+                // console.log(response);
+            });
+        }
+    }
+});
+
+// const app = new Vue({
+//     el: '#app',
+//     data: {
+//         messages: []
+//     },
+//     methods: {
+//         addMessage(message) {
+//             // Add to existing messages
+//             this.messages.push(message);
+
+//             // Persist to the database etc
+//             axios.post('/messages', message).then(response => {
+//                 // Do whatever;
+//             })
+//         }
+//     },
+//     created() {
+//         axios.get('/messages').then(response => {
+//             this.messages = response.data;
+//         });
+//         Echo.join('chatroom')
+//             .here((users) => {
+//                 this.usersInRoom = users;
+//             })
+//             .joining((user) => {
+//                 this.usersInRoom.push(user);
+//             })
+//             .leaving((user) => {
+//                 this.usersInRoom = this.usersInRoom.filter(u => u != user)
+//             })
+//             .listen('MessagePosted', (e) => {
+//                 this.messages.push({
+//                     message: e.message.message,
+//                     user: e.user
+//                 });
+//             });
+//     }
+// });
+
+/***/ }),
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(48);
-window._ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(38);
+window._ = __webpack_require__(15);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -1502,9 +1487,9 @@ window._ = __webpack_require__(25);
  */
 
 try {
-    window.$ = window.jQuery = __webpack_require__(27);
+    window.$ = window.jQuery = __webpack_require__(17);
 
-    __webpack_require__(28);
+    __webpack_require__(18);
 } catch (e) {}
 
 /**
@@ -1513,7 +1498,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(29);
+window.axios = __webpack_require__(19);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -1539,17 +1524,17 @@ if (token) {
 
 
 
-window.Pusher = __webpack_require__(49);
+window.Pusher = __webpack_require__(39);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
     broadcaster: 'pusher',
-    key: 'your-pusher-key',
+    key: '04a3a30aa3b486b0fc06',
     cluster: 'ap1',
     encrypted: true
 });
 
 /***/ }),
-/* 25 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -18666,10 +18651,10 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */](
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(26)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(16)(module)))
 
 /***/ }),
-/* 26 */
+/* 16 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18697,7 +18682,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 27 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -29576,7 +29561,7 @@ return jQuery;
 
 
 /***/ }),
-/* 28 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /*!
@@ -32162,22 +32147,22 @@ if (typeof jQuery === 'undefined') {
 
 
 /***/ }),
-/* 29 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(30);
+module.exports = __webpack_require__(20);
 
 /***/ }),
-/* 30 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
-var bind = __webpack_require__(18);
-var Axios = __webpack_require__(32);
-var defaults = __webpack_require__(16);
+var utils = __webpack_require__(0);
+var bind = __webpack_require__(6);
+var Axios = __webpack_require__(22);
+var defaults = __webpack_require__(3);
 
 /**
  * Create an instance of Axios
@@ -32210,15 +32195,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(23);
-axios.CancelToken = __webpack_require__(46);
-axios.isCancel = __webpack_require__(22);
+axios.Cancel = __webpack_require__(11);
+axios.CancelToken = __webpack_require__(36);
+axios.isCancel = __webpack_require__(10);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(47);
+axios.spread = __webpack_require__(37);
 
 module.exports = axios;
 
@@ -32227,7 +32212,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 31 */
+/* 21 */
 /***/ (function(module, exports) {
 
 /*!
@@ -32254,18 +32239,18 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 32 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var defaults = __webpack_require__(16);
-var utils = __webpack_require__(13);
-var InterceptorManager = __webpack_require__(41);
-var dispatchRequest = __webpack_require__(42);
-var isAbsoluteURL = __webpack_require__(44);
-var combineURLs = __webpack_require__(45);
+var defaults = __webpack_require__(3);
+var utils = __webpack_require__(0);
+var InterceptorManager = __webpack_require__(31);
+var dispatchRequest = __webpack_require__(32);
+var isAbsoluteURL = __webpack_require__(34);
+var combineURLs = __webpack_require__(35);
 
 /**
  * Create a new instance of Axios
@@ -32347,13 +32332,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 33 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -32366,13 +32351,13 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 34 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(21);
+var createError = __webpack_require__(9);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -32399,7 +32384,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 35 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32427,13 +32412,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 36 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -32502,13 +32487,13 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 37 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 /**
  * Parse headers into an object
@@ -32546,13 +32531,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 38 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -32621,7 +32606,7 @@ module.exports = (
 
 
 /***/ }),
-/* 39 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32664,13 +32649,13 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 40 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -32724,13 +32709,13 @@ module.exports = (
 
 
 /***/ }),
-/* 41 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -32783,16 +32768,16 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 42 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
-var transformData = __webpack_require__(43);
-var isCancel = __webpack_require__(22);
-var defaults = __webpack_require__(16);
+var utils = __webpack_require__(0);
+var transformData = __webpack_require__(33);
+var isCancel = __webpack_require__(10);
+var defaults = __webpack_require__(3);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -32869,13 +32854,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 43 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(13);
+var utils = __webpack_require__(0);
 
 /**
  * Transform the data for a request or a response
@@ -32896,7 +32881,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 44 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32917,7 +32902,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 45 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32938,13 +32923,13 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 46 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(23);
+var Cancel = __webpack_require__(11);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -33002,7 +32987,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 47 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33036,860 +33021,1476 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 48 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-class Connector {
-    /**
-     * Create a new class instance.
-     */
-    constructor(options) {
-        /**
-         * Default connector options.
-         */
-        this._defaultOptions = {
-            auth: {
-                headers: {},
-            },
-            authEndpoint: '/broadcasting/auth',
-            broadcaster: 'pusher',
-            csrfToken: null,
-            host: null,
-            key: null,
-            namespace: 'App.Events',
-        };
-        this.setOptions(options);
-        this.connect();
-    }
-    /**
-     * Merge the custom options with the defaults.
-     */
-    setOptions(options) {
-        this.options = Object.assign(this._defaultOptions, options);
-        if (this.csrfToken()) {
-            this.options.auth.headers['X-CSRF-TOKEN'] = this.csrfToken();
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
         }
-        return options;
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
+
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
+
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function () {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
+
+var Connector = /*#__PURE__*/function () {
+  /**
+   * Create a new class instance.
+   */
+  function Connector(options) {
+    _classCallCheck(this, Connector);
+
+    /**
+     * Default connector options.
+     */
+    this._defaultOptions = {
+      auth: {
+        headers: {}
+      },
+      authEndpoint: '/broadcasting/auth',
+      broadcaster: 'pusher',
+      csrfToken: null,
+      host: null,
+      key: null,
+      namespace: 'App.Events'
+    };
+    this.setOptions(options);
+    this.connect();
+  }
+  /**
+   * Merge the custom options with the defaults.
+   */
+
+
+  _createClass(Connector, [{
+    key: "setOptions",
+    value: function setOptions(options) {
+      this.options = _extends(this._defaultOptions, options);
+
+      if (this.csrfToken()) {
+        this.options.auth.headers['X-CSRF-TOKEN'] = this.csrfToken();
+      }
+
+      return options;
     }
     /**
      * Extract the CSRF token from the page.
      */
-    csrfToken() {
-        let selector;
-        if (typeof window !== 'undefined' && window['Laravel'] && window['Laravel'].csrfToken) {
-            return window['Laravel'].csrfToken;
-        }
-        else if (this.options.csrfToken) {
-            return this.options.csrfToken;
-        }
-        else if (typeof document !== 'undefined' &&
-            typeof document.querySelector === 'function' &&
-            (selector = document.querySelector('meta[name="csrf-token"]'))) {
-            return selector.getAttribute('content');
-        }
-        return null;
+
+  }, {
+    key: "csrfToken",
+    value: function csrfToken() {
+      var selector;
+
+      if (typeof window !== 'undefined' && window['Laravel'] && window['Laravel'].csrfToken) {
+        return window['Laravel'].csrfToken;
+      } else if (this.options.csrfToken) {
+        return this.options.csrfToken;
+      } else if (typeof document !== 'undefined' && typeof document.querySelector === 'function' && (selector = document.querySelector('meta[name="csrf-token"]'))) {
+        return selector.getAttribute('content');
+      }
+
+      return null;
     }
-}
+  }]);
+
+  return Connector;
+}();
 
 /**
  * This class represents a basic channel.
  */
-class Channel {
+var Channel = /*#__PURE__*/function () {
+  function Channel() {
+    _classCallCheck(this, Channel);
+  }
+
+  _createClass(Channel, [{
+    key: "listenForWhisper",
+
     /**
      * Listen for a whisper event on the channel instance.
      */
-    listenForWhisper(event, callback) {
-        return this.listen('.client-' + event, callback);
+    value: function listenForWhisper(event, callback) {
+      return this.listen('.client-' + event, callback);
     }
     /**
      * Listen for an event on the channel instance.
      */
-    notification(callback) {
-        return this.listen('.Illuminate\\Notifications\\Events\\BroadcastNotificationCreated', callback);
+
+  }, {
+    key: "notification",
+    value: function notification(callback) {
+      return this.listen('.Illuminate\\Notifications\\Events\\BroadcastNotificationCreated', callback);
     }
     /**
      * Stop listening for a whispser event on the channel instance.
      */
-    stopListeningForWhisper(event) {
-        return this.stopListening('.client-' + event);
+
+  }, {
+    key: "stopListeningForWhisper",
+    value: function stopListeningForWhisper(event) {
+      return this.stopListening('.client-' + event);
     }
-}
+  }]);
+
+  return Channel;
+}();
 
 /**
  * Event name formatter
  */
-class EventFormatter {
-    /**
-     * Create a new class instance.
-     */
-    constructor(namespace) {
-        this.setNamespace(namespace);
-    }
-    /**
-     * Format the given event name.
-     */
-    format(event) {
-        if (event.charAt(0) === '.' || event.charAt(0) === '\\') {
-            return event.substr(1);
-        }
-        else if (this.namespace) {
-            event = this.namespace + '.' + event;
-        }
-        return event.replace(/\./g, '\\');
+var EventFormatter = /*#__PURE__*/function () {
+  /**
+   * Create a new class instance.
+   */
+  function EventFormatter(namespace) {
+    _classCallCheck(this, EventFormatter);
+
+    this.setNamespace(namespace);
+  }
+  /**
+   * Format the given event name.
+   */
+
+
+  _createClass(EventFormatter, [{
+    key: "format",
+    value: function format(event) {
+      if (event.charAt(0) === '.' || event.charAt(0) === '\\') {
+        return event.substr(1);
+      } else if (this.namespace) {
+        event = this.namespace + '.' + event;
+      }
+
+      return event.replace(/\./g, '\\');
     }
     /**
      * Set the event namespace.
      */
-    setNamespace(value) {
-        this.namespace = value;
+
+  }, {
+    key: "setNamespace",
+    value: function setNamespace(value) {
+      this.namespace = value;
     }
-}
+  }]);
+
+  return EventFormatter;
+}();
 
 /**
  * This class represents a Pusher channel.
  */
-class PusherChannel extends Channel {
-    /**
-     * Create a new class instance.
-     */
-    constructor(pusher, name, options) {
-        super();
-        this.name = name;
-        this.pusher = pusher;
-        this.options = options;
-        this.eventFormatter = new EventFormatter(this.options.namespace);
-        this.subscribe();
-    }
-    /**
-     * Subscribe to a Pusher channel.
-     */
-    subscribe() {
-        this.subscription = this.pusher.subscribe(this.name);
+
+var PusherChannel = /*#__PURE__*/function (_Channel) {
+  _inherits(PusherChannel, _Channel);
+
+  var _super = _createSuper(PusherChannel);
+
+  /**
+   * Create a new class instance.
+   */
+  function PusherChannel(pusher, name, options) {
+    var _this;
+
+    _classCallCheck(this, PusherChannel);
+
+    _this = _super.call(this);
+    _this.name = name;
+    _this.pusher = pusher;
+    _this.options = options;
+    _this.eventFormatter = new EventFormatter(_this.options.namespace);
+
+    _this.subscribe();
+
+    return _this;
+  }
+  /**
+   * Subscribe to a Pusher channel.
+   */
+
+
+  _createClass(PusherChannel, [{
+    key: "subscribe",
+    value: function subscribe() {
+      this.subscription = this.pusher.subscribe(this.name);
     }
     /**
      * Unsubscribe from a Pusher channel.
      */
-    unsubscribe() {
-        this.pusher.unsubscribe(this.name);
+
+  }, {
+    key: "unsubscribe",
+    value: function unsubscribe() {
+      this.pusher.unsubscribe(this.name);
     }
     /**
      * Listen for an event on the channel instance.
      */
-    listen(event, callback) {
-        this.on(this.eventFormatter.format(event), callback);
-        return this;
+
+  }, {
+    key: "listen",
+    value: function listen(event, callback) {
+      this.on(this.eventFormatter.format(event), callback);
+      return this;
     }
     /**
      * Stop listening for an event on the channel instance.
      */
-    stopListening(event) {
-        this.subscription.unbind(this.eventFormatter.format(event));
-        return this;
+
+  }, {
+    key: "stopListening",
+    value: function stopListening(event) {
+      this.subscription.unbind(this.eventFormatter.format(event));
+      return this;
     }
     /**
      * Bind a channel to an event.
      */
-    on(event, callback) {
-        this.subscription.bind(event, callback);
-        return this;
+
+  }, {
+    key: "on",
+    value: function on(event, callback) {
+      this.subscription.bind(event, callback);
+      return this;
     }
-}
+  }]);
+
+  return PusherChannel;
+}(Channel);
 
 /**
  * This class represents a Pusher private channel.
  */
-class PusherPrivateChannel extends PusherChannel {
+
+var PusherPrivateChannel = /*#__PURE__*/function (_PusherChannel) {
+  _inherits(PusherPrivateChannel, _PusherChannel);
+
+  var _super = _createSuper(PusherPrivateChannel);
+
+  function PusherPrivateChannel() {
+    _classCallCheck(this, PusherPrivateChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(PusherPrivateChannel, [{
+    key: "whisper",
+
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        this.pusher.channels.channels[this.name].trigger(`client-${eventName}`, data);
-        return this;
+    value: function whisper(eventName, data) {
+      this.pusher.channels.channels[this.name].trigger("client-".concat(eventName), data);
+      return this;
     }
-}
+  }]);
+
+  return PusherPrivateChannel;
+}(PusherChannel);
 
 /**
  * This class represents a Pusher private channel.
  */
-class PusherEncryptedPrivateChannel extends PusherChannel {
+
+var PusherEncryptedPrivateChannel = /*#__PURE__*/function (_PusherChannel) {
+  _inherits(PusherEncryptedPrivateChannel, _PusherChannel);
+
+  var _super = _createSuper(PusherEncryptedPrivateChannel);
+
+  function PusherEncryptedPrivateChannel() {
+    _classCallCheck(this, PusherEncryptedPrivateChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(PusherEncryptedPrivateChannel, [{
+    key: "whisper",
+
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        this.pusher.channels.channels[this.name].trigger(`client-${eventName}`, data);
-        return this;
+    value: function whisper(eventName, data) {
+      this.pusher.channels.channels[this.name].trigger("client-".concat(eventName), data);
+      return this;
     }
-}
+  }]);
+
+  return PusherEncryptedPrivateChannel;
+}(PusherChannel);
 
 /**
  * This class represents a Pusher presence channel.
  */
-class PusherPresenceChannel extends PusherChannel {
+
+var PusherPresenceChannel = /*#__PURE__*/function (_PusherChannel) {
+  _inherits(PusherPresenceChannel, _PusherChannel);
+
+  var _super = _createSuper(PusherPresenceChannel);
+
+  function PusherPresenceChannel() {
+    _classCallCheck(this, PusherPresenceChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(PusherPresenceChannel, [{
+    key: "here",
+
     /**
      * Register a callback to be called anytime the member list changes.
      */
-    here(callback) {
-        this.on('pusher:subscription_succeeded', data => {
-            callback(Object.keys(data.members).map(k => data.members[k]));
-        });
-        return this;
+    value: function here(callback) {
+      this.on('pusher:subscription_succeeded', function (data) {
+        callback(Object.keys(data.members).map(function (k) {
+          return data.members[k];
+        }));
+      });
+      return this;
     }
     /**
      * Listen for someone joining the channel.
      */
-    joining(callback) {
-        this.on('pusher:member_added', member => {
-            callback(member.info);
-        });
-        return this;
+
+  }, {
+    key: "joining",
+    value: function joining(callback) {
+      this.on('pusher:member_added', function (member) {
+        callback(member.info);
+      });
+      return this;
     }
     /**
      * Listen for someone leaving the channel.
      */
-    leaving(callback) {
-        this.on('pusher:member_removed', member => {
-            callback(member.info);
-        });
-        return this;
+
+  }, {
+    key: "leaving",
+    value: function leaving(callback) {
+      this.on('pusher:member_removed', function (member) {
+        callback(member.info);
+      });
+      return this;
     }
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        this.pusher.channels.channels[this.name].trigger(`client-${eventName}`, data);
-        return this;
+
+  }, {
+    key: "whisper",
+    value: function whisper(eventName, data) {
+      this.pusher.channels.channels[this.name].trigger("client-".concat(eventName), data);
+      return this;
     }
-}
+  }]);
+
+  return PusherPresenceChannel;
+}(PusherChannel);
 
 /**
  * This class represents a Socket.io channel.
  */
-class SocketIoChannel extends Channel {
+
+var SocketIoChannel = /*#__PURE__*/function (_Channel) {
+  _inherits(SocketIoChannel, _Channel);
+
+  var _super = _createSuper(SocketIoChannel);
+
+  /**
+   * Create a new class instance.
+   */
+  function SocketIoChannel(socket, name, options) {
+    var _this;
+
+    _classCallCheck(this, SocketIoChannel);
+
+    _this = _super.call(this);
     /**
-     * Create a new class instance.
+     * The event callbacks applied to the channel.
      */
-    constructor(socket, name, options) {
-        super();
-        /**
-         * The event callbacks applied to the channel.
-         */
-        this.events = {};
-        this.name = name;
-        this.socket = socket;
-        this.options = options;
-        this.eventFormatter = new EventFormatter(this.options.namespace);
-        this.subscribe();
-        this.configureReconnector();
-    }
-    /**
-     * Subscribe to a Socket.io channel.
-     */
-    subscribe() {
-        this.socket.emit('subscribe', {
-            channel: this.name,
-            auth: this.options.auth || {},
-        });
+
+    _this.events = {};
+    _this.name = name;
+    _this.socket = socket;
+    _this.options = options;
+    _this.eventFormatter = new EventFormatter(_this.options.namespace);
+
+    _this.subscribe();
+
+    _this.configureReconnector();
+
+    return _this;
+  }
+  /**
+   * Subscribe to a Socket.io channel.
+   */
+
+
+  _createClass(SocketIoChannel, [{
+    key: "subscribe",
+    value: function subscribe() {
+      this.socket.emit('subscribe', {
+        channel: this.name,
+        auth: this.options.auth || {}
+      });
     }
     /**
      * Unsubscribe from channel and ubind event callbacks.
      */
-    unsubscribe() {
-        this.unbind();
-        this.socket.emit('unsubscribe', {
-            channel: this.name,
-            auth: this.options.auth || {},
-        });
+
+  }, {
+    key: "unsubscribe",
+    value: function unsubscribe() {
+      this.unbind();
+      this.socket.emit('unsubscribe', {
+        channel: this.name,
+        auth: this.options.auth || {}
+      });
     }
     /**
      * Listen for an event on the channel instance.
      */
-    listen(event, callback) {
-        this.on(this.eventFormatter.format(event), callback);
-        return this;
+
+  }, {
+    key: "listen",
+    value: function listen(event, callback) {
+      this.on(this.eventFormatter.format(event), callback);
+      return this;
     }
     /**
      * Stop listening for an event on the channel instance.
      */
-    stopListening(event) {
-        const name = this.eventFormatter.format(event);
-        this.socket.removeListener(name);
-        delete this.events[name];
-        return this;
+
+  }, {
+    key: "stopListening",
+    value: function stopListening(event) {
+      var name = this.eventFormatter.format(event);
+      this.socket.removeListener(name);
+      delete this.events[name];
+      return this;
     }
     /**
      * Bind the channel's socket to an event and store the callback.
      */
-    on(event, callback) {
-        let listener = (channel, data) => {
-            if (this.name == channel) {
-                callback(data);
-            }
-        };
-        this.socket.on(event, listener);
-        this.bind(event, listener);
+
+  }, {
+    key: "on",
+    value: function on(event, callback) {
+      var _this2 = this;
+
+      var listener = function listener(channel, data) {
+        if (_this2.name == channel) {
+          callback(data);
+        }
+      };
+
+      this.socket.on(event, listener);
+      this.bind(event, listener);
     }
     /**
      * Attach a 'reconnect' listener and bind the event.
      */
-    configureReconnector() {
-        const listener = () => {
-            this.subscribe();
-        };
-        this.socket.on('reconnect', listener);
-        this.bind('reconnect', listener);
+
+  }, {
+    key: "configureReconnector",
+    value: function configureReconnector() {
+      var _this3 = this;
+
+      var listener = function listener() {
+        _this3.subscribe();
+      };
+
+      this.socket.on('reconnect', listener);
+      this.bind('reconnect', listener);
     }
     /**
      * Bind the channel's socket to an event and store the callback.
      */
-    bind(event, callback) {
-        this.events[event] = this.events[event] || [];
-        this.events[event].push(callback);
+
+  }, {
+    key: "bind",
+    value: function bind(event, callback) {
+      this.events[event] = this.events[event] || [];
+      this.events[event].push(callback);
     }
     /**
      * Unbind the channel's socket from all stored event callbacks.
      */
-    unbind() {
-        Object.keys(this.events).forEach(event => {
-            this.events[event].forEach(callback => {
-                this.socket.removeListener(event, callback);
-            });
-            delete this.events[event];
+
+  }, {
+    key: "unbind",
+    value: function unbind() {
+      var _this4 = this;
+
+      Object.keys(this.events).forEach(function (event) {
+        _this4.events[event].forEach(function (callback) {
+          _this4.socket.removeListener(event, callback);
         });
+
+        delete _this4.events[event];
+      });
     }
-}
+  }]);
+
+  return SocketIoChannel;
+}(Channel);
 
 /**
  * This class represents a Socket.io presence channel.
  */
-class SocketIoPrivateChannel extends SocketIoChannel {
+
+var SocketIoPrivateChannel = /*#__PURE__*/function (_SocketIoChannel) {
+  _inherits(SocketIoPrivateChannel, _SocketIoChannel);
+
+  var _super = _createSuper(SocketIoPrivateChannel);
+
+  function SocketIoPrivateChannel() {
+    _classCallCheck(this, SocketIoPrivateChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(SocketIoPrivateChannel, [{
+    key: "whisper",
+
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        this.socket.emit('client event', {
-            channel: this.name,
-            event: `client-${eventName}`,
-            data: data,
-        });
-        return this;
+    value: function whisper(eventName, data) {
+      this.socket.emit('client event', {
+        channel: this.name,
+        event: "client-".concat(eventName),
+        data: data
+      });
+      return this;
     }
-}
+  }]);
+
+  return SocketIoPrivateChannel;
+}(SocketIoChannel);
 
 /**
  * This class represents a Socket.io presence channel.
  */
-class SocketIoPresenceChannel extends SocketIoPrivateChannel {
+
+var SocketIoPresenceChannel = /*#__PURE__*/function (_SocketIoPrivateChann) {
+  _inherits(SocketIoPresenceChannel, _SocketIoPrivateChann);
+
+  var _super = _createSuper(SocketIoPresenceChannel);
+
+  function SocketIoPresenceChannel() {
+    _classCallCheck(this, SocketIoPresenceChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(SocketIoPresenceChannel, [{
+    key: "here",
+
     /**
      * Register a callback to be called anytime the member list changes.
      */
-    here(callback) {
-        this.on('presence:subscribed', (members) => {
-            callback(members.map(m => m.user_info));
-        });
-        return this;
+    value: function here(callback) {
+      this.on('presence:subscribed', function (members) {
+        callback(members.map(function (m) {
+          return m.user_info;
+        }));
+      });
+      return this;
     }
     /**
      * Listen for someone joining the channel.
      */
-    joining(callback) {
-        this.on('presence:joining', member => callback(member.user_info));
-        return this;
+
+  }, {
+    key: "joining",
+    value: function joining(callback) {
+      this.on('presence:joining', function (member) {
+        return callback(member.user_info);
+      });
+      return this;
     }
     /**
      * Listen for someone leaving the channel.
      */
-    leaving(callback) {
-        this.on('presence:leaving', member => callback(member.user_info));
-        return this;
+
+  }, {
+    key: "leaving",
+    value: function leaving(callback) {
+      this.on('presence:leaving', function (member) {
+        return callback(member.user_info);
+      });
+      return this;
     }
-}
+  }]);
+
+  return SocketIoPresenceChannel;
+}(SocketIoPrivateChannel);
 
 /**
  * This class represents a null channel.
  */
-class NullChannel extends Channel {
+
+var NullChannel = /*#__PURE__*/function (_Channel) {
+  _inherits(NullChannel, _Channel);
+
+  var _super = _createSuper(NullChannel);
+
+  function NullChannel() {
+    _classCallCheck(this, NullChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(NullChannel, [{
+    key: "subscribe",
+
     /**
      * Subscribe to a channel.
      */
-    subscribe() {
-        //
-    }
+    value: function subscribe() {} //
+
     /**
      * Unsubscribe from a channel.
      */
-    unsubscribe() {
-        //
-    }
+
+  }, {
+    key: "unsubscribe",
+    value: function unsubscribe() {} //
+
     /**
      * Listen for an event on the channel instance.
      */
-    listen(event, callback) {
-        return this;
+
+  }, {
+    key: "listen",
+    value: function listen(event, callback) {
+      return this;
     }
     /**
      * Stop listening for an event on the channel instance.
      */
-    stopListening(event) {
-        return this;
+
+  }, {
+    key: "stopListening",
+    value: function stopListening(event) {
+      return this;
     }
     /**
      * Bind a channel to an event.
      */
-    on(event, callback) {
-        return this;
+
+  }, {
+    key: "on",
+    value: function on(event, callback) {
+      return this;
     }
-}
+  }]);
+
+  return NullChannel;
+}(Channel);
 
 /**
  * This class represents a null private channel.
  */
-class NullPrivateChannel extends NullChannel {
+
+var NullPrivateChannel = /*#__PURE__*/function (_NullChannel) {
+  _inherits(NullPrivateChannel, _NullChannel);
+
+  var _super = _createSuper(NullPrivateChannel);
+
+  function NullPrivateChannel() {
+    _classCallCheck(this, NullPrivateChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(NullPrivateChannel, [{
+    key: "whisper",
+
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        return this;
+    value: function whisper(eventName, data) {
+      return this;
     }
-}
+  }]);
+
+  return NullPrivateChannel;
+}(NullChannel);
 
 /**
  * This class represents a null presence channel.
  */
-class NullPresenceChannel extends NullChannel {
+
+var NullPresenceChannel = /*#__PURE__*/function (_NullChannel) {
+  _inherits(NullPresenceChannel, _NullChannel);
+
+  var _super = _createSuper(NullPresenceChannel);
+
+  function NullPresenceChannel() {
+    _classCallCheck(this, NullPresenceChannel);
+
+    return _super.apply(this, arguments);
+  }
+
+  _createClass(NullPresenceChannel, [{
+    key: "here",
+
     /**
      * Register a callback to be called anytime the member list changes.
      */
-    here(callback) {
-        return this;
+    value: function here(callback) {
+      return this;
     }
     /**
      * Listen for someone joining the channel.
      */
-    joining(callback) {
-        return this;
+
+  }, {
+    key: "joining",
+    value: function joining(callback) {
+      return this;
     }
     /**
      * Listen for someone leaving the channel.
      */
-    leaving(callback) {
-        return this;
+
+  }, {
+    key: "leaving",
+    value: function leaving(callback) {
+      return this;
     }
     /**
      * Trigger client event on the channel.
      */
-    whisper(eventName, data) {
-        return this;
+
+  }, {
+    key: "whisper",
+    value: function whisper(eventName, data) {
+      return this;
     }
-}
+  }]);
+
+  return NullPresenceChannel;
+}(NullChannel);
 
 /**
  * This class creates a connector to Pusher.
  */
-class PusherConnector extends Connector {
-    constructor() {
-        super(...arguments);
-        /**
-         * All of the subscribed channel names.
-         */
-        this.channels = {};
-    }
+
+var PusherConnector = /*#__PURE__*/function (_Connector) {
+  _inherits(PusherConnector, _Connector);
+
+  var _super = _createSuper(PusherConnector);
+
+  function PusherConnector() {
+    var _this;
+
+    _classCallCheck(this, PusherConnector);
+
+    _this = _super.apply(this, arguments);
     /**
-     * Create a fresh Pusher connection.
+     * All of the subscribed channel names.
      */
-    connect() {
-        if (typeof this.options.client !== 'undefined') {
-            this.pusher = this.options.client;
-        }
-        else {
-            this.pusher = new Pusher(this.options.key, this.options);
-        }
+
+    _this.channels = {};
+    return _this;
+  }
+  /**
+   * Create a fresh Pusher connection.
+   */
+
+
+  _createClass(PusherConnector, [{
+    key: "connect",
+    value: function connect() {
+      if (typeof this.options.client !== 'undefined') {
+        this.pusher = this.options.client;
+      } else {
+        this.pusher = new Pusher(this.options.key, this.options);
+      }
     }
     /**
      * Listen for an event on a channel instance.
      */
-    listen(name, event, callback) {
-        return this.channel(name).listen(event, callback);
+
+  }, {
+    key: "listen",
+    value: function listen(name, event, callback) {
+      return this.channel(name).listen(event, callback);
     }
     /**
      * Get a channel instance by name.
      */
-    channel(name) {
-        if (!this.channels[name]) {
-            this.channels[name] = new PusherChannel(this.pusher, name, this.options);
-        }
-        return this.channels[name];
+
+  }, {
+    key: "channel",
+    value: function channel(name) {
+      if (!this.channels[name]) {
+        this.channels[name] = new PusherChannel(this.pusher, name, this.options);
+      }
+
+      return this.channels[name];
     }
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name) {
-        if (!this.channels['private-' + name]) {
-            this.channels['private-' + name] = new PusherPrivateChannel(this.pusher, 'private-' + name, this.options);
-        }
-        return this.channels['private-' + name];
+
+  }, {
+    key: "privateChannel",
+    value: function privateChannel(name) {
+      if (!this.channels['private-' + name]) {
+        this.channels['private-' + name] = new PusherPrivateChannel(this.pusher, 'private-' + name, this.options);
+      }
+
+      return this.channels['private-' + name];
     }
     /**
      * Get a private encrypted channel instance by name.
      */
-    encryptedPrivateChannel(name) {
-        if (!this.channels['private-encrypted-' + name]) {
-            this.channels['private-encrypted-' + name] = new PusherEncryptedPrivateChannel(this.pusher, 'private-encrypted-' + name, this.options);
-        }
-        return this.channels['private-encrypted-' + name];
+
+  }, {
+    key: "encryptedPrivateChannel",
+    value: function encryptedPrivateChannel(name) {
+      if (!this.channels['private-encrypted-' + name]) {
+        this.channels['private-encrypted-' + name] = new PusherEncryptedPrivateChannel(this.pusher, 'private-encrypted-' + name, this.options);
+      }
+
+      return this.channels['private-encrypted-' + name];
     }
     /**
      * Get a presence channel instance by name.
      */
-    presenceChannel(name) {
-        if (!this.channels['presence-' + name]) {
-            this.channels['presence-' + name] = new PusherPresenceChannel(this.pusher, 'presence-' + name, this.options);
-        }
-        return this.channels['presence-' + name];
+
+  }, {
+    key: "presenceChannel",
+    value: function presenceChannel(name) {
+      if (!this.channels['presence-' + name]) {
+        this.channels['presence-' + name] = new PusherPresenceChannel(this.pusher, 'presence-' + name, this.options);
+      }
+
+      return this.channels['presence-' + name];
     }
     /**
      * Leave the given channel, as well as its private and presence variants.
      */
-    leave(name) {
-        let channels = [name, 'private-' + name, 'presence-' + name];
-        channels.forEach((name, index) => {
-            this.leaveChannel(name);
-        });
+
+  }, {
+    key: "leave",
+    value: function leave(name) {
+      var _this2 = this;
+
+      var channels = [name, 'private-' + name, 'presence-' + name];
+      channels.forEach(function (name, index) {
+        _this2.leaveChannel(name);
+      });
     }
     /**
      * Leave the given channel.
      */
-    leaveChannel(name) {
-        if (this.channels[name]) {
-            this.channels[name].unsubscribe();
-            delete this.channels[name];
-        }
+
+  }, {
+    key: "leaveChannel",
+    value: function leaveChannel(name) {
+      if (this.channels[name]) {
+        this.channels[name].unsubscribe();
+        delete this.channels[name];
+      }
     }
     /**
      * Get the socket ID for the connection.
      */
-    socketId() {
-        return this.pusher.connection.socket_id;
+
+  }, {
+    key: "socketId",
+    value: function socketId() {
+      return this.pusher.connection.socket_id;
     }
     /**
      * Disconnect Pusher connection.
      */
-    disconnect() {
-        this.pusher.disconnect();
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {
+      this.pusher.disconnect();
     }
-}
+  }]);
+
+  return PusherConnector;
+}(Connector);
 
 /**
  * This class creates a connnector to a Socket.io server.
  */
-class SocketIoConnector extends Connector {
-    constructor() {
-        super(...arguments);
-        /**
-         * All of the subscribed channel names.
-         */
-        this.channels = {};
-    }
+
+var SocketIoConnector = /*#__PURE__*/function (_Connector) {
+  _inherits(SocketIoConnector, _Connector);
+
+  var _super = _createSuper(SocketIoConnector);
+
+  function SocketIoConnector() {
+    var _this;
+
+    _classCallCheck(this, SocketIoConnector);
+
+    _this = _super.apply(this, arguments);
     /**
-     * Create a fresh Socket.io connection.
+     * All of the subscribed channel names.
      */
-    connect() {
-        let io = this.getSocketIO();
-        this.socket = io(this.options.host, this.options);
-        return this.socket;
+
+    _this.channels = {};
+    return _this;
+  }
+  /**
+   * Create a fresh Socket.io connection.
+   */
+
+
+  _createClass(SocketIoConnector, [{
+    key: "connect",
+    value: function connect() {
+      var io = this.getSocketIO();
+      this.socket = io(this.options.host, this.options);
+      return this.socket;
     }
     /**
      * Get socket.io module from global scope or options.
      */
-    getSocketIO() {
-        if (typeof this.options.client !== 'undefined') {
-            return this.options.client;
-        }
-        if (typeof io !== 'undefined') {
-            return io;
-        }
-        throw new Error('Socket.io client not found. Should be globally available or passed via options.client');
+
+  }, {
+    key: "getSocketIO",
+    value: function getSocketIO() {
+      if (typeof this.options.client !== 'undefined') {
+        return this.options.client;
+      }
+
+      if (typeof io !== 'undefined') {
+        return io;
+      }
+
+      throw new Error('Socket.io client not found. Should be globally available or passed via options.client');
     }
     /**
      * Listen for an event on a channel instance.
      */
-    listen(name, event, callback) {
-        return this.channel(name).listen(event, callback);
+
+  }, {
+    key: "listen",
+    value: function listen(name, event, callback) {
+      return this.channel(name).listen(event, callback);
     }
     /**
      * Get a channel instance by name.
      */
-    channel(name) {
-        if (!this.channels[name]) {
-            this.channels[name] = new SocketIoChannel(this.socket, name, this.options);
-        }
-        return this.channels[name];
+
+  }, {
+    key: "channel",
+    value: function channel(name) {
+      if (!this.channels[name]) {
+        this.channels[name] = new SocketIoChannel(this.socket, name, this.options);
+      }
+
+      return this.channels[name];
     }
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name) {
-        if (!this.channels['private-' + name]) {
-            this.channels['private-' + name] = new SocketIoPrivateChannel(this.socket, 'private-' + name, this.options);
-        }
-        return this.channels['private-' + name];
+
+  }, {
+    key: "privateChannel",
+    value: function privateChannel(name) {
+      if (!this.channels['private-' + name]) {
+        this.channels['private-' + name] = new SocketIoPrivateChannel(this.socket, 'private-' + name, this.options);
+      }
+
+      return this.channels['private-' + name];
     }
     /**
      * Get a presence channel instance by name.
      */
-    presenceChannel(name) {
-        if (!this.channels['presence-' + name]) {
-            this.channels['presence-' + name] = new SocketIoPresenceChannel(this.socket, 'presence-' + name, this.options);
-        }
-        return this.channels['presence-' + name];
+
+  }, {
+    key: "presenceChannel",
+    value: function presenceChannel(name) {
+      if (!this.channels['presence-' + name]) {
+        this.channels['presence-' + name] = new SocketIoPresenceChannel(this.socket, 'presence-' + name, this.options);
+      }
+
+      return this.channels['presence-' + name];
     }
     /**
      * Leave the given channel, as well as its private and presence variants.
      */
-    leave(name) {
-        let channels = [name, 'private-' + name, 'presence-' + name];
-        channels.forEach(name => {
-            this.leaveChannel(name);
-        });
+
+  }, {
+    key: "leave",
+    value: function leave(name) {
+      var _this2 = this;
+
+      var channels = [name, 'private-' + name, 'presence-' + name];
+      channels.forEach(function (name) {
+        _this2.leaveChannel(name);
+      });
     }
     /**
      * Leave the given channel.
      */
-    leaveChannel(name) {
-        if (this.channels[name]) {
-            this.channels[name].unsubscribe();
-            delete this.channels[name];
-        }
+
+  }, {
+    key: "leaveChannel",
+    value: function leaveChannel(name) {
+      if (this.channels[name]) {
+        this.channels[name].unsubscribe();
+        delete this.channels[name];
+      }
     }
     /**
      * Get the socket ID for the connection.
      */
-    socketId() {
-        return this.socket.id;
+
+  }, {
+    key: "socketId",
+    value: function socketId() {
+      return this.socket.id;
     }
     /**
      * Disconnect Socketio connection.
      */
-    disconnect() {
-        this.socket.disconnect();
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {
+      this.socket.disconnect();
     }
-}
+  }]);
+
+  return SocketIoConnector;
+}(Connector);
 
 /**
  * This class creates a null connector.
  */
-class NullConnector extends Connector {
-    constructor() {
-        super(...arguments);
-        /**
-         * All of the subscribed channel names.
-         */
-        this.channels = {};
-    }
+
+var NullConnector = /*#__PURE__*/function (_Connector) {
+  _inherits(NullConnector, _Connector);
+
+  var _super = _createSuper(NullConnector);
+
+  function NullConnector() {
+    var _this;
+
+    _classCallCheck(this, NullConnector);
+
+    _this = _super.apply(this, arguments);
     /**
-     * Create a fresh connection.
+     * All of the subscribed channel names.
      */
-    connect() {
-        //
-    }
+
+    _this.channels = {};
+    return _this;
+  }
+  /**
+   * Create a fresh connection.
+   */
+
+
+  _createClass(NullConnector, [{
+    key: "connect",
+    value: function connect() {} //
+
     /**
      * Listen for an event on a channel instance.
      */
-    listen(name, event, callback) {
-        return new NullChannel();
+
+  }, {
+    key: "listen",
+    value: function listen(name, event, callback) {
+      return new NullChannel();
     }
     /**
      * Get a channel instance by name.
      */
-    channel(name) {
-        return new NullChannel();
+
+  }, {
+    key: "channel",
+    value: function channel(name) {
+      return new NullChannel();
     }
     /**
      * Get a private channel instance by name.
      */
-    privateChannel(name) {
-        return new NullPrivateChannel();
+
+  }, {
+    key: "privateChannel",
+    value: function privateChannel(name) {
+      return new NullPrivateChannel();
     }
     /**
      * Get a presence channel instance by name.
      */
-    presenceChannel(name) {
-        return new NullPresenceChannel();
+
+  }, {
+    key: "presenceChannel",
+    value: function presenceChannel(name) {
+      return new NullPresenceChannel();
     }
     /**
      * Leave the given channel, as well as its private and presence variants.
      */
-    leave(name) {
-        //
-    }
+
+  }, {
+    key: "leave",
+    value: function leave(name) {} //
+
     /**
      * Leave the given channel.
      */
-    leaveChannel(name) {
-        //
-    }
+
+  }, {
+    key: "leaveChannel",
+    value: function leaveChannel(name) {} //
+
     /**
      * Get the socket ID for the connection.
      */
-    socketId() {
-        return 'fake-socket-id';
+
+  }, {
+    key: "socketId",
+    value: function socketId() {
+      return 'fake-socket-id';
     }
     /**
      * Disconnect the connection.
      */
-    disconnect() {
-        //
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {//
     }
-}
+  }]);
+
+  return NullConnector;
+}(Connector);
 
 /**
  * This class is the primary API for interacting with broadcasting.
  */
-class Echo {
-    /**
-     * Create a new class instance.
-     */
-    constructor(options) {
-        this.options = options;
-        this.connect();
-        if (!this.options.withoutInterceptors) {
-            this.registerInterceptors();
-        }
+
+var Echo = /*#__PURE__*/function () {
+  /**
+   * Create a new class instance.
+   */
+  function Echo(options) {
+    _classCallCheck(this, Echo);
+
+    this.options = options;
+    this.connect();
+
+    if (!this.options.withoutInterceptors) {
+      this.registerInterceptors();
     }
-    /**
-     * Get a channel instance by name.
-     */
-    channel(channel) {
-        return this.connector.channel(channel);
+  }
+  /**
+   * Get a channel instance by name.
+   */
+
+
+  _createClass(Echo, [{
+    key: "channel",
+    value: function channel(_channel) {
+      return this.connector.channel(_channel);
     }
     /**
      * Create a new connection.
      */
-    connect() {
-        if (this.options.broadcaster == 'pusher') {
-            this.connector = new PusherConnector(this.options);
-        }
-        else if (this.options.broadcaster == 'socket.io') {
-            this.connector = new SocketIoConnector(this.options);
-        }
-        else if (this.options.broadcaster == 'null') {
-            this.connector = new NullConnector(this.options);
-        }
-        else if (typeof this.options.broadcaster == 'function') {
-            this.connector = new this.options.broadcaster(this.options);
-        }
+
+  }, {
+    key: "connect",
+    value: function connect() {
+      if (this.options.broadcaster == 'pusher') {
+        this.connector = new PusherConnector(this.options);
+      } else if (this.options.broadcaster == 'socket.io') {
+        this.connector = new SocketIoConnector(this.options);
+      } else if (this.options.broadcaster == 'null') {
+        this.connector = new NullConnector(this.options);
+      } else if (typeof this.options.broadcaster == 'function') {
+        this.connector = new this.options.broadcaster(this.options);
+      }
     }
     /**
      * Disconnect from the Echo server.
      */
-    disconnect() {
-        this.connector.disconnect();
+
+  }, {
+    key: "disconnect",
+    value: function disconnect() {
+      this.connector.disconnect();
     }
     /**
      * Get a presence channel instance by name.
      */
-    join(channel) {
-        return this.connector.presenceChannel(channel);
+
+  }, {
+    key: "join",
+    value: function join(channel) {
+      return this.connector.presenceChannel(channel);
     }
     /**
      * Leave the given channel, as well as its private and presence variants.
      */
-    leave(channel) {
-        this.connector.leave(channel);
+
+  }, {
+    key: "leave",
+    value: function leave(channel) {
+      this.connector.leave(channel);
     }
     /**
      * Leave the given channel.
      */
-    leaveChannel(channel) {
-        this.connector.leaveChannel(channel);
+
+  }, {
+    key: "leaveChannel",
+    value: function leaveChannel(channel) {
+      this.connector.leaveChannel(channel);
     }
     /**
      * Listen for an event on a channel instance.
      */
-    listen(channel, event, callback) {
-        return this.connector.listen(channel, event, callback);
+
+  }, {
+    key: "listen",
+    value: function listen(channel, event, callback) {
+      return this.connector.listen(channel, event, callback);
     }
     /**
      * Get a private channel instance by name.
      */
-    private(channel) {
-        return this.connector.privateChannel(channel);
+
+  }, {
+    key: "private",
+    value: function _private(channel) {
+      return this.connector.privateChannel(channel);
     }
     /**
      * Get a private encrypted channel instance by name.
      */
-    encryptedPrivate(channel) {
-        return this.connector.encryptedPrivateChannel(channel);
+
+  }, {
+    key: "encryptedPrivate",
+    value: function encryptedPrivate(channel) {
+      return this.connector.encryptedPrivateChannel(channel);
     }
     /**
      * Get the Socket ID for the connection.
      */
-    socketId() {
-        return this.connector.socketId();
+
+  }, {
+    key: "socketId",
+    value: function socketId() {
+      return this.connector.socketId();
     }
     /**
      * Register 3rd party request interceptiors. These are used to automatically
      * send a connections socket id to a Laravel app with a X-Socket-Id header.
      */
-    registerInterceptors() {
-        if (typeof Vue === 'function' && Vue.http) {
-            this.registerVueRequestInterceptor();
-        }
-        if (typeof axios === 'function') {
-            this.registerAxiosRequestInterceptor();
-        }
-        if (typeof jQuery === 'function') {
-            this.registerjQueryAjaxSetup();
-        }
+
+  }, {
+    key: "registerInterceptors",
+    value: function registerInterceptors() {
+      if (typeof Vue === 'function' && Vue.http) {
+        this.registerVueRequestInterceptor();
+      }
+
+      if (typeof axios === 'function') {
+        this.registerAxiosRequestInterceptor();
+      }
+
+      if (typeof jQuery === 'function') {
+        this.registerjQueryAjaxSetup();
+      }
     }
     /**
      * Register a Vue HTTP interceptor to add the X-Socket-ID header.
      */
-    registerVueRequestInterceptor() {
-        Vue.http.interceptors.push((request, next) => {
-            if (this.socketId()) {
-                request.headers.set('X-Socket-ID', this.socketId());
-            }
-            next();
-        });
+
+  }, {
+    key: "registerVueRequestInterceptor",
+    value: function registerVueRequestInterceptor() {
+      var _this = this;
+
+      Vue.http.interceptors.push(function (request, next) {
+        if (_this.socketId()) {
+          request.headers.set('X-Socket-ID', _this.socketId());
+        }
+
+        next();
+      });
     }
     /**
      * Register an Axios HTTP interceptor to add the X-Socket-ID header.
      */
-    registerAxiosRequestInterceptor() {
-        axios.interceptors.request.use((config) => {
-            if (this.socketId()) {
-                config.headers['X-Socket-Id'] = this.socketId();
-            }
-            return config;
-        });
+
+  }, {
+    key: "registerAxiosRequestInterceptor",
+    value: function registerAxiosRequestInterceptor() {
+      var _this2 = this;
+
+      axios.interceptors.request.use(function (config) {
+        if (_this2.socketId()) {
+          config.headers['X-Socket-Id'] = _this2.socketId();
+        }
+
+        return config;
+      });
     }
     /**
      * Register jQuery AjaxPrefilter to add the X-Socket-ID header.
      */
-    registerjQueryAjaxSetup() {
-        if (typeof jQuery.ajax != 'undefined') {
-            jQuery.ajaxPrefilter((options, originalOptions, xhr) => {
-                if (this.socketId()) {
-                    xhr.setRequestHeader('X-Socket-Id', this.socketId());
-                }
-            });
-        }
+
+  }, {
+    key: "registerjQueryAjaxSetup",
+    value: function registerjQueryAjaxSetup() {
+      var _this3 = this;
+
+      if (typeof jQuery.ajax != 'undefined') {
+        jQuery.ajaxPrefilter(function (options, originalOptions, xhr) {
+          if (_this3.socketId()) {
+            xhr.setRequestHeader('X-Socket-Id', _this3.socketId());
+          }
+        });
+      }
     }
-}
+  }]);
+
+  return Echo;
+}();
 
 /* harmony default export */ __webpack_exports__["a"] = (Echo);
 
 
 /***/ }),
-/* 49 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
- * Pusher JavaScript Library v6.0.2
+ * Pusher JavaScript Library v6.0.3
  * https://pusher.com/
  *
- * Copyright 2017, Pusher
+ * Copyright 2020, Pusher
  * Released under the MIT licence.
  */
 
@@ -34479,7 +35080,7 @@ var ScriptReceivers = new ScriptReceiverFactory('_pusher_script_', 'Pusher.Scrip
 
 // CONCATENATED MODULE: ./src/core/defaults.ts
 var Defaults = {
-    VERSION: "6.0.2",
+    VERSION: "6.0.3",
     PROTOCOL: 7,
     wsPort: 80,
     wssPort: 443,
@@ -38438,18 +39039,18 @@ runtime.setup(pusher_Pusher);
 });
 
 /***/ }),
-/* 50 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 if (false) {
   module.exports = require('./vue.common.prod.js')
 } else {
-  module.exports = __webpack_require__(51)
+  module.exports = __webpack_require__(41)
 }
 
 
 /***/ }),
-/* 51 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50413,10 +51014,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(52).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(42).setImmediate))
 
 /***/ }),
-/* 52 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -50472,7 +51073,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(53);
+__webpack_require__(43);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -50483,10 +51084,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 53 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -50676,18 +51277,18 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(19)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(7)))
 
 /***/ }),
-/* 54 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(15)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(45)
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(46)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50726,7 +51327,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50755,7 +51356,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50798,19 +51399,19 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(58)
+  __webpack_require__(48)
 }
-var normalizeComponent = __webpack_require__(15)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(61)
+var __vue_script__ = __webpack_require__(51)
 /* template */
-var __vue_template__ = __webpack_require__(62)
+var __vue_template__ = __webpack_require__(52)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50849,17 +51450,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(59);
+var content = __webpack_require__(49);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("2f0a40f5", content, false, {});
+var update = __webpack_require__(5)("2f0a40f5", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -50875,21 +51476,21 @@ if(false) {
 }
 
 /***/ }),
-/* 59 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.chat-message {\r\n  padding: 1rem;\n}\n.chat-message > p {\r\n  margin-bottom: .5rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-message {\n  padding: 1rem;\n}\n.chat-message > p {\n  margin-bottom: .5rem;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 60 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /**
@@ -50922,7 +51523,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 61 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -50936,11 +51537,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['message']
+    props: ['messages']
 });
 
 /***/ }),
-/* 62 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -50948,9 +51549,9 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "chat-message" }, [
-    _c("p", [_vm._v(_vm._s(_vm.message.message))]),
+    _c("p", [_vm._v(_vm._s(_vm.messages))]),
     _vm._v(" "),
-    _c("small", [_vm._v(_vm._s(_vm.message.user.ten_kh))])
+    _c("small", [_vm._v(_vm._s(_vm.messages))])
   ])
 }
 var staticRenderFns = []
@@ -50964,19 +51565,19 @@ if (false) {
 }
 
 /***/ }),
-/* 63 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(64)
+  __webpack_require__(54)
 }
-var normalizeComponent = __webpack_require__(15)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(66)
+var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(67)
+var __vue_template__ = __webpack_require__(57)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51015,17 +51616,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 64 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(65);
+var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("206cab28", content, false, {});
+var update = __webpack_require__(5)("206cab28", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51041,21 +51642,21 @@ if(false) {
 }
 
 /***/ }),
-/* 65 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.chat-log .chat-message:nth-child(even) {\r\n    background-color: #ccc;\n}\n.empty {\r\n  padding: 1rem;\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-log .chat-message:nth-child(even) {\n    background-color: #ccc;\n}\n.empty {\n    padding: 1rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 66 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51076,7 +51677,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 67 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function(){},staticRenderFns:[]}
@@ -51088,19 +51689,19 @@ if (false) {
 }
 
 /***/ }),
-/* 68 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(69)
+  __webpack_require__(59)
 }
-var normalizeComponent = __webpack_require__(15)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(61)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -51139,17 +51740,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 69 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(70);
+var content = __webpack_require__(60);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("5c505c19", content, false, {});
+var update = __webpack_require__(5)("5c505c19", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51165,21 +51766,21 @@ if(false) {
 }
 
 /***/ }),
-/* 70 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.chat-composer {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\n}\n.chat-composer input {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 auto;\r\n            flex: 1 auto;\r\n    padding: .5rem 1rem;\n}\n.chat-composer button {\r\n    border-radius: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n.chat-composer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.chat-composer input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    padding: .5rem 1rem;\n}\n.chat-composer button {\n    border-radius: 0;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 71 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51214,7 +51815,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 72 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -51268,6 +51869,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-5f9ae64f", module.exports)
   }
 }
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
