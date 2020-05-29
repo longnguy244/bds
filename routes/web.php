@@ -80,11 +80,11 @@ Route::group(['middleware' => 'customer'], function(){
     //     broadcast(new MessagePosted($message, $user))->toOthers();
     //     return ['status' => 'OK'];
     // });
+    Route::post('thanhtoan/{id}', 'Web\PaymentController@payment_accept')->name('post.thanhtoan');
+    Route::get('checkpayment/{id}', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
 });
+    Route::get('thanhtoan/{id}', 'Web\PaymentController@payment')->name('thanhtoan');
 
-Route::get('thanhtoan/{id}', 'Web\PaymentController@payment')->name('thanhtoan');
-Route::post('thanhtoan', 'Web\PaymentController@payment_accept')->name('post.thanhtoan');
-Route::get('checkpayment/{id}', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
 
 Broadcast::channel('chatroom', function ($user) {
     return $user;

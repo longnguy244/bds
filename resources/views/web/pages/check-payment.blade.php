@@ -132,7 +132,7 @@
                         <span style="float: right; font-size: 25px">5.000.000đ</span>
                     </p>
                     <div class="south-buttons-area mb-100">
-                        <form method="POST" action="{{ route('post.thanhtoan', $bds->id) }}" onsubmit="return validateForm()">
+                        <form method="POST" id="pay_success" action="{{ route('post.thanhtoan', $bds->id) }}" onsubmit="return validateForm()">
 						{{ csrf_field() }}
                         @if(Auth::guard('customer')->check())
                             <input type="hidden" name="kh_id" id="kh_id" value="{{ Auth::guard('customer')->user()->id }}">
@@ -190,6 +190,7 @@
                 return actions.order.capture().then(function(details) {
                     // This function shows a transaction success message to your buyer.
                     alert('Cảm ơn ' + details.payer.name.given_name + ' đã đặt cọc. Nhân viên của chúng tôi sẽ sớm liên hệ đến quý khách');
+                    document.getElementById("pay_success").submit();
                 });
             }
         }).render('#paypal-button-container');
