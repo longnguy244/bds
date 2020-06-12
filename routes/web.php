@@ -81,7 +81,10 @@ Route::group(['middleware' => 'customer'], function(){
     //     return ['status' => 'OK'];
     // });
     Route::post('thanhtoan/{id}', 'Web\PaymentController@payment_accept')->name('post.thanhtoan');
-    Route::get('checkpayment/{id}', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
+    Route::get('checkout/{id}', 'Web\PaymentController@payment_check')->name('check.thanhtoan');
+    Route::get('hopdong/{id}', 'Web\PaymentController@hopdong')->name('hopdong');
+    Route::post('hopdong', 'Web\PaymentController@save_hopdong')->name('post.hopdong');
+    Route::get('hopdong', 'Web\PaymentController@show_hopdong')->name('get.hopdong');
 });
     Route::get('thanhtoan/{id}', 'Web\PaymentController@payment')->name('thanhtoan');
 

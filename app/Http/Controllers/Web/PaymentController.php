@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 
 use App\BATDONGSAN;
 use App\THANHTOAN;
+use App\HOPDONG;
+use App\KHACHHANG;
 
 class PaymentController extends Controller
 {
@@ -34,6 +36,30 @@ class PaymentController extends Controller
         $bds = BATDONGSAN::find($id);
         $bds->status = 1;
         $bds->update();
-        return redirect('/');
+        return redirect()->route('hopdong', $bds->id);
+    }
+    
+    public function hopdong($id)
+    {
+        return view('web.pages.submit',[
+            'bds' => BATDONGSAN::find($id),
+        ]);
+    }
+    
+    public function show_hopdong(Request $request)
+    {
+        $id_bds = $request->input('id_bds');
+        $id_kh = $request->input('id_kh');
+        return view('web.pages.hopdong',[
+            'data' => HOPDONG::where('id_bds',$id_bds)
+                                ->where('id_kh', $id_kh)
+                                ->first(),
+        ]);
+    }
+
+    public function save_hopdong(Request $request)
+    {
+        HOPDONG::create($request->all());
+        return redirect()->route('get.hopdong');
     }
 }
