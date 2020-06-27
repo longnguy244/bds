@@ -191,8 +191,6 @@
                     // This function shows a transaction success message to your buyer.
                     alert('Cảm ơn ' + details.payer.name.given_name + ' đã đặt cọc. Nhân viên của chúng tôi sẽ sớm liên hệ đến quý khách');
                     document.getElementById("pay_success").submit();
-                    // document.getElementById("save_contract").submit();
-                    // document.getElementById("check_contract").submit();
                 });
             }
         }).render('#paypal-button-container');

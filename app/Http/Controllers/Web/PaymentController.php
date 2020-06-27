@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Auth;
 use App\BATDONGSAN;
 use App\THANHTOAN;
 use App\HOPDONG;
@@ -36,13 +37,15 @@ class PaymentController extends Controller
         $bds = BATDONGSAN::find($id);
         $bds->status = 1;
         $bds->update();
-        return redirect()->route('hopdong', $bds->id);
+        return redirect()->route('hopdong', $id);
     }
     
     public function hopdong($id)
     {
         return view('web.pages.submit',[
             'bds' => BATDONGSAN::find($id),
+            'kh' => Auth::guard('customer')->user(),
+            'data' => HOPDONG::find($id),
         ]);
     }
     
@@ -60,6 +63,7 @@ class PaymentController extends Controller
     public function save_hopdong(Request $request)
     {
         HOPDONG::create($request->all());
-        return redirect()->route('get.hopdong');
+        // redirect()->route('get.hopdong');
+        return redirect('/');
     }
 }
