@@ -5,6 +5,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
+    
+    <!-- Bootstrap Core Css -->
+    <link href="{{ asset('theme/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <title>Document</title>
     <style>
         /*@font-face {
@@ -37,8 +40,8 @@
     </style>
 </head>
 <body>
-    
-        <div class="center">
+    <div class="container">
+    <div class="center">
             <h4>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
             <p>Độc lập - Tự do - Hạnh phúc</p>
             <p>----------</p>
@@ -68,7 +71,7 @@
                 <p>ĐIỀU 1:  NỘI DUNG HỢP ĐỒNG</b></p>
                 <p>1.1 Bên B đồng ý giao cho Bên A thực hiện dịch vụ môi giới bán (hoặc cho thuê) bất động sản do Bên B là chủ sở hữu.</p>
                 <p>1.2 Đặc điểm của BĐS và giấy tờ pháp lý về BĐS là đối tượng của dịch vụ này được mô tả như sau: </p>
-                <p>Lọai bất động sản: {{Loaibds($data->id_bds)}}</p>
+                <p>Lọai bất động sản: {{Loaibds($data->bds->id_loaibds)}}</p>
                 <p>Địa chỉ: {{DCBDS($data->id_bds)}}</p>
                 <p>Diện tích khuôn viên đất: {{DTMD($data->id_bds)}} m2</p>
                 <p>Diện tích đất xây dựng: {{DTXD($data->id_bds)}}m2</p>
@@ -142,6 +145,9 @@
 
         </div>
         <a href="{{ route('down.hopdong',$data->id) }}">Xuat File</a>
+
+    </div>
+        
       
 </body>
 </html>

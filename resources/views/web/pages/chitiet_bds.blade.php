@@ -15,6 +15,9 @@
             top: 80px;
             z-index: 10000;
         }
+        .owl-carousel .owl-item {
+            object-fit: cover;
+        }
     </style>
 @endpush
 

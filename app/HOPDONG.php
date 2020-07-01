@@ -55,5 +55,10 @@ class HOPDONG extends Model
 			'phi_dangbai.required'       	=> 'Phí đăng bài không được phép để trống',
 			'huehong.required'       		=> 'Huê hồng không được phép để trống',
 			'thoihanhopdong.required'       => 'Thời hạn hợp đồng không được phép để trống',
-        ];
+		];
+			
+		public function bds()
+		{
+			return $this->belongsTo('App\BATDONGSAN', 'id_bds');
+		}
 }

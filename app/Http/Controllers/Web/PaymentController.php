@@ -37,7 +37,7 @@ class PaymentController extends Controller
         $bds = BATDONGSAN::find($id);
         $bds->status = 1;
         $bds->update();
-        return redirect()->route('hopdong', $id);
+        return redirect()->route('get.hopdong', $id);
     }
     
     public function hopdong($id)
