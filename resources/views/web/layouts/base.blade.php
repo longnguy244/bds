@@ -65,7 +65,7 @@
     </head>
     <body>
         @yield('main')
-        <!-- <a href="javascript:;"><img src="{{ asset('/upload/chatbox_icon.png') }}" class="icon-chatbox" alt="icon-chatbox"></a>
+        {{-- <a href="javascript:;"><img src="{{ asset('/upload/chatbox_icon.png') }}" class="icon-chatbox" alt="icon-chatbox"></a>
         <div class="card card-chatbox">
             <div class="card-header">Chatbox
             <button class="btn float-right border-0 close">X</button>
@@ -81,7 +81,7 @@
                 <!-- </form> -->
                 </div>
             </div>
-        </div> -->
+        </div> --}}
 
         <!-- jQuery (Necessary for All JavaScript Plugins) -->
         <script src="{{ asset('south/js/jquery/jquery-2.2.4.min.js') }}"></script>

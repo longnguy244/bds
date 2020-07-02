@@ -45,7 +45,7 @@ class PaymentController extends Controller
         return view('web.pages.submit',[
             'bds' => BATDONGSAN::find($id),
             'kh' => Auth::guard('customer')->user(),
-            'data' => HOPDONG::find($id),
+            // 'data' => HOPDONG::find($id),
         ]);
     }
     

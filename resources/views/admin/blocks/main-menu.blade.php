@@ -140,7 +140,7 @@
                 </li>
             </ul>
         </li>
-        <li class="{{ $route=='thang' || $route=='quy' || $route=='nam'? 'active' : '' }}">
+        <!-- <li class="{{ $route=='thang' || $route=='quy' || $route=='nam'? 'active' : '' }}">
             <a class="menu-toggle" href="javascript:void(0);">
                 <i class="material-icons">insert_chart</i>
                 <span>Thống kê</span>
@@ -162,7 +162,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> -->
         <li class="{{ $route=='feedback' ? 'active' : '' }}">
             <a class="menu-toggle" href="javascript:void(0);">
                 <i class="material-icons">loyalty</i>
