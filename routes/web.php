@@ -49,6 +49,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::post('/chinh-sua/{id}','Admin\ChuSoHuuController@postEdit')->name('post.edit.chusohuu');
     });
 
+    Route::post('updatestatus', 'Admin\HopDongController@updateStatus')->name('updateStatus');
+
 });
 
 Auth::routes();

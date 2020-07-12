@@ -28,7 +28,9 @@ class HopDongController extends Controller
     {
         return view('admin.pages.hopdong.index',[
             'auth'          => \Auth::user(),
-            'data'          => $this->model->all(),
+            'data'          => $this->model->where('status',0)->get(),
+            'data1'          => $this->model->where('status',1)->get(),
+            'data2'          => $this->model->where('status',2)->get(),
             'route'         => $this->model->route,
         ]);
     }
@@ -61,6 +63,12 @@ class HopDongController extends Controller
     {
         $this->validate($request, $this->model->rules, $this->model->messages);
         $this->model->create($request->all());
+        // dd($request->id_bds);
+        if($request->status == 2){
+            $bds = BATDONGSAN::find($request->id_bds);
+            $bds->status = 0;
+            $bds->update();
+        }
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect(route('hopdong.index'));
     }

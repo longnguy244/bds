@@ -107,7 +107,7 @@
             <ul class="ml-menu">
                 <li class="{{ $route=='hopdong' ? 'active' : '' }}">
                     <a href="{{ asset('admin/hopdong') }}">
-                        <span>Hợp đồng môi giới</span>
+                        <span>Hợp đồng</span>
                     </a>
                 </li>
                 <li class="{{ $route=='bienbanhopdong' ? 'active' : '' }}">

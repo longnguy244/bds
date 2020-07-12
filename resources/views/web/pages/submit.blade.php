@@ -192,14 +192,15 @@
             <input type="hidden" name="id_kh"  value="{{ Auth::guard('customer')->user()->id }}">
             <input type="hidden" name="id_nv"  value="1">
             <input type="hidden" name="id_httt"  value="2">
-            <input type="hidden" name="ten_hd"  value="{{ $bds->ten_bds }}">
+            <input type="hidden" name="ten_hd"  value="Hợp đồng đặt cọc {{ $bds->ten_bds }}">
             <input type="hidden" name="giaban"  value="{{ $bds->gia }}">
             <input type="hidden" name="giathue"  value="đồng">
-            <input type="hidden" name="phi_mg"  value="2.000.000">
+            <input type="hidden" name="phi_mg"  value="5.000.000">
             <input type="hidden" name="phi_dangbai"  value="đồng">
             <input type="hidden" name="huehong"  value="1">
             <input type="hidden" name="thoihanhopdong"  value="2020-12-31">
             <input type="hidden" name="ngaylaphd"  value="{{ date('Y-m-d') }}">
+            <input type="hidden" name="status"  value="1">
             <div style="margin-bottom: 50px;">
                 <button class="btn south-btn m-1" style="width: 40%;" type="submit">Đồng ý</button>
             </div>

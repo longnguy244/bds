@@ -23,6 +23,7 @@ class HOPDONG extends Model
 			'thoihanhopdong',
 			'ngaylaphd',
 			'ghichu',
+			'status',
         ];
         
         public  $rules =
@@ -40,6 +41,7 @@ class HOPDONG extends Model
 			'thoihanhopdong'	=> 'required',
 			'ngaylaphd'			=> 'required',
 			'ghichu',
+			'status'			=> 'required',
         ];
 
         public $messages = 
@@ -55,6 +57,7 @@ class HOPDONG extends Model
 			'phi_dangbai.required'       	=> 'Phí đăng bài không được phép để trống',
 			'huehong.required'       		=> 'Huê hồng không được phép để trống',
 			'thoihanhopdong.required'       => 'Thời hạn hợp đồng không được phép để trống',
+			'status.required'       		=> 'Vui lòng chọn loại hợp đồng',
 		];
 			
 		public function bds()

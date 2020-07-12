@@ -176,8 +176,17 @@
                     <b>Ngày lập hợp đồng</b>
                     <div class="input-group">
                         <div class="form-line">
-                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylaphd" type="text" id="ngaylaphd" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 30/07/2016" value="{{ old('ngaylaphd') }}">
+                            <input data-inputmask-alias="yyyy/mm/dd" name="ngaylaphd" type="text" id="ngaylaphd" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 30/07/2016" value="{{ date('Y/m/d') }}">
                         </div>
+                    </div>
+                    <b>Tình trạng hợp đồng</b>
+                    <div class="input-group">
+                        <select class="btn-group bootstrap-select form-control show-tick" name="status"  id="status">
+                            <option value="">-- Please select --</option>
+                            <option value="0">Hợp đồng môi giới</option>
+                            <option value="1">Hợp đồng đặt cọc</option>
+                            <option value="2">Hợp đồng mua bán</option>
+                        </select>
                     </div>
                     <label for="bds_note">
                         Ghi chú

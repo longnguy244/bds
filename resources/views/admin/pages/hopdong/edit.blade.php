@@ -163,6 +163,22 @@
                             <input data-inputmask-alias="yyyy/mm/dd" name="ngaylaphd" type="text" id="ngaylaphd" class="form-control date" data-val="true" data-val-required="Required" placeholder="Ex: 2016/07/30" value="{{ old('ngaylaphd', $data->ngaylaphd) }}">
                         </div>
                     </div>
+                    <b>Tình trạng hợp đồng</b>
+                    <div class="input-group">
+                    <div class="btn-group bootstrap-select disabled form-control">
+                        <select class="form-control" disabled="" tabindex="-98">
+                            <option @if($data->status == 0 ) selected @endif value="{{ $data->status }}">Hợp đồng môi giới</option>
+                            <option @if($data->status == 1 ) selected @endif value="{{ $data->status }}">Hợp đồng đặt cọc</option>
+                            <option @if($data->status == 2 ) selected @endif value="{{ $data->status }}">Hợp đồng mua bán</option>
+                        </select>
+                    </div>
+                        <!-- <select class="btn-group bootstrap-select disabled form-control" name="status"  id="status">
+                            <option value="">-- Please select --</option>
+                            <option @if($data->status == 0 ) selected @endif value="{{ $data->status }}">Hợp đồng môi giới</option>
+                            <option @if($data->status == 1 ) selected @endif value="{{ $data->status }}">Hợp đồng đặt cọc</option>
+                            <option @if($data->status == 2 ) selected @endif value="{{ $data->status }}">Hợp đồng mua bán</option>
+                        </select> -->
+                    </div>
                     <label for="ghichu">
                         Ghi chú
                     </label>
