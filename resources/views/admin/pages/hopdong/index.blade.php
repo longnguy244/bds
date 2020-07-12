@@ -286,9 +286,6 @@
                                                     <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdong.show', ['data' => $data->id]) }}">
                                                         <i class="material-icons">visibility</i>
                                                     </a>
-                                                    <a type="button" class="btn bg-brown waves-effect" href="{{ route('hopdong.show', ['data' => $data->id]) }}">
-                                                        <i class="material-icons">autorenew</i>
-                                                    </a>
                                                     </center>
                                                 </td>
                                             </tr>
