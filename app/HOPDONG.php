@@ -64,4 +64,9 @@ class HOPDONG extends Model
 		{
 			return $this->belongsTo('App\BATDONGSAN', 'id_bds');
 		}
+
+		public function kh()
+		{
+			return $this->belongsTo('App\KHACHHANG', 'id_kh');
+		}
 }

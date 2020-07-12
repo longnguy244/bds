@@ -196,7 +196,7 @@
                                                     <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                                         <i class="material-icons">delete</i>
                                                     </div>
-                                                    <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdong.show', ['data' => $data->id]) }}">
+                                                    <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdongdatcoc', ['data' => $data->id]) }}">
                                                         <i class="material-icons">visibility</i>
                                                     </a>
                                                     </center>
@@ -283,7 +283,7 @@
                                                     <div data-toggle="modal" data-target="#cfmDel" onclick="$('#formDelete').attr('action', '{{ route('hopdong.destroy', ['data' => $data->id]) }}');" class="btn bg-red waves-effect">
                                                         <i class="material-icons">delete</i>
                                                     </div>
-                                                    <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdong.show', ['data' => $data->id]) }}">
+                                                    <a type="button" class="btn bg-light-green waves-effect" href="{{ route('hopdongmuaban', ['data' => $data->id]) }}">
                                                         <i class="material-icons">visibility</i>
                                                     </a>
                                                     </center>

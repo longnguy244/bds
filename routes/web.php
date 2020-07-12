@@ -49,7 +49,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::post('/chinh-sua/{id}','Admin\ChuSoHuuController@postEdit')->name('post.edit.chusohuu');
     });
 
-    Route::post('updatestatus', 'Admin\HopDongController@updateStatus')->name('updateStatus');
+    Route::get('hopdong/hopdongdatcoc/{id}', 'Admin\HopDongController@hopdongdatcoc')->name('hopdongdatcoc');
+    Route::get('hopdong/hopdongmuaban/{id}', 'Admin\HopDongController@hopdongmuaban')->name('hopdongmuaban');
 
 });
 

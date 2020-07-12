@@ -95,6 +95,32 @@ class HopDongController extends Controller
         
     }
 
+    public function hopdongdatcoc($id)
+    {
+        // dd($this->model->find($id)->bds->id_loaibds);
+        return view('admin.pages.hopdong.hopdongdatcoc', [
+            'auth'          => \Auth::user(),
+            'route'         => $this->model->route,
+            'data'          => $this->model->find($id),
+            'bds'           => BATDONGSAN::find($this->model->find($id)->bds->id),
+            'kh'            => KHACHHANG::find($this->model->find($id)->kh->id),
+            'customers'     => KHACHHANG::get(),
+        ]);
+        
+    }
+    
+    public function hopdongmuaban($id)
+    {
+        // dd($this->model->find($id)->bds->id_loaibds);
+        return view('admin.pages.hopdong.hopdongmuaban', [
+            'auth'          => \Auth::user(),
+            'route'         => $this->model->route,
+            'data'          => $this->model->find($id),
+            'customers'     => KHACHHANG::get(),
+        ]);
+        
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
