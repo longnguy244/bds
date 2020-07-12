@@ -68,6 +68,10 @@ class HopDongController extends Controller
             $bds = BATDONGSAN::find($request->id_bds);
             $bds->status = 0;
             $bds->update();
+        }elseif($request->status == 1){
+            $bds = BATDONGSAN::find($request->id_bds);
+            $bds->status = 1;
+            $bds->update();
         }
         session()->flash('flash_message', 'Thêm dữ liệu thành công');
         return redirect(route('hopdong.index'));
