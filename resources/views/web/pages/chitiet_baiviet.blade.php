@@ -4,6 +4,16 @@
     {{ $baiviet->ten_bv }} - DreamHouse
 @endsection
 
+@push('css')
+    <style>
+        .blog-post-thumbnail img{
+            height: 346px;
+            width: 730px;
+            object-fit: cover;
+        }
+    </style>
+@endpush
+
 @section('main')
     <!-- ##### Header Area Start ##### -->
     @include('web.blocks.header')
@@ -32,7 +42,7 @@
                     <div class="single-blog-area">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
-                            <img src="{{ asset('south/img/blog-img/blog3.jpg') }}" alt="">
+                            <img src="{{ asset('upload/bds/'.$baiviet->bds->hinhanh) }}" onerror="this.src='{{ url('south/img/bg-img/feature2.jpg') }}'" alt="">
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -139,27 +149,15 @@
                     <div class="blog-sidebar-area">
 
                         <!-- Search Widget -->
-                        <div class="search-widget-area mb-70">
+                        <!-- <div class="search-widget-area mb-70">
                             <form action="#" method="get">
                                 <input type="search" name="search" id="search" placeholder="Search">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
-                        </div>
+                        </div> -->
 
                         <!-- Catagories Widget -->
-                        <div class="south-catagories-card mb-70">
-                            <h5>Archive</h5>
-                            <ul class="catagories-menu">
-                                <li><a href="#">Radiology</a></li>
-                                <li><a href="#">Cardiology</a></li>
-                                <li><a href="#">Gastroenterology</a></li>
-                                <li><a href="#">Neurology</a></li>
-                                <li><a href="#">General surgery</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Catagories Widget -->
-                        <div class="south-catagories-card mb-70">
+                        <!-- <div class="south-catagories-card mb-70">
                             <h5>Categories</h5>
                             <ul class="catagories-menu">
                                 <li><a href="#">Radiology</a></li>
@@ -168,11 +166,47 @@
                                 <li><a href="#">Neurology</a></li>
                                 <li><a href="#">General surgery</a></li>
                             </ul>
+                        </div> -->
+                        
+                        <p style="font-size: 18px; margin-bottom: 25px">Thông tin của bất động sản</p>
+                        <div class="single-featured-property">
+                            <!-- Property Thumbnail -->
+                            <div class="property-thumb">
+                                <img src="{{ asset('upload/bds/'.$baiviet->bds->hinhanh) }}" onerror="this.src='{{ url('south/img/bg-img/feature2.jpg') }}'" alt="">
+
+                                <div class="tag">
+                                    <span>{{ $baiviet->bds->hinhthuc }}</span>
+                                </div>
+                                <div class="list-price">
+                                    <p>{{ number_format($baiviet->bds->gia) }} VND</p>
+                                </div>
+                            </div>
+                            <!-- Property Content -->
+                            <div class="property-content">
+                                <a href="{{ asset('/'.$baiviet->bds->alias) }}"><h5>{{ $baiviet->bds->ten_bds }}</h5></a>
+                                <p class="location"><img src="{{ asset('south/img/icons/location.png') }}" alt="">{{ $baiviet->bds->diachi_bds }}</p>
+                                
+                                <div class="property-meta-data d-flex align-items-end justify-content-between">
+                                    <div class="new-tag">
+                                        <img src="{{ asset('south/img/icons/new.png') }}" alt="">
+                                    </div>
+                                    <div class="bathroom">
+                                        <img src="{{ asset('south/img/icons/bathtub.png') }}" alt="">
+                                        <span>2</span>
+                                    </div>
+                                    <div class="garage">
+                                        <img src="{{ asset('south/img/icons/garage.png') }}" alt="">
+                                        <span>2</span>
+                                    </div>
+                                    <div class="space">
+                                        <img src="{{ asset('south/img/icons/space.png') }}" alt="">
+                                        <span>120 sq ft</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                         <!-- Catagories Widget -->
-                        <div class="featured-properties-slides owl-carousel">
-
+                        {{--<div class="featured-properties-slides owl-carousel">
                             <!-- Single Slide -->
                             <div class="single-featured-property">
                                 <!-- Property Thumbnail -->
@@ -248,7 +282,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
 
                     </div>
                 </div>

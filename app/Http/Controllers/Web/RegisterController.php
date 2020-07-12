@@ -13,11 +13,6 @@ class RegisterController extends Controller
     use RegistersUsers;
     protected $redirectTo = '/';
     
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-    
     public function getRegister()
     {
         return view('web.pages.register');

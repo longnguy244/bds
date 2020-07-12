@@ -36,5 +36,10 @@ class BAIVIET extends Model
 			'ten_bv.required'    	=> 'Tên bài viết là bắt buộc',
 			'alias.required'     	=> 'Alias là bắt buộc',
 			'trangthai.required'    => 'Trạng thái là bắt buộc',
-        ];
+		];
+		
+		public function bds()
+		{
+			return $this->belongsTo('App\BATDONGSAN','id_bds');
+		}
 }

@@ -133,11 +133,11 @@
                         <span>Phiếu thu</span>
                     </a>
                 </li>
-                <li class="{{ $route=='phieuchi' ? 'active' : '' }}">
+                <!-- <li class="{{ $route=='phieuchi' ? 'active' : '' }}">
                     <a href="{{ asset('admin/phieuchi') }}">
                         <span>Phiếu chi</span>
                     </a>
-                </li>
+                </li> -->
             </ul>
         </li>
         <!-- <li class="{{ $route=='thang' || $route=='quy' || $route=='nam'? 'active' : '' }}">

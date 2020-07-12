@@ -75,6 +75,8 @@ class HopDongController extends Controller
     {
         // dd($this->model->find($id)->bds->id_loaibds);
         return view('admin.pages.hopdong.show', [
+            'auth'          => \Auth::user(),
+            'route'         => $this->model->route,
             'data'          => $this->model->find($id),
             'customers'     => KHACHHANG::get(),
         ]);

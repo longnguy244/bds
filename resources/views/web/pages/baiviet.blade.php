@@ -4,6 +4,16 @@
     Bài viết - DreamHouse 
 @endsection
 
+@push('css')
+    <style>
+        .blog-post-thumbnail img{
+            height: 346px;
+            width: 730px;
+            object-fit: cover;
+        }
+    </style>
+@endpush
+
 @section('main')
     <!-- ##### Header Area Start ##### -->
     @include('web.blocks.header')
@@ -33,7 +43,7 @@
                     <div class="single-blog-area mb-50">
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail">
-                            <img src="{{ asset('south/img/blog-img/blog1.jpg') }}" alt="">
+                            <img src="{{ asset('upload/bds/'.$bv->bds->hinhanh) }}" onerror="this.src='{{ url('south/img/bg-img/feature2.jpg') }}'" alt="">
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
